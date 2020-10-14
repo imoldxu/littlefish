@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.x.lfs.context.bo.WxUserInfoBo;
 import com.x.lfs.context.vo.UserVo;
-import com.x.lfs.service.UserService;
+import com.x.lfs.service.impl.UserServiceImpl;
 import com.x.tools.util.SessionUtil;
 
 import io.swagger.annotations.Api;
@@ -30,7 +30,7 @@ import io.swagger.annotations.ApiParam;
 public class UserController{
 
 	@Autowired
-	UserService userService;
+	UserServiceImpl userService;
 	
 	public static final String SESSION_KEY = "user";
 	

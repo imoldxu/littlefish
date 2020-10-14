@@ -29,6 +29,7 @@ public class User {
 	
 	private String birthday;
 	
+	@Indexed(unique=true)
 	private String phone;
 	
 	private String password;
@@ -36,8 +37,10 @@ public class User {
 	@Indexed(unique=true)
 	private String wxUnionId;
 	
+	@Indexed(unique=true)
 	private String wxMiniOpenId;
 	
+	@Indexed(unique=true)
 	private String wxOpenId;
 	
 	private Date createtime;

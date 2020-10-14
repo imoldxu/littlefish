@@ -70,7 +70,7 @@ public class WxMiniProgramUtil {
 
 	public static final String grant_type = "client_credential";
 
-	public static final String appid = "wx27274648aadcf410"; // 租盟
+	public static final String appid = "wx9a452688cd3858eb";
 	public static final String secret = "d0e80bf423848e0ebb647998e2228d63";
 
 	private static CloseableHttpClient httpClient = httpClient();
