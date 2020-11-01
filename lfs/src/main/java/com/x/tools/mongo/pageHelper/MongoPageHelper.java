@@ -88,9 +88,11 @@ public class MongoPageHelper {
             query.skip(skip).limit(pageSize);
         }
 
+        //query.with(new Sort(Lists.newArrayList(new Order(Direction.ASC, ID)))),
+        query.with(Sort.by(Order.asc(ID)));
+        
         final List<T> entityList = mongoTemplate
-            .find(query.with(new Sort(Lists.newArrayList(new Order(Direction.ASC, ID)))),
-                entityClass);
+            .find(query, entityClass);
 
         final PageResult<R> pageResult = new PageResult<>();
         final Pagination pagination = new Pagination();

@@ -2,6 +2,8 @@ package com.x.lfs.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.mongodb.MongoDbFactory;
+import org.springframework.data.mongodb.MongoTransactionManager;
 import org.springframework.data.mongodb.core.MongoTemplate;
 
 import com.x.tools.mongo.pageHelper.MongoPageHelper;
@@ -30,5 +32,11 @@ public class MongoDBConfig {
 //
 //        return mappingConverter;
 //    }
+	
+	//配置mongodb的事务管理，其他地方只需要设置@Transaction即可开启事务
+	@Bean
+    MongoTransactionManager transactionManager(MongoDbFactory factory){
+        return new MongoTransactionManager(factory);
+    }
 	
 }

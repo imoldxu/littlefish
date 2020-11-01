@@ -142,7 +142,11 @@ public class WxMiniProgramUtil {
 
 				String data = EntityUtils.toString(response.getEntity());
 				JSONObject jsonData = JSON.parseObject(data);
-				return jsonData.getString("access_token");
+				if(isError(jsonData)) {
+					throw new IOException("微信响应状态错误:"+jsonData.getString("errmsg")); 
+				}else {
+					return jsonData.getString("access_token");
+				}
 			} else {
 				throw new IOException("微信响应状态错误");
 			}

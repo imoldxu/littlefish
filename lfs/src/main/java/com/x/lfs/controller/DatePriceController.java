@@ -45,7 +45,7 @@ public class DatePriceController {
 	@RequestMapping(method = RequestMethod.POST)
 	@ApiOperation(value = "批量修改日期价格", notes = "批量修改日期价格")
 	public void batchAdd(
-			@ApiParam(name = "batchAddDatePriceBo", value = "日期查询条件") @RequestBody @Valid BatchAddDatePriceBo batchAddDatePriceBo,
+			@ApiParam(name = "batchAddDatePriceBo", value = "批量添加日期价格") @RequestBody @Valid BatchAddDatePriceBo batchAddDatePriceBo,
 			HttpServletRequest request, HttpServletResponse response) {
 	
 		datePriceService.updateDatePrice(batchAddDatePriceBo);
