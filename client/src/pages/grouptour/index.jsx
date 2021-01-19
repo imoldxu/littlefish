@@ -19,9 +19,9 @@ class GroupTour extends Component {
     render(){
 
         const { groupTour } = this.props;
-        const { vHeight, data=[]} = groupTour
+        const { vHeight, list=[]} = groupTour
 
-        const dataLen = data.length
+        const dataLen = list.length
         
         this.loading = false;
         const itemSize = 100;

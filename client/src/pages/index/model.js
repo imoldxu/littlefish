@@ -1,3 +1,6 @@
+import APIFunction from '../../services'
+
+const { queryBanner } = APIFunction
 
 export default {
   namespace: 'index',
@@ -16,5 +19,11 @@ export default {
     },
   },
   effects: {
+    *queryBanner({payload},{call, put}){
+      const {success, data} = yield call(queryBanner, payload)
+      if(success){
+        yield put({type:'save', payload: {bannerlist: data}})
+      }
+    }
   },
 }

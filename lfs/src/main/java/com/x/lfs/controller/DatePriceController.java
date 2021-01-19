@@ -44,11 +44,11 @@ public class DatePriceController {
 	@CrossOrigin(allowedHeaders = "*", allowCredentials = "true")
 	@RequestMapping(method = RequestMethod.POST)
 	@ApiOperation(value = "批量修改日期价格", notes = "批量修改日期价格")
-	public void batchAdd(
+	public List<DatePrice> batchAdd(
 			@ApiParam(name = "batchAddDatePriceBo", value = "批量添加日期价格") @RequestBody @Valid BatchAddDatePriceBo batchAddDatePriceBo,
 			HttpServletRequest request, HttpServletResponse response) {
 	
-		datePriceService.updateDatePrice(batchAddDatePriceBo);
-		return;
+		List<DatePrice> ret = datePriceService.updateDatePrice(batchAddDatePriceBo);
+		return ret;
 	}
 }

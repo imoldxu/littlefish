@@ -15,7 +15,6 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.config.RegistryBuilder;
 import org.apache.http.conn.ConnectionKeepAliveStrategy;
-import org.apache.http.conn.HttpClientConnectionManager;
 import org.apache.http.conn.socket.ConnectionSocketFactory;
 import org.apache.http.conn.socket.PlainConnectionSocketFactory;
 import org.apache.http.conn.ssl.NoopHostnameVerifier;
@@ -36,25 +35,19 @@ import org.slf4j.LoggerFactory;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.qq.weixin.mp.aes.AesException;
 import com.qq.weixin.mp.aes.WXBizMsgCrypt;
 import com.x.lfs.context.ErrorCode;
 import com.x.lfs.context.HandleException;
 
-import java.util.Map;
 import java.util.HashMap;
 import java.util.Arrays;
 import java.util.Base64;
-import java.util.Formatter;
 import java.security.AlgorithmParameters;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.security.Security;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -65,13 +58,13 @@ public class WxMiniProgramUtil {
 	/**
 	 * 发送消息相关
 	 */
-	private static final String TOKEN = "zkhz";
-	private static final String encodingAesKey = "WADge6EHVX3zxQ3OculChEommAdP5aV3ajk3Hww3RMm";
+	//private static final String TOKEN = "zkhz";
+	//private static final String encodingAesKey = "WADge6EHVX3zxQ3OculChEommAdP5aV3ajk3Hww3RMm";
 
 	public static final String grant_type = "client_credential";
 
 	public static final String appid = "wx9a452688cd3858eb";
-	public static final String secret = "d0e80bf423848e0ebb647998e2228d63";
+	public static final String secret = "b09661d0f88271431db87950116c7c09";
 
 	private static CloseableHttpClient httpClient = httpClient();
 
@@ -155,24 +148,26 @@ public class WxMiniProgramUtil {
 		}
 	}
 
-	/**
-	 * 发送模板消息，接收微信的url验证
-	 * 
-	 * @param signature
-	 * @param timestamp
-	 * @param nonce
-	 * @param echostr
-	 * @return
-	 * @throws AesException
-	 */
-	public static String checkSignature(String signature, String timestamp, String nonce, String echostr)
-			throws AesException {
-
-		WXBizMsgCrypt pc = new WXBizMsgCrypt(TOKEN, encodingAesKey, appid);
-		String decodeEcho = pc.verifyUrl(signature, timestamp, nonce, "");
-
-		return echostr;
-	}
+//	/**
+//	 * 发送模板消息，接收微信的url验证
+//	 * 
+//	 * @param signature
+//	 * @param timestamp
+//	 * @param nonce
+//	 * @param echostr
+//	 * @return
+//	 * @throws AesException
+//	 */
+//	public static String checkSignature(String signature, String timestamp, String nonce, String echostr)
+//			throws AesException {
+//
+//		WXBizMsgCrypt pc = new WXBizMsgCrypt(TOKEN, encodingAesKey, appid);
+//		String decodeEcho = pc.verifyUrl(signature, timestamp, nonce, "");
+//		
+//		log.info("checkSignature: %s", decodeEcho);
+//		
+//		return echostr;
+//	}
 
 	/**
 	 * 发送模板消息

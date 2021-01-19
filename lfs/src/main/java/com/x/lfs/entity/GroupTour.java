@@ -11,19 +11,32 @@ public class GroupTour {
 	@Id
 	private String id;
 
-	private String title;
+	private String title;//title名称
 
 	private int days;//几天
 	
 	private int nights;//几晚
 	
-	private List<String> imageUrl;
+	private List<String> imageUrls;
 	
-	private List<String> points;
+	private List<String> tags;//标签，重点
 	
-	private List<Package> packages;
+	//国家
+	//省
+	//景区
+	//供应商产品名称
+	//供应商产品编号
 	
-	private List<String> introduceImageUrl;
+	//预定限制
+	//提前预定限制
+	//儿童可预订否？
+	//儿童年龄？
+	//儿童身高
+	//预定人数限制？
+	
+	private String departPlace;//出发地
+	
+	private List<Sku> skus;
 
 	public String getId() {
 		return id;
@@ -40,7 +53,6 @@ public class GroupTour {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
 	
 	public int getDays() {
 		return days;
@@ -58,36 +70,36 @@ public class GroupTour {
 		this.nights = nights;
 	}
 	
-	public List<String> getImageUrl() {
-		return imageUrl;
+	public List<String> getImageUrls() {
+		return imageUrls;
 	}
 
-	public void setImageUrl(List<String> imageUrl) {
-		this.imageUrl = imageUrl;
+	public void setImageUrls(List<String> imageUrls) {
+		this.imageUrls = imageUrls;
 	}
 
-	public List<String> getPoints() {
-		return points;
+	public List<Sku> getSkus() {
+		return skus;
 	}
 
-	public void setPoints(List<String> points) {
-		this.points = points;
+	public void setSkus(List<Sku> skus) {
+		this.skus = skus;
 	}
 
-	public List<Package> getPackages() {
-		return packages;
+	public List<String> getTags() {
+		return tags;
 	}
 
-	public void setPackages(List<Package> packages) {
-		this.packages = packages;
+	public void setTags(List<String> tags) {
+		this.tags = tags;
 	}
 
-	public List<String> getIntroduceImageUrl() {
-		return introduceImageUrl;
+	public String getDepartPlace() {
+		return departPlace;
 	}
 
-	public void setIntroduceImageUrl(List<String> introduceImageUrl) {
-		this.introduceImageUrl = introduceImageUrl;
+	public void setDepartPlace(String departPlace) {
+		this.departPlace = departPlace;
 	}
 	
 }

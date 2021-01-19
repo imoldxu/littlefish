@@ -2,8 +2,8 @@ package com.x.lfs.config;
 
 import javax.validation.ConstraintViolationException;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -23,7 +23,7 @@ import com.x.lfs.context.Response;
 @ControllerAdvice
 public class ExceptionHandle {
 
-	private static final Logger logger = LoggerFactory.getLogger(ExceptionHandle.class);
+	//private static final Logger logger = LoggerFactory.getLogger(ExceptionHandle.class);
 	
 	@ExceptionHandler(value = Exception.class)
 	//@ResponseBody

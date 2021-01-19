@@ -6,23 +6,28 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Valid
 public class DatePriceQuery {
 	
 	@NotBlank
-	private String packageId;
+	private String skuId;
 	
 	@NotNull
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date startDate;
 	
+	@NotNull
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date endDate;
 
-	public String getPackageId() {
-		return packageId;
+	public String getSkuId() {
+		return skuId;
 	}
 
-	public void setPackageId(String packageId) {
-		this.packageId = packageId;
+	public void setSkuId(String skuId) {
+		this.skuId = skuId;
 	}
 
 	public Date getStartDate() {

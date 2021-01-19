@@ -6,3 +6,5 @@ lfs/target/
 lfs/.classpath
 lfs/.project
 lfs/settings/
+wxmp/dist/
+wxmp/.env.production

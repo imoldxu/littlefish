@@ -1,0 +1,31 @@
+{
+  "name": "remax-test",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Remax Project",
+  "main": "index.js",
+  "keywords": [],
+  "author": "imoldxu <9794208@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "remax build -t wechat -w",
+    "build": "cross-env NODE_ENV=production remax build -t wechat"
+  },
+  "dependencies": {
+    "@remax/plugin-less": "^1.0.0",
+    "annar": "^2.0.7",
+    "axios": "^0.21.1",
+    "axios-miniprogram-adapter": "^0.3.2",
+    "moment": "^2.29.1",
+    "path-to-regexp": "^6.2.0",
+    "react": "^16.14.0",
+    "remax": "^2.9.1",
+    "remax-recycle-view": "^1.1.1",
+    "unstated-next": "^1.1.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "@types/react": "^16.14.2",
+    "typescript": "^4.1.2"
+  }
+}

@@ -1,3 +1,6 @@
+import APIFunction from "../../services";
+
+const {getGoodsDetail} = APIFunction
 
 export default {
   namespace: 'goodsDetail',
@@ -16,5 +19,11 @@ export default {
     },
   },
   effects: {
+    *get ({payload}, {call, put}){
+      const {success, data} = yield call(getGoodsDetail, payload)
+      if(success){
+        yield put({type:'save', payload: data})
+      }
+    }
   },
 }

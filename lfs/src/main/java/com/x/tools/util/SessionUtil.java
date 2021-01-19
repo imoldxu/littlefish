@@ -14,6 +14,7 @@ public class SessionUtil {
 		session.setMaxInactiveInterval(24*60*60);
 	}
 	
+	@SuppressWarnings("unchecked")
 	public static <T> T get(HttpServletRequest request, String key, Class<T> valueClass)  throws HandleException{
 		HttpSession session = request.getSession();
 		T value = (T) session.getAttribute(key);
@@ -24,6 +25,7 @@ public class SessionUtil {
 	}
 	
 	//可能返回null
+	@SuppressWarnings("unchecked")
 	public static <T> T check(HttpServletRequest request, String key, Class<T> valueClass)  throws HandleException{
 		HttpSession session = request.getSession();
 		T value = (T) session.getAttribute(key);

@@ -1,12 +1,39 @@
 package com.x.tools.util;
 
+import java.io.IOException;
+import java.lang.reflect.Type;
 import java.math.BigDecimal;
 
-public class MoneyUtil {
+import com.alibaba.fastjson.parser.DefaultJSONParser;
+import com.alibaba.fastjson.parser.deserializer.ObjectDeserializer;
+import com.alibaba.fastjson.serializer.JSONSerializer;
+import com.alibaba.fastjson.serializer.ObjectSerializer;
+
+public class MoneyUtil implements ObjectSerializer, ObjectDeserializer{
 
 	 /**金额为分的格式 */    
     public static final String CURRENCY_FEN_REGEX = "\\-?[0-9]+";    
-        
+    
+	@Override
+	public Long deserialze(DefaultJSONParser parser, Type type, Object fieldName) {
+		String value = parser.parseObject(String.class);
+        return changeY2F(value);
+	}
+
+	@Override
+	public int getFastMatchToken() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+    
+	@Override
+	public void write(JSONSerializer serializer, Object object, Object fieldName, Type fieldType, int features)
+			throws IOException {
+		Integer amount = (Integer) object;
+        String text = changeF2Y(amount);
+        serializer.write(text);
+	}  
+    
     /**   
      * 将分为单位的转换为元并返回金额格式的字符串 （除100）  
      *   
@@ -67,8 +94,8 @@ public class MoneyUtil {
      * @param amount  
      * @return  
      */    
-    public static String changeY2F(Integer amount){    
-        return BigDecimal.valueOf(amount).multiply(new BigDecimal(100)).toString();    
+    public static Long changeY2F(Integer amount){    
+        return BigDecimal.valueOf(amount).multiply(new BigDecimal(100)).longValue();    
     }    
         
     /**   
@@ -77,7 +104,7 @@ public class MoneyUtil {
      * @param amount  
      * @return  
      */    
-    public static String changeY2F(String amount){    
+    public static Long changeY2F(String amount){    
         String currency =  amount.replaceAll("\\$|\\￥|\\,", "");  //处理包含, ￥ 或者$的金额    
         int index = currency.indexOf(".");    
         int length = currency.length();    
@@ -91,7 +118,7 @@ public class MoneyUtil {
         }else{    
             amLong = Long.valueOf((currency.substring(0, index+1)).replace(".", "")+"00");    
         }    
-        return amLong.toString();    
-    }    
+        return amLong;    
+    }
 	
 }

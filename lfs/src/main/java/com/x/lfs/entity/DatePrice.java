@@ -4,9 +4,9 @@ import java.util.Date;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.format.annotation.DateTimeFormat;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.alibaba.fastjson.annotation.JSONField;
+import com.x.tools.util.MoneyUtil;
 
 @Document(collection="datePrice")
 public class DatePrice {
@@ -14,14 +14,19 @@ public class DatePrice {
 	@Id
 	private String id;
 	
-	private String packageId; //套餐id
+	private String skuId; //套餐id
 
+	//金额转换交由前台自己控制展示形式
+	//@JSONField(serializeUsing=MoneyUtil.class)
 	private Integer adultPrice;
 	
+	//金额转换交由前台自己控制展示形式
+	//@JSONField(serializeUsing=MoneyUtil.class)
 	private Integer childPrice;
 	
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	@JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
+	//@DateTimeFormat(pattern = "yyyy-MM-dd")
+	//@JsonFormat(pattern="yyyy-MM-dd")
+	@JSONField(format="yyyy-MM-dd")
 	private Date date;
 
 	public String getId() {
@@ -31,15 +36,15 @@ public class DatePrice {
 	public void setId(String id) {
 		this.id = id;
 	}
-
-	public String getPackageId() {
-		return packageId;
-	}
-
-	public void setPackageId(String packageId) {
-		this.packageId = packageId;
-	}
 	
+	public String getSkuId() {
+		return skuId;
+	}
+
+	public void setSkuId(String skuId) {
+		this.skuId = skuId;
+	}
+
 	public Integer getAdultPrice() {
 		return adultPrice;
 	}

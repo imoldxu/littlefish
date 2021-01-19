@@ -47,6 +47,8 @@ export type IProps = {
   hideArrow?: boolean;
   /** 隐藏控制器 */
   hideController?: boolean;
+  /** 隐藏日期头部星期信息 */
+  hideHead?: boolean;
   /** 是否可以滑动 */
   isSwiper?: boolean;
   /** 滑动方向 水平/竖直*/
@@ -422,14 +424,16 @@ export default class Calendar extends Component<IProps, IState> {
             )}
           </View>
 
-
+          {hideHead ? (
+              ''
+            ) : (
         <View className="calendar-head" style={headStyle}>
           {getWeekDayList(startDay as number).map(value => (
             <View style={headCellStyle} key={value}>
               {value}
             </View>
           ))}
-        </View>
+        </View>)}
         {isSwiper ? (
           <Swiper
             style={{

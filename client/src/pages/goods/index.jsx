@@ -16,7 +16,7 @@ class Goods extends Component {
         const { dispatch } = this.props
         console.log(Taro.getCurrentInstance().router.params)
         const { goodsId } = Taro.getCurrentInstance().router.params
-        dispatch({ type: 'goodsDetail/query', payload: { id: goodsId } })
+        dispatch({ type: 'goodsDetail/get', payload: { id: goodsId } })
     }
 
     componentDidMount() {
@@ -64,13 +64,14 @@ class Goods extends Component {
     handleClickBuy= ()=>{
         const { goodsDetail } = this.props
         //TODO，取goodsid
-        Taro.navigateTo({url: '/pages/enroll/enroll?goodsid=1'})
+        const { id } = goodsDetail
+        Taro.navigateTo({url: '/pages/enroll/enroll?goodsid='+id})
     }
 
     render() {
         const { goodsDetail } = this.props
 
-        const { currentTab } = goodsDetail
+        const { imageList, title, points, price, detailImage, currentTab, schedule } = goodsDetail
 
         return (
             <View className={styles.content}>
@@ -82,30 +83,42 @@ class Goods extends Component {
                         indicatorDots
                         duration="10"
                         autoplay>
-                        <SwiperItem>
-                            <Image mode="scaleToFill"
-                                src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1938730765,610435416&fm=26&gp=0.jpg"></Image>
-                        </SwiperItem>
+                        {
+                            imageList.map(image=>{
+                                return (
+                                <SwiperItem>
+                                    <Image mode="scaleToFill"
+                                    src={image}></Image>
+                                </SwiperItem>
+                                )
+                            })
+                        }
                     </Swiper>
                     <View className={styles.card}>
-                        <View className="at-col--wrap"><Text>成都丽江双飞4天3晚，玉龙雪上，莎拉海，篝火晚会【五星住宿】【好吃好玩】</Text></View>
+                    <View className="at-col--wrap"><Text>{title}</Text></View>
                         <View>
-                            <AtTag name='tag-1' type='primary' circle>入川必玩</AtTag>
-                            <AtTag name='tag-1' type='primary' circle>住金顶</AtTag>
+                            {
+                                points.map(point=>{
+                                    return (
+                                        <AtTag name='tag-1' type='primary' circle>{point}</AtTag>
+                                    )
+                                })
+                            }
                         </View>
-                        <View><Text className={styles.price}>￥1568-2988</Text></View>
+                        <View><Text className={styles.price}>￥{price}</Text></View>
                     </View>
                     <View className={styles.card}>
                         <AtList>
-                            <AtListItem title='成都参团' arrow='right' />
+                            <AtListItem title={'${departure}+参团'} arrow='right' />
                         </AtList>
-                        <View><ExCalendar view="week" hideController={true}
+                        <View><ExCalendar view="week" hideController={true} hideHeader={true}
+                            startDay={new Date().getDay()}
                             extraInfo={[
                                 { value: '2020-10-12', text: '￥1200', color: 'red' },
                                 { value: '2020-10-13', text: '￥1200', color: 'red' },
                                 { value: '2020-10-14', text: '￥1300', color: 'red' }
                             ]}
-                            onDayClick={item => console.log(item)}
+                            onDayClick={item => this.handleClickBuy}
                             ></ExCalendar></View>
                     </View>
 
@@ -122,7 +135,7 @@ class Goods extends Component {
                         </AtTabBar>
                         <View id="introduce">
                             <AtDivider content="图文介绍"></AtDivider>
-                            <Image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1600707234684&di=b61f4591584a390884c7e499b3e982f1&imgtype=0&src=http%3A%2F%2Fpic17.nipic.com%2F20111022%2F5519212_095442647339_2.jpg"
+                            <Image src={detailImage}
                                     mode="widthFix"
                                     className={styles.twimage}
                                 >
@@ -130,36 +143,29 @@ class Goods extends Component {
                         </View>
                         <View id="schedule">
                             <AtDivider content="行程安排"></AtDivider>
-                            <View className="at-row">
-                                <View className="at-col at-col-2"><Text>Day1</Text></View>
-                                <View className="at-col at-col-10">
-                                    <AtTimeline 
-                                    pending 
-                                    items={[
-                                        { title: '刷牙洗脸', content: ['大概8:00'], icon: 'check-circle' }, 
-                                        { title: '吃早餐', content: ['牛奶+面包', '餐后记得吃药'], icon: 'clock' }, 
-                                        { title: '上班', content: ['查看邮件', '写PPT', '发送PPT给领导'], icon: 'clock' }, 
-                                        { title: '睡觉', content: ['不超过23:00'], icon: 'clock' }
-                                    ]}
-                                    >
-                                    </AtTimeline>
-                                </View>
-                            </View>
-                            <View className="at-row">
-                                <View className="at-col at-col-2"><Text>Day2</Text></View>
-                                <View className="at-col at-col-10">
-                                    <AtTimeline 
-                                    pending 
-                                    items={[
-                                        { title: '刷牙洗脸', content: ['大概8:00'], icon: 'check-circle' }, 
-                                        { title: '吃早餐', content: ['牛奶+面包', '餐后记得吃药'], icon: 'clock' }, 
-                                        { title: '上班', content: ['查看邮件', '写PPT', '发送PPT给领导'], icon: 'clock' }, 
-                                        { title: '睡觉', content: ['不超过23:00'], icon: 'clock' }
-                                    ]}
-                                    >
-                                    </AtTimeline>
-                                </View>
-                            </View>
+                            {
+                                schedule.map(daySchedule=>{
+                                    const {num, todoList } = daySchedule
+
+                                    return (
+                                    <View className="at-row">
+                                        <View className="at-col at-col-2"><Text>Day{num}</Text></View>
+                                        <View className="at-col at-col-10">
+                                            <AtTimeline 
+                                            pending 
+                                            items={[
+                                                { title: '刷牙洗脸', content: ['大概8:00'], icon: 'check-circle' }, 
+                                                { title: '吃早餐', content: ['牛奶+面包', '餐后记得吃药'], icon: 'clock' }, 
+                                                { title: '上班', content: ['查看邮件', '写PPT', '发送PPT给领导'], icon: 'clock' }, 
+                                                { title: '睡觉', content: ['不超过23:00'], icon: 'clock' }
+                                            ]}
+                                            >
+                                            </AtTimeline>
+                                        </View>
+                                    </View>
+                                    )
+                                })
+                            }
                         </View>
                         <View id="costinfo">
                            <AtDivider content="费用说明"></AtDivider>

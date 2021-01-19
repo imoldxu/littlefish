@@ -1,13 +1,11 @@
 package com.x.tools.mongo.pageHelper;
 
-import com.google.common.collect.Lists;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import org.apache.commons.lang3.StringUtils;
 import org.bson.types.ObjectId;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.domain.Sort.Order;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -16,7 +14,7 @@ import org.springframework.data.mongodb.core.query.Query;
 /**
  * MongoDB分页查询工具类.
  *
- * @author Ryan Miao at 2018-06-07 14:46
+ * @author xujh
  **/
 public class MongoPageHelper {
 
@@ -36,9 +34,9 @@ public class MongoPageHelper {
      * java.lang.Class, java.util.function.Function, java.lang.Integer, java.lang.Integer,
      * java.lang.String)
      */
-    public <T> PageResult<T> pageQuery(Query query, Class<T> entityClass, Integer pageSize,
+    public <T> PageResult<T> pageQuery(Query query, String collectionName, Class<T> entityClass, Integer pageSize,
         Integer pageNum) {
-        return pageQuery(query, entityClass, Function.identity(), pageSize, pageNum, null);
+        return pageQuery(query, collectionName, entityClass, Function.identity(), pageSize, pageNum, null);
     }
 
     /**
@@ -48,9 +46,9 @@ public class MongoPageHelper {
      * java.lang.Class, java.util.function.Function, java.lang.Integer, java.lang.Integer,
      * java.lang.String)
      */
-    public <T, R> PageResult<R> pageQuery(Query query, Class<T> entityClass, Function<T, R> mapper,
+    public <T, R> PageResult<R> pageQuery(Query query, String collectionName, Class<T> entityClass, Function<T, R> mapper,
         Integer pageSize, Integer pageNum) {
-        return pageQuery(query, entityClass, mapper, pageSize, pageNum, null);
+        return pageQuery(query, collectionName, entityClass, mapper, pageSize, pageNum, null);
     }
 
     /**
@@ -67,7 +65,7 @@ public class MongoPageHelper {
      * @param <R> 最终返回时，展现给页面时的一条记录的类型。
      * @return PageResult，一个封装page信息的对象.
      */
-    public <T, R> PageResult<R> pageQuery(Query query, Class<T> entityClass, Function<T, R> mapper,
+    public <T, R> PageResult<R> pageQuery(Query query, String collectionName, Class<T> entityClass, Function<T, R> mapper,
         Integer pageSize, Integer pageIndex, String lastId) {
         //分页逻辑
         long total = mongoTemplate.count(query, entityClass);
@@ -92,7 +90,7 @@ public class MongoPageHelper {
         query.with(Sort.by(Order.asc(ID)));
         
         final List<T> entityList = mongoTemplate
-            .find(query, entityClass);
+            .find(query, entityClass, collectionName);
 
         final PageResult<R> pageResult = new PageResult<>();
         final Pagination pagination = new Pagination();

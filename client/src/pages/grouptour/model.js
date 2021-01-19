@@ -1,3 +1,6 @@
+import APIFunction from '../../services/api'
+
+const {queryGroupTour} = APIFunction
 
 export default {
   namespace: 'groupTour',
@@ -17,5 +20,11 @@ export default {
     },
   },
   effects: {
+    *query({payload},{call, put}){
+       const {success, data} = yield call(queryGroupTour, payload)
+       if(success){
+         yield put({type: 'saveMore', payload: data})
+       } 
+    }
   },
 }

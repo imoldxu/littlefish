@@ -7,13 +7,14 @@ public class Todo {
 	public static final int FREE = 1;//自由活动
 	public static final int MEAL = 2;//餐饮
 	public static final int HOTEL = 3; //住宿
-	public static final int SCENIC_SPOT = 4; //景点
+	public static final int TRAFFIC = 4; //交通
+	public static final int SCENIC_SPOT = 5; //景点
 	
 	private int type;
 	
 	private String time;
 	
-	private String todo;
+	private String title;
 	
 	private String info;
 	
@@ -34,13 +35,13 @@ public class Todo {
 	public void setTime(String time) {
 		this.time = time;
 	}
-
-	public String getTodo() {
-		return todo;
+	
+	public String getTitle() {
+		return title;
 	}
 
-	public void setTodo(String todo) {
-		this.todo = todo;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public String getInfo() {

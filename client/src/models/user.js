@@ -2,8 +2,6 @@ import Taro from '@tarojs/taro';
 import config from '../utils/config';
 import APIFunction from '../services';
 import wxAPI from '../utils/wxpromise';
-import { take } from 'lodash';
-
 
 export default {
   namespace: 'user',
@@ -63,7 +61,7 @@ export default {
         Taro.navigateTo({ url: '/pages/login/login' })
       }
     },
-    *authGetUserInfo({ payload }, { call, put }) {//授权后的处理
+    *authGetUserInfo({ payload }, { call, put, take }) {//授权后的处理
       const { needGoback=true } = payload
 
       Taro.showLoading({ title: '登陆中' })

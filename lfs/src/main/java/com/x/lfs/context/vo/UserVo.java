@@ -7,7 +7,7 @@ import com.alibaba.fastjson.annotation.JSONField;
 public class UserVo {
 	
 	@JSONField(serialize=false)
-	private Integer id;
+	private String id;
 	
 	private String nickName;
 	
@@ -48,16 +48,16 @@ public class UserVo {
     
     private int subscribe;//是否关注微信公众号
     
-    private String sessionID;//本地session
+    private String sessionId;//本地session
     
     @JSONField(serialize=false)
     private String wxSessionKey;
 
-	public Integer getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -205,12 +205,12 @@ public class UserVo {
 		this.subscribe = subscribe;
 	}
 
-	public String getSessionID() {
-		return sessionID;
+	public String getSessionId() {
+		return sessionId;
 	}
 
-	public void setSessionID(String sessionID) {
-		this.sessionID = sessionID;
+	public void setSessionId(String sessionId) {
+		this.sessionId = sessionId;
 	}
 
 	public String getWxSessionKey() {

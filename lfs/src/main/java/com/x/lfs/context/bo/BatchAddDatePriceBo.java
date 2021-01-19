@@ -11,15 +11,15 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 public class BatchAddDatePriceBo {
 
 	@NotNull
-	@JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date starteDate;
 	
 	@NotNull
-	@JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date endDate;
 	
 	@NotNull
-	private String packageId; //套餐id
+	private String skuId; //套餐id
 
 	private Integer adultPrice;
 	
@@ -41,12 +41,12 @@ public class BatchAddDatePriceBo {
 		this.endDate = endDate;
 	}
 
-	public String getPackageId() {
-		return packageId;
+	public String getSkuId() {
+		return skuId;
 	}
 
-	public void setPackageId(String packageId) {
-		this.packageId = packageId;
+	public void setSkuId(String skuId) {
+		this.skuId = skuId;
 	}
 
 	public Integer getAdultPrice() {

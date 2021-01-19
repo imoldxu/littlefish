@@ -9,10 +9,12 @@ const GoodsItemRow = React.memo(({ index, style, data }) => {
 
   return (
     <View className="at-row">
-      <Image src={imageUrl}></Image>
-      <View className="at-row">
-        <View><Text>{name}</Text></View>
-        <View><Text>{price}</Text></View>
+      <Image className="at-col" src={imageUrl}></Image>
+      <View className="at-col">
+        <View className="at-row">
+          <View><Text>{name}</Text></View>
+          <View><Text>{price}</Text></View>
+        </View>
       </View>
     </View>
   );

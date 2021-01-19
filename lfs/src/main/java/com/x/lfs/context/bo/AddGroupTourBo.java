@@ -4,8 +4,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
-
-import com.x.lfs.entity.Package;
+import javax.validation.constraints.NotEmpty;
 
 @Valid
 public class AddGroupTourBo {
@@ -17,13 +16,15 @@ public class AddGroupTourBo {
 	
 	private Integer nights;//几晚
 	
-	private List<String> imageUrl;
+	private List<String> imageUrls;
 	
-	private List<String> points;
+	private List<String> tags;
 	
-	private List<Package> packages;
+	@NotEmpty
+	private List<AddSkuBo> skus;
 	
-	private List<String> introduceImageUrl;
+	@NotBlank
+	private String departPlace;//出发地
 
 	public String getTitle() {
 		return title;
@@ -49,36 +50,36 @@ public class AddGroupTourBo {
 		this.nights = nights;
 	}
 
-	public List<String> getImageUrl() {
-		return imageUrl;
+	public List<String> getImageUrls() {
+		return imageUrls;
 	}
 
-	public void setImageUrl(List<String> imageUrl) {
-		this.imageUrl = imageUrl;
+	public void setImageUrls(List<String> imageUrls) {
+		this.imageUrls = imageUrls;
 	}
 
-	public List<String> getPoints() {
-		return points;
+	public List<String> getTags() {
+		return tags;
 	}
 
-	public void setPoints(List<String> points) {
-		this.points = points;
+	public void setTags(List<String> tags) {
+		this.tags = tags;
 	}
 
-	public List<Package> getPackages() {
-		return packages;
+	public List<AddSkuBo> getSkus() {
+		return skus;
 	}
 
-	public void setPackages(List<Package> packages) {
-		this.packages = packages;
+	public void setSkus(List<AddSkuBo> skus) {
+		this.skus = skus;
 	}
 
-	public List<String> getIntroduceImageUrl() {
-		return introduceImageUrl;
+	public String getDepartPlace() {
+		return departPlace;
 	}
 
-	public void setIntroduceImageUrl(List<String> introduceImageUrl) {
-		this.introduceImageUrl = introduceImageUrl;
+	public void setDepartPlace(String departPlace) {
+		this.departPlace = departPlace;
 	}
-	
+
 }

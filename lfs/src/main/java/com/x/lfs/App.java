@@ -11,10 +11,10 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  *
  */
 
-@SpringBootApplication
 @ComponentScan(basePackages= "com.x.lfs.*")
 @EnableRedissonHttpSession
 @EnableScheduling
+@SpringBootApplication
 public class App 
 {
     public static void main( String[] args )

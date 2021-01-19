@@ -5,16 +5,15 @@ import java.util.Base64;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.x.lfs.context.bo.WxMiniProgramLoginBo;
 import com.x.lfs.context.bo.WxUserInfoBo;
 import com.x.lfs.context.vo.UserVo;
 import com.x.lfs.service.impl.UserServiceImpl;
@@ -38,13 +37,13 @@ public class UserController{
 	@RequestMapping(value = "/mini/session", method = RequestMethod.POST)
 	@ApiOperation(value = "微信小程序登录", notes = "微信小程序登录")
 	public UserVo loginByMiniProgram(
-			@ApiParam(name = "wxCode", value = "微信授权码") @RequestParam(name = "wxCode") @NotBlank String wxCode,
+			@ApiParam(name = "wxCode", value = "微信授权码") @RequestBody @Valid WxMiniProgramLoginBo wxMiniProgramLoginBo,
 			HttpServletRequest request, HttpServletResponse response) {
 	
-		UserVo user = userService.loginByWxMiniprogram(wxCode);
-		String sessionID = request.getSession().getId();
-		sessionID = Base64.getEncoder().encodeToString(sessionID.getBytes());
-		user.setSessionID(sessionID);
+		UserVo user = userService.loginByWxMiniprogram(wxMiniProgramLoginBo.getCode());
+		String sessionId = request.getSession().getId();
+		sessionId = Base64.getEncoder().encodeToString(sessionId.getBytes());
+		user.setSessionId(sessionId);
 		SessionUtil.set(request, SESSION_KEY, user);
 		
 		return user;

@@ -1,0 +1,46 @@
+.item {
+    height: 240px;
+    padding: 20 0px;
+    background-color: white;
+}
+
+.item::after {
+    content: ''; // 必须
+    position: absolute;
+    left: 10px;
+    bottom: 0;
+    right: 10px;
+    //width: 100vw;
+    height: 1PX;
+    background-color: #dadada;
+}
+
+.image {
+    height: 220px;
+    width: 220px;
+    margin: 10px;
+}
+
+.content{
+    position: relative;
+    margin: 10px;
+    height: 220px;
+    .title {
+        text-align: left;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        line-height: 1.5;
+        font-size: small;
+    }
+
+    .price {
+        position: absolute;
+        bottom:0px;
+        color: red;
+        font-size: small;
+        line-height: 1.5;
+    }
+}

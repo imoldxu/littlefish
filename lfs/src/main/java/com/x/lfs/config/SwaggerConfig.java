@@ -2,8 +2,9 @@ package com.x.lfs.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -16,8 +17,9 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
+@EnableWebMvc
 @EnableSwagger2
-public class SwaggerConfig extends WebMvcConfigurationSupport{
+public class SwaggerConfig implements WebMvcConfigurer{
 
 	 /**
      * 可以定义多个组，比如本类中定义把test和demo区分开了

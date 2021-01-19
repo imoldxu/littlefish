@@ -2,7 +2,7 @@ package com.x.lfs.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.mongodb.MongoDbFactory;
+import org.springframework.data.mongodb.MongoDatabaseFactory;
 import org.springframework.data.mongodb.MongoTransactionManager;
 import org.springframework.data.mongodb.core.MongoTemplate;
 
@@ -17,7 +17,7 @@ public class MongoDBConfig {
 		return new MongoPageHelper(template);
 	}
 	
-	//在mongodb数据保存时不设置_class字段
+	//在mongodb数据保存时不设置_class字段，保存字段可以帮助快速映射
 //	@Bean
 //    public MappingMongoConverter mappingMongoConverter(MongoDbFactory factory, MongoMappingContext context, BeanFactory beanFactory) {
 //        DbRefResolver dbRefResolver = new DefaultDbRefResolver(factory);
@@ -35,7 +35,7 @@ public class MongoDBConfig {
 	
 	//配置mongodb的事务管理，其他地方只需要设置@Transaction即可开启事务
 	@Bean
-    MongoTransactionManager transactionManager(MongoDbFactory factory){
+    MongoTransactionManager transactionManager(MongoDatabaseFactory factory){
         return new MongoTransactionManager(factory);
     }
 	

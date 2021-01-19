@@ -2,6 +2,8 @@ package com.x.lfs.service.impl;
 
 import java.util.List;
 import java.util.function.Function;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
 import org.bson.types.ObjectId;
@@ -17,7 +19,9 @@ import com.x.lfs.context.bo.AddGroupTourBo;
 import com.x.lfs.context.bo.GroupTourQuery;
 import com.x.lfs.context.vo.GroupTourItemVo;
 import com.x.lfs.entity.GroupTour;
-import com.x.lfs.entity.Package;
+import com.x.lfs.entity.PriceRange;
+import com.x.lfs.entity.Sku;
+import com.x.lfs.service.DatePriceService;
 import com.x.lfs.service.GroupTourService;
 import com.x.tools.mongo.pageHelper.MongoPageHelper;
 import com.x.tools.mongo.pageHelper.PageResult;
@@ -33,14 +37,16 @@ public class GroupTourServiceImpl implements GroupTourService{
 	MongoPageHelper mongoPageHelper;
 	@Autowired
 	MapperFacade orikaMapper;
+	@Autowired
+	DatePriceService dataPriceService;
 	
 	public GroupTour add(AddGroupTourBo addGroupTourBo) {
 		GroupTour gt = orikaMapper.map(addGroupTourBo, GroupTour.class);
 		
-		List<Package> packageList = gt.getPackages();
-		packageList.forEach( p->{
-			ObjectId packageId = ObjectId.get();
-			p.setId(packageId.toHexString());
+		List<Sku> skus = gt.getSkus();
+		skus.forEach( p->{
+			ObjectId skuId = ObjectId.get();
+			p.setId(skuId.toHexString());
 		});
 		
 		mongoTemplate.insert(gt);
@@ -50,23 +56,23 @@ public class GroupTourServiceImpl implements GroupTourService{
 	public GroupTour modify(GroupTour gt) {
 		Query query = new Query(Criteria.where("id").is(gt.getId()));
 		Update update = new Update();
+		update.set("title", gt.getTitle());
 		update.set("days", gt.getDays());
 		update.set("nights", gt.getNights());
-		List<String> imageUrls = gt.getImageUrl();
-		update.set("imageUrl", imageUrls);
-		update.set("introduceImageUrl", gt.getIntroduceImageUrl());
-		update.set("points", gt.getPoints());
-		update.set("title", gt.getTitle());
+		update.set("imageUrls", gt.getImageUrls());
+		update.set("tags", gt.getTags());
+		
+		List<Sku> skus = gt.getSkus();
+		skus.forEach(p ->{
+			update.set("skus", p);
+		});
+		
 		mongoTemplate.updateFirst(query, update, GroupTour.class);
 		
-//		List<Package> packageList = gt.getPackages();
-//		packageList.forEach(p ->{
-//			modifyPackage(p);
-//		});
 		return gt;
 	}
 	
-	public void addPackage(String tourId, Package p) {
+	public void addPackage(String tourId, Sku p) {
 		Query query = new Query(Criteria.where("id").is(tourId));
 		Update update = new Update();
 		ObjectId packageId = ObjectId.get();
@@ -85,7 +91,7 @@ public class GroupTourServiceImpl implements GroupTourService{
 		mongoTemplate.updateFirst(query, update, GroupTour.class);
 	}
 	
-	public void modifyPakcage(String tourId, Package p) {
+	public void modifyPakcage(String tourId, Sku p) {
 		Query query = new Query(Criteria.where("id").is(tourId));
 		query.addCriteria(Criteria.where("$packages.id").is(p.getId()));
 		Update update = new Update();
@@ -104,24 +110,32 @@ public class GroupTourServiceImpl implements GroupTourService{
 		Query query = new Query();
 		//按id倒叙排列
 		//包含哪些字段
-		query.fields().include("");
+		//query.fields().include("");
 		query.with(Sort.by(Sort.Order.desc("_id")));
 		//
-		Function<GroupTour, GroupTourItemVo> mapper = new Function<GroupTour, GroupTourItemVo>() {
-	        @Override
-	        public GroupTourItemVo apply(GroupTour in) {
-	            return orikaMapper.map(in, GroupTourItemVo.class);
-	        }
-	    };
+//		Function<GroupTour, GroupTourItemVo> mapper = new Function<GroupTour, GroupTourItemVo>() {
+//	        @Override
+//	        public GroupTourItemVo apply(GroupTour in) {
+//	            return orikaMapper.map(in, GroupTourItemVo.class);
+//	        }
+//	    };
 	    
 	    //使用非entity对象来接受，可能是起到project的效果
 	    //mongoTemplate.find(query, GroupTourItemVo.class, "grouptour");
 		
 		if(StringUtils.isBlank(lastId)) {
-			ret = mongoPageHelper.pageQuery(query, GroupTour.class, mapper, pageSize, pageIndex);
+			ret = mongoPageHelper.pageQuery(query, "groupTour", GroupTourItemVo.class, Function.identity(), pageSize, pageIndex);
 		}else {
-			ret = mongoPageHelper.pageQuery(query, GroupTour.class, mapper, pageSize, pageIndex, lastId);
+			ret = mongoPageHelper.pageQuery(query, "groupTour", GroupTourItemVo.class, Function.identity(), pageSize, pageIndex, lastId);
 		}
+		
+		ret.getList().forEach(item->{
+			List<String> skuIds = item.getSkus().stream().map(sku->sku.getId()).collect(Collectors.toList());
+			PriceRange priceRange = dataPriceService.getPriceRange(skuIds);
+			item.setMaxPrice(priceRange.getMaxPrice());
+			item.setMinPrice(priceRange.getMinPrice());
+		});
+		
 		return ret;
 	}
 
