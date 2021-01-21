@@ -1,0 +1,116 @@
+
+.banner{
+    width: 100%;
+    height: 100%;
+}
+
+.card {
+    position: relative;
+    //overflow: hidden;
+    border-radius: 16rpx;
+    background-color: #fdfffd;
+    font-size: 28rpx;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.title{
+    font-size:small;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+.price{
+    font-size:small;
+    color: red;
+}
+
+.loading {
+    height: 100vh;    
+}
+
+.skuTab{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.foot{
+    position:fixed;
+    height: 80px;
+    width: 100%;
+    bottom: 0;
+
+    .button{
+        font-size: medium;
+        border-radius:0;
+        height: 80px;
+        line-height: 80px;
+    }
+    .button::after{
+        border-radius:0;
+    }
+}
+
+//解决sticky后锚点被遮盖的问题
+.dark_anchor {
+    height: 150px;
+    margin-top: -150px;
+}
+
+//内容title
+.panel_title{
+    position: relative;
+    margin-bottom: 1.06667rem;
+    padding-left: 1.06667rem;
+    color: #6a6a77;
+    font-size: .68267rem;
+    font-weight: 700;
+    line-height: 1.5;
+    
+    &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        left: .512rem;
+        top: 50%;
+        margin-top: -.42667rem;
+        width: 2PX;
+        height: .85333rem;
+        background-color: #6190e8;
+        box-shadow: 0 0.14933rem 0.256rem 0 rgba(97,144,232,.2);
+        border-radius: 1PX;
+    }
+}
+
+//panel之下的子内容title
+.sub_title {
+    color: black;
+}
+
+.info_key{
+    background-color: #c2c2c2;
+    height: 100%;
+}
+.info_row{
+    background-color: #e2e2e2;
+    color: white;
+}
+.info_value{
+    background-color: #e7e7e7;
+    color: black;
+    line-height: 1.5;
+}
+
+.cancelPolicy_header{
+    background-color: #686874;
+    color: white;
+}
+.cancelPolicy_key{
+    background-color: #6a6a77;
+    line-height: 1.5;
+    color: white;
+}
+.cancelPolicy_value{
+    background-color: #e7e7e7;
+    line-height: 1.5;
+}

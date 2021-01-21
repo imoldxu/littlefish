@@ -18,7 +18,7 @@ export default function useGroupTour(){
         setState({ ...state, ...data })
       }
     }catch(e){
-
+      throw e
     }
   }
 

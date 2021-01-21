@@ -9,9 +9,11 @@
   "license": "MIT",
   "scripts": {
     "dev": "remax build -t wechat -w",
+    "mobile": "remax build -t wechat -w -m",
     "build": "cross-env NODE_ENV=production remax build -t wechat"
   },
   "dependencies": {
+    "@miniprogram-component-plus/sticky": "^1.0.1",
     "@remax/plugin-less": "^1.0.0",
     "annar": "^2.0.7",
     "axios": "^0.21.1",
@@ -21,7 +23,8 @@
     "react": "^16.14.0",
     "remax": "^2.9.1",
     "remax-recycle-view": "^1.1.1",
-    "unstated-next": "^1.1.0"
+    "unstated-next": "^1.1.0",
+    "weui-miniprogram": "^1.0.7"
   },
   "devDependencies": {
     "cross-env": "^7.0.2",

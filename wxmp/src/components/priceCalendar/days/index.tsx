@@ -403,7 +403,7 @@ const Days: FunctionComponent<DaysProps> = ({
               }}
             />
             {/* 扩展信息，在不可选择的状态下不显示 */}
-            { (extraInfoIndex === -1 && disable && extraInfo[extraInfoIndex].adultPrice) ? (  
+            { (extraInfoIndex === -1 || disable) ? (  
               ''
             ) : (
               <View

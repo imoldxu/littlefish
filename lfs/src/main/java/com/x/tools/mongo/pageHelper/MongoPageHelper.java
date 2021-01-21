@@ -68,11 +68,8 @@ public class MongoPageHelper {
     public <T, R> PageResult<R> pageQuery(Query query, String collectionName, Class<T> entityClass, Function<T, R> mapper,
         Integer pageSize, Integer pageIndex, String lastId) {
         //分页逻辑
-        long total = mongoTemplate.count(query, entityClass);
+        long total = mongoTemplate.count(query, collectionName);
         final Integer pages = (int) Math.ceil(total / (double) pageSize);
-        if (pageIndex <= 0 || pageIndex > pages) {
-            pageIndex = FIRST_PAGE_NUM;
-        }
         
         if (StringUtils.isNotBlank(lastId)) {
             if (pageIndex != FIRST_PAGE_NUM) {
@@ -82,6 +79,9 @@ public class MongoPageHelper {
             }
             query.limit(pageSize);
         } else {
+//        	if (pageIndex <= 0 || pageIndex > pages) {
+//                pageIndex = FIRST_PAGE_NUM;
+//            }
             int skip = pageSize * (pageIndex - 1);
             query.skip(skip).limit(pageSize);
         }

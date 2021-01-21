@@ -8,24 +8,31 @@ import useTourGroupList from '../../hooks/groupTourList';
 import styles from './index.less'
 
 // const mockData = [];
-// for (let i = 0; i < 50; i++) {
+// for (let i = 0; i < 500; i++) {
 //   mockData.push({
-//     id: i,
-//     imageUrl: "http://p1-q.mafengwo.net/s17/M00/6D/42/CoUBXl-T1rGAdikJAAFvuTI95kY60.jpeg?imageMogr2%2Fthumbnail%2F%21400x300r%2Fgravity%2FCenter%2Fcrop%2F%21400x300%2Fquality%2F100",
-//     name: `【5大优惠·5星希尔顿酒店】云南大理丽江6天游（活动可叠加+杨丽萍大剧院+私人游艇+大型民族歌舞表演+3大5A景点+3大特色餐+玉龙雪山）`,
-//     price: '￥1800~2990'
+//     height: 220,//((i % 5) + 1) * 100,
+//     text: `mock block ${i}`,
 //   });
 // }
 
+
 export default () => {
 
-    const [ loading, setLoading ] = useState(false)
-    const { state, query } = useTourGroupList()
-    const { list } = state
+    const [ loading, setLoading ] = useState(true)
+    const tourGroupList = useTourGroupList()
+    const [ triggered, setTriggered] = useState(false)
+    const { list, pagination } = tourGroupList.state
+
+    const data = list.map(i=>{
+        i.height=240  //设置Item的高度
+        return i
+    })
+
+    let isGetMore = false
 
     function refresh(){
         setLoading(true)
-        query().catch(e=>{
+        tourGroupList.refresh().catch(e=>{
             console.log(e)
         }).finally(()=>
             setLoading(false)
@@ -42,13 +49,14 @@ export default () => {
     }
 
     return (
-        <View className={styles.page}>
+        <View className="x-page">
             {
                 list.length>0? (
                     <RecycleView
                         className={styles.recycleView}
-                        placeholderImage="https://gw.alicdn.com/tfs/TB18fUJCxD1gK0jSZFyXXciOVXa-750-656.png"
+                        //placeholderImage="https://gw.alicdn.com/tfs/TB18fUJCxD1gK0jSZFyXXciOVXa-750-656.png"
                         data={list}
+                        overscanCount={20}
                         // headerHeight={200}
                         // bottomHeight={300}
                         // renderHeader={() => {
@@ -61,6 +69,29 @@ export default () => {
                             return (
                                 <GoodsItemRow data={item} onClick={()=>handleClickItem(item.id, item.minPrice)}></GoodsItemRow>
                             );
+                        }}
+                        refresher-enabled={true}
+                        bindrefresherrefresh={(e)=>{
+                            console.log(e)
+                            setTriggered(true)
+                            tourGroupList.refresh().finally(
+                                ()=> setTriggered(false)
+                            )
+                        }}
+                        refresher-triggered={triggered}
+                        enhanced={true}
+                        paging-enabled={true}
+                        lower-threshold={480}
+                        onScrollToLower={e=>{
+                            
+                            if(!isGetMore && pagination.current<=pagination.pages){
+                                isGetMore = true
+                                const lastId = list[list.length-1].id
+                                const pageIndex = pagination.current+1
+                                tourGroupList.query({lastId, pageIndex ,pageSize:20}).finally(()=>{
+                                    isGetMore = false
+                                })
+                            }
                         }}
                     />
                 ): 

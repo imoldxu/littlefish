@@ -1,3 +1,16 @@
-page {
-  background: #fcfcfc;
+.x-page {
+  background-color: #f4f4f4;
+  height: 100vh;
+}
+
+.x-block{
+  margin: 20px 0px;
+  width: 100vw;
+  background-color: white;
+}
+
+.x-card{
+  padding: 20px;
+  width: 100vw;
+  background-color: white;
 }

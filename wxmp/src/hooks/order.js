@@ -32,7 +32,7 @@ export default function useOrder(){
           setState({ ...state, ...data })
         }
     }catch(e){
-
+        return Promise.reject(e)
     }
   }
 

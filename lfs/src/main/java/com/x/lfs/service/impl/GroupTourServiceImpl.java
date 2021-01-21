@@ -63,9 +63,13 @@ public class GroupTourServiceImpl implements GroupTourService{
 		update.set("tags", gt.getTags());
 		
 		List<Sku> skus = gt.getSkus();
-		skus.forEach(p ->{
-			update.set("skus", p);
+		skus.forEach( p->{
+			if(null == p.getId()) {
+				ObjectId skuId = ObjectId.get();
+				p.setId(skuId.toHexString());
+			}
 		});
+		update.set("skus", skus);
 		
 		mongoTemplate.updateFirst(query, update, GroupTour.class);
 		

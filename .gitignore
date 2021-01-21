@@ -1,7 +1,5 @@
 client/dist/
 client/node_modules/
-testclient/
-client2/
 lfs/target/
 lfs/.classpath
 lfs/.project

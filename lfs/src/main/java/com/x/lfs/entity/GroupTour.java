@@ -2,12 +2,15 @@ package com.x.lfs.entity;
 
 import java.util.List;
 
+import javax.validation.constraints.NotBlank;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection="groupTour")
 public class GroupTour {
 
+	@NotBlank
 	@Id
 	private String id;
 

@@ -121,7 +121,7 @@ const getWeekDayList = (startDay: number) => {
   return result;
 };
 
-export default class ExCalendar extends Component<IProps, IState> {
+export default class PriceCalendar extends Component<IProps, IState> {
 
 
   state: IState = {

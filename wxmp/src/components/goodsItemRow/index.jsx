@@ -15,14 +15,14 @@ export default (props) => {
   const minRMB = (minPrice/100)
 
   return (
-    <View onClick={props.onClick}>
-      <Row gutter={12} className={styles.item} >
-        <Col>
+    <View onClick={props.onClick} className={styles.item}>
+      <Row>
+        <Col className={styles.content}>
           <Image mode="aspectFill" className={styles.image} src={imageUrl}></Image>
         </Col>
         <Col className={styles.content}>
-          <View className={styles.title}><Text>{title}</Text></View>
-          <View className={styles.price}><Text>{`￥${minRMB}起`}</Text></View>
+          <View className={styles.title}>{title}</View>
+          <View className={styles.price}>{`￥${minRMB}起`}</View>
         </Col>
       </Row>
     </View>

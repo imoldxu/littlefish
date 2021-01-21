@@ -1,11 +1,11 @@
-import { Grid, Icon } from 'annar';
+import { Grid } from 'annar';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Text, View, Image } from 'remax/wechat';
 import styles from './timeline.less'
 
-export default class Timeline extends React.Component {
+export default class Timeline extends React.PureComponent {
 
     renderGridItem = (image, index)=>{
         return (
