@@ -6,7 +6,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.alibaba.fastjson.annotation.JSONField;
-import com.x.tools.util.MoneyUtil;
 
 @Document(collection="datePrice")
 public class DatePrice {

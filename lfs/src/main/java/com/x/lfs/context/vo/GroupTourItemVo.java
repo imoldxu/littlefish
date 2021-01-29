@@ -3,7 +3,6 @@ package com.x.lfs.context.vo;
 import java.util.List;
 
 import com.alibaba.fastjson.annotation.JSONField;
-import com.x.tools.util.MoneyUtil;
 
 public class GroupTourItemVo {
 

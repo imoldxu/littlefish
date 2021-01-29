@@ -1,15 +1,18 @@
-import { Row, Tag, Col, Loading, Tabs, Grid, Cell } from 'annar'
-import React, { useMemo, useState } from 'react'
+import { Row, Tag, Col, Loading, Tabs, Grid, Cell, Popup } from 'annar'
+import React, { useMemo, useRef, useState } from 'react'
 import { useQuery } from 'remax'
 import { usePageEvent } from 'remax/macro'
-import { ScrollView, View, Button, Image, Text, RichText, Swiper, SwiperItem, pageScrollTo, navigateTo, showShareMenu } from 'remax/wechat'
+import { ScrollView, View, Button, Image, Text, RichText, Swiper, SwiperItem, pageScrollTo, navigateTo, showShareMenu, showLoading, hideLoading, createSelectorQuery, nextTick, showToast } from 'remax/wechat'
 import Timeline from '../../components/timeLine'
+import PriceCalendar from '../../components/priceCalendar'
+import TagRadioGroup from '../../components/tagRadioGroup'
+import TagRadio from '../../components/tagRadio'
 import useDatePrice from '../../hooks/datePrice'
 import useGroupTour from '../../hooks/groupTour'
-import EnrollPopup from './components/enroll'
 import { getMonthFirstDay, getMonthLastDay } from '../../utils/datetime'
 import MpSticky from '@miniprogram-component-plus/sticky/miniprogram_dist/index'
 import '@miniprogram-component-plus/sticky/miniprogram_dist/index.wxss'
+import moment from 'moment'
 
 import styles from './index.less'
 
@@ -44,6 +47,7 @@ export default () => {
     const [currentTab, setCurrentTab] = useState("0");
     const [skuIndex, setSkuIndex] = useState();
     const [skuOpen, setSkuOpen] = useState(false);
+    const [selectedDayPrice, setSelectedDayPrice ] = useState()
 
     const goodsId = query["goodsId"]
 
@@ -56,15 +60,37 @@ export default () => {
         })
     });
 
+    let initTabCards = []
+    
+    usePageEvent('onReady', () =>{
+        createSelectorQuery().selectAll('.tabcard').boundingClientRect(rects=>{
+            rects.forEach((rect,index)=>{
+                initTabCards.push({
+                    index,
+                    top: rect.top,
+                    bottom: rect.bottom
+                })
+            })
+        }).exec()
+    })
+
+    // function onScroll(e){
+    //     initTabCards.forEach(item => {
+    //         if(e.scrollTop > item.top && e.scrollTop < item.bottom ){
+    //             setCurrentTab(item.index)
+    //         }
+    //     })
+    // }
+
     //分享内容
-    usePageEvent("onShareAppMessage", object=>{
-        const {from, target, webViewUrl} = object
-        return {title:"有没有兴趣一起", path: `/pages/goods/index?goodsId=${goodsId}` }
+    usePageEvent("onShareAppMessage", object => {
+        const { from, target, webViewUrl } = object
+        return { title: "有没有兴趣一起", path: `/pages/goods/index?goodsId=${goodsId}` }
     })
 
     //根据传入的id获取商品详情
     function refresh() {
-        setLoading(true)  
+        setLoading(true)
         getDetail({ id: goodsId }).finally(() => {
             setLoading(false)
         })
@@ -125,19 +151,21 @@ export default () => {
         }
     }
 
-    function handleBuy() {
-
+    function handleBuy(e) {
+        if(!selectedDayPrice){
+            showToast({title:"请选择出发日期"})
+            return 
+        }
+        navigateTo({url: `/pages/enroll/index?goodsId=${goodsId}&goodName=${state.title}&skuId=${selectedSku.id}&skuName=${selectedSku.name}&dayPriceStr=${JSON.stringify(selectedDayPrice)}`})
     }
 
     //处理日期切换
     function monthChange(now) {
         const skuId = state.skus[skuIndex].id
-        datePrice.query({ skuId: skuId, startDate: getMonthFirstDay(now), endDate: getMonthLastDay(now) })
-    }
-
-    //处理购买
-    function handleClickBuy() {
-        setSkuOpen(true)
+        showLoading({title:"获取价格", mask: true})
+        datePrice.query({ skuId: skuId, startDate: getMonthFirstDay(now), endDate: getMonthLastDay(now) }).finally(
+            ()=> hideLoading()
+        )
     }
 
     //获取当前选中的sku，默认选中第一个sku
@@ -197,16 +225,16 @@ export default () => {
                                     })
                                 }
                             </View>
-                            <View><Text className={styles.price}>￥{query['minPrice'] / 100}起</Text></View>
+                            <View className={styles.price}><Text>￥{query['minPrice'] / 100}起</Text></View>
                         </View>
 
 
-                        <View className={styles.card}>
+                        <View className="x-block">
                             <Cell label="出发地">
                                 {state.departPlace}
                             </Cell>
                             <View>
-                                {/* <ExCalendar view="week" hideController={true} hideHeader={true}
+                                {/* <PriceCalendar view="week" hideController={true} hideHeader={true}
                                 startDay={new Date().getDay()}
                                 extraInfo={[
                                     { value: '2020-10-12', text: '￥1200', color: 'red' },
@@ -214,128 +242,130 @@ export default () => {
                                     { value: '2020-10-14', text: '￥1300', color: 'red' }
                                 ]}
                                 onDayClick={item => handleClickBuy()}
-                                ></ExCalendar> */}
+                                ></PriceCalendar> */}
                             </View>
                         </View>
 
-                        <View className={styles.card}>
-                            <MpSticky offset-top={0}>
-                                <View style={{ backgroundColor: "white", width: "100vw" }}>
-                                    <Tabs className={styles.skuTab} onTabClick={({key}) => handleSkuChange(key)}
-                                        activeKey={`${skuIndex}`} type="plain"
-                                        animated>
-                                        {
-                                            skuKeys.map(tab => {
-                                                return (
-                                                    <TabContent key={tab.key} tab={tab.title}>
-                                                    </TabContent>
-                                                )
-                                            })
-                                        }
-                                    </Tabs>
+                        <MpSticky offset-top={0}>
+                            <View className="x-card" style={{ marginBottom: "0", paddingBottom: "0" }}>
 
-                                    <Tabs className={styles.tabs_header} type="card" onTabClick={({ key }) => handleTabBarClick(key)} activeKey={currentTab}
-                                        headerStyle={{ border: "red" }} animated
-                                    >
-                                        {
-                                            tabs.map(tab => {
-                                                return (
-                                                    <TabContent key={tab.key} tab={tab.title}>
-                                                    </TabContent>
-                                                )
-                                            })
-                                        }
-                                    </Tabs>
-                                </View>
-                            </MpSticky>
-                            <View>
-                                <View id="introduce" className={styles.dark_anchor} />
-                                <Text className={styles.panel_title}>图文介绍</Text>
-
-                                {
-                                    selectedSku.introduceImageUrls.map((detailImage, index) => {
-                                        return (
-                                            <Image key={index} src={detailImage}
-                                                mode="widthFix"
-                                                className={styles.twimage}
-                                                style={{ width: "100%" }}>
-                                            </Image>)
-                                    })
-                                }
-
-                            </View>
-                            <View>
-                                <View id="schedule" className={styles.dark_anchor} />
-                                <Text className={styles.panel_title}>行程安排</Text>
-                                {
-                                    selectedSku.scheduleList.map((daySchedule, index) => {
-                                        const { num, places, todoList } = daySchedule
-                                        
+                                <Tabs onTabClick={({ key }) => handleSkuChange(key)}
+                                    activeKey={`${skuIndex}`} type="plain" headerStyle={{fontSize:"medium"}}
+                                    animated={true}>
+                                    {
+                                        skuKeys.map((tab, index) => {
                                             return (
-                                                <Row key={index}>
-                                                    <Col span={4}><Text>Day{num}</Text></Col>
-                                                    <Col span={20}>
-                                                        <Timeline lastday={index == (selectedSku.scheduleList.length - 1)} places={places} items={todoList}></Timeline>
-                                                    </Col>
-                                                </Row>
+                                                <TabContent key={tab.key} tab={tab.title} key={index}>
+                                                </TabContent>
                                             )
-                                         
-                                    })
-                                }
+                                        })
+                                    }
+                                </Tabs>
+
+                                <Tabs type="card" onTabClick={({ key }) => handleTabBarClick(key)} activeKey={currentTab}
+                                    animated={true}>
+                                    {
+                                        tabs.map((tab,index) => {
+                                            return (
+                                                <TabContent key={tab.key} tab={tab.title} key={index}>
+                                                </TabContent>
+                                            )
+                                        })
+                                    }
+                                </Tabs>
                             </View>
-                            <View>
-                                <View id="costinfo" className={styles.dark_anchor} />
-                                <View className={styles.panel_title}><Text>费用说明</Text></View>
-                                <View><Text className={styles.subTitle}>费用包含</Text></View>
-                                {
-                                    renderInfoRow({ key: 'bigTrafficFeeDes', name: '大交通', value: selectedSku.bigTrafficFeeDes })
-                                }
-                                {
-                                    renderInfoRow({ key: 'localTrafficFeeDes', name: '当地交通', value: selectedSku.localTrafficFeeDes })
-                                }
-                                {
-                                    renderInfoRow({ key: 'hotelFeeDes', name: '住宿', value: selectedSku.hotelFeeDes })
-                                }
-                                {
-                                    renderInfoRow({ key: 'foodFeeDes', name: '餐食', value: selectedSku.foodFeeDes })
-                                }
-                                {
-                                    renderInfoRow({ key: 'ticketFeeDes', name: '景点门票', value: selectedSku.ticketFeeDes })
-                                }
-                                {
-                                    renderInfoRow({ key: 'guideFeeDes', name: '导游服务', value: selectedSku.guideFeeDes })
-                                }
-                                {
-                                    renderInfoRow({ key: 'otherFeeDes', name: '其他', value: selectedSku.otherFeeDes })
-                                }
-                                <View><Text className={styles.subTitle}>费用不含</Text></View>
-                                {
-                                    renderInfoRow({ key: 'withoutFeeDes', name: '说明', value: selectedSku.withoutFeeDes })
-                                }
-                                {
-                                    renderInfoRow({ key: 'otherWithoutFeeDes', name: '其他', value: selectedSku.otherWithoutFeeDes })
-                                }
-                                <View><Text className={styles.subTitle}>儿童政策</Text></View>
-                                {
-                                    renderInfoRow({ key: 'childrenPolicy', name: '说明', value: selectedSku.childrenPolicy })
-                                }
-                                <View><Text className={styles.subTitle}>自费项目</Text></View>
-                                {
-                                    renderInfoRow({ key: 'ownfee', name: "说明", value: selectedSku.ownfee })
-                                }
-                            </View>
-                            <View>
-                                <View id="notice" className={styles.dark_anchor} />
-                                <Text className={styles.panel_title}>购买须知</Text>
-                                <View><Text className={styles.subTitle}>服务信息</Text></View>
-                                <View><Text>{selectedSku.serviceInfo}</Text></View>
-                                <View><Text className={styles.subTitle}>取消政策</Text></View>
-                                <View><Text>旅游者违约退改规则</Text></View>
-                                <Grid data={cancelPolicy} columns={2} span={[16, 8, 16, 8, 16, 8, 16, 8, 16, 8]}>
-                                    {renderCancelPolicyItem}
-                                </Grid>
-                                <View><Text>{selectedSku.cancelPolicy}</Text></View>
-                            </View>
+                        </MpSticky>
+
+                        <View className="x-card tabcard">
+                            <View id="introduce" className={styles.dark_anchor} />
+                            <View className={styles.panel_title}><Text>图文介绍</Text></View>
+                            {
+                                selectedSku.introduceImageUrls.map((detailImage, index) => {
+                                    return (
+                                        <Image key={index} src={detailImage}
+                                            mode="widthFix"
+                                            className={styles.twimage}
+                                            style={{ width: "100%" }}
+                                            key={index}>
+                                        </Image>)
+                                })
+                            }
+
+                        </View>
+
+                        <View className="x-card tabcard">
+                            <View id="schedule" className={styles.dark_anchor} />
+                            <View className={styles.panel_title}><Text>行程安排</Text></View>
+                            {
+                                selectedSku.scheduleList.map((daySchedule, index) => {
+                                    const { num, places, todoList } = daySchedule
+                                    let dayNum = num
+                                    if(num<10){
+                                        dayNum = '0'+num
+                                    }
+                                    return (
+                                        <Row key={index}>
+                                            <Col span={3}><View>{dayNum}</View><View>Day</View></Col>
+                                            <Col span={21}>
+                                                <Timeline lastday={index == (selectedSku.scheduleList.length - 1)} places={places} items={todoList}></Timeline>
+                                            </Col>
+                                        </Row>
+                                    )
+                                })
+                            }
+                        </View>
+                        <View className="x-card tabcard">
+                            <View id="costinfo" className={styles.dark_anchor} />
+                            <View className={styles.panel_title}><Text>费用说明</Text></View>
+                            <View className={styles.subTitle}><Text>费用包含</Text></View>
+                            {
+                                renderInfoRow({ key: 'bigTrafficFeeDes', name: '大交通', value: selectedSku.bigTrafficFeeDes })
+                            }
+                            {
+                                renderInfoRow({ key: 'localTrafficFeeDes', name: '当地交通', value: selectedSku.localTrafficFeeDes })
+                            }
+                            {
+                                renderInfoRow({ key: 'hotelFeeDes', name: '住宿', value: selectedSku.hotelFeeDes })
+                            }
+                            {
+                                renderInfoRow({ key: 'foodFeeDes', name: '餐食', value: selectedSku.foodFeeDes })
+                            }
+                            {
+                                renderInfoRow({ key: 'ticketFeeDes', name: '景点门票', value: selectedSku.ticketFeeDes })
+                            }
+                            {
+                                renderInfoRow({ key: 'guideFeeDes', name: '导游服务', value: selectedSku.guideFeeDes })
+                            }
+                            {
+                                renderInfoRow({ key: 'otherFeeDes', name: '其他', value: selectedSku.otherFeeDes })
+                            }
+                            <View className={styles.subTitle}><Text>费用不含</Text></View>
+                            {
+                                renderInfoRow({ key: 'withoutFeeDes', name: '说明', value: selectedSku.withoutFeeDes })
+                            }
+                            {
+                                renderInfoRow({ key: 'otherWithoutFeeDes', name: '其他', value: selectedSku.otherWithoutFeeDes })
+                            }
+                            <View className={styles.subTitle}><Text>儿童政策</Text></View>
+                            {
+                                renderInfoRow({ key: 'childrenPolicy', name: '说明', value: selectedSku.childrenPolicy })
+                            }
+                            <View className={styles.subTitle}><Text>自费项目</Text></View>
+                            {
+                                renderInfoRow({ key: 'ownfee', name: "说明", value: selectedSku.ownfee })
+                            }
+                        </View>
+                        <View className="x-card tabcard" style={{lineHeight:"1.5", fontSize:"x-small"}}>
+                            <View id="notice" className={styles.dark_anchor} />
+                            <View className={styles.panel_title}><Text>购买须知</Text></View>
+                            <View className={styles.subTitle}><Text>服务信息</Text></View>
+                            <View><Text>{selectedSku.serviceInfo}</Text></View>
+                            <View className={styles.subTitle}><Text>取消政策</Text></View>
+                            <View><Text>旅游者违约退改规则</Text></View>
+                            <Grid data={cancelPolicy} columns={2} span={[16, 8, 16, 8, 16, 8, 16, 8, 16, 8]}>
+                                {renderCancelPolicyItem}
+                            </Grid>
+                            <View><Text>{selectedSku.cancelPolicy}</Text></View>
                         </View>
                         {/* 避免被底部按钮遮挡 */}
                         <View style={{ height: "100" }}></View>
@@ -344,24 +374,44 @@ export default () => {
                         <Row>
                             {/* <Col span={6}><Button className={styles.button}>收藏</Button></Col> */}
                             <Col span={12}><Button className={styles.button} openType='contact' type='default'>联系客服</Button></Col>
-                            <Col span={12}><Button className={styles.button} type='primary' onClick={handleClickBuy}>立即购买</Button></Col>
+                            <Col span={12}><Button className={styles.button} type='primary' onClick={()=>setSkuOpen(true)}>立即购买</Button></Col>
                         </Row>
                     </View>
-                    <EnrollPopup
+                    <Popup transparent={true}
+                        position="bottom"
                         open={skuOpen}
-                        skus={state.skus}
-                        datePrice={datePrice.list}
-                        onClose={() => setSkuOpen(false)}
-                        selectedSku={selectedSku}
-                        handleClickBuy={handleBuy}
-                        onMonthChange={monthChange}
-                    ></EnrollPopup>
+                        onClose={()=>setSkuOpen(false)}
+                        >
+                        <ScrollView style={{height: "80vh", backgroundColor:"white"}} scrollY={true}>
+                            <View>
+                                <View style={{fontSize: "small", fontWeight: "600", margin: "20rpx 20rpx 0rpx 20rpx"}}><Text>套餐</Text></View>
+                                <TagRadioGroup name="line" active={skuIndex} onChange={handleSkuChange}>
+                                    {
+                                        state.skus.map((sku, index)=>{
+                                            return (
+                                                <TagRadio key={index} value={index}>{sku.name}</TagRadio>
+                                            )
+                                        })
+                                    }
+                                </TagRadioGroup>
+                            </View>
+                            <View style={{fontSize: "small", fontWeight: "600", margin: "20rpx 20rpx 0rpx 20rpx"}}><Text>选择出发日期</Text></View>
+                            <PriceCalendar view="month" extraInfo={datePrice.list} showDivider={true} minDate={moment().format("YYYY-MM-DD")}
+                                selectedDate={selectedDayPrice? selectedDayPrice.date : ""}
+                                onCurrentViewChange={(date)=>monthChange(date)} onDayClick={(day, dayPrice)=>setSelectedDayPrice(dayPrice)}
+                            ></PriceCalendar>
+                            <View style={{height:"100rpx"}}></View>
+                        </ScrollView>
+                        <View className={styles.foot}>
+                            <Button className={styles.button} type="primary" onClick={handleBuy}>我要参团</Button>
+                        </View>
+                    </Popup>
                 </View>
             ) : loading ? (
-                    <Row className={styles.loading} justify="center" align="middle">
-                        <Col><Loading type="wave"></Loading></Col>
-                    </Row>
-                ) : (
+                <Row className={styles.loading} justify="center" align="middle">
+                    <Col><Loading type="wave"></Loading></Col>
+                </Row>
+            ) : (
                     <View className={styles.empty} onClick={refresh}>
                         <Image className={styles.image} mode="aspectFit" src="/images/empty-box.png"></Image>
                         <Text className={styles.tip}>暂无数据，点击重试</Text>

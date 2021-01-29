@@ -164,7 +164,7 @@ export type DaysProps = {
   /** 日期 用于确定年月 */
   date: Date;
   /** 点击事件回调 */
-  onClick: (info: CalendarDateInfo) => any;
+  onClick: (info: CalendarDateInfo, extraInfo: ExtraInfo) => any;
   /** 长按回调（触发长按事件时不会触发点击事件） */
   onDayLongPress?: (item: { value: string }) => any;
   /** 额外信息 */
@@ -343,7 +343,7 @@ const Days: FunctionComponent<DaysProps> = ({
             className={className.join(' ')}
             onClick={() => {
               if (!disable) {
-                onClick(value);
+                onClick(value, extraInfo[extraInfoIndex]);
               }
             }}
             style={customStyles.containerStyle}

@@ -1,3 +1,3 @@
 module.exports =  {
-  navigationBarTitleText: '报名'
+  navigationBarTitleText: '订单确认'
 }

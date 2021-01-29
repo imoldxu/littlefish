@@ -35,8 +35,6 @@ import org.slf4j.LoggerFactory;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.qq.weixin.mp.aes.AesException;
-import com.qq.weixin.mp.aes.WXBizMsgCrypt;
 import com.x.lfs.context.ErrorCode;
 import com.x.lfs.context.HandleException;
 
@@ -169,16 +167,25 @@ public class WxMiniProgramUtil {
 //		return echostr;
 //	}
 
+	class WeappTemplateMsg{
+		String template_id; //小程序模板ID
+		String page; //小程序页面路径
+		String form_id; //小程序模板消息formid, formid需要在提交form时携带传到后台才能发送模板消息
+		String data; //小程序模板数据
+		String emphasis_keyword; //小程序模板放大关键词
+	}
+	
+	class MpTemplateMsg{
+		String appid;   //公众号appid，要求与小程序有绑定且同主体
+		String template_id;  //公众号模板id
+		String url;		//公众号模板消息所要跳转的url
+		String miniprogram;	//公众号模板消息所要跳转的小程序，小程序的必须与公众号具有绑定关系
+		String data;	//公众号模板消息的数
+	}
+	
 	/**
 	 * 发送模板消息
 	 * 
-	 * @param openid
-	 * @param access_token
-	 * @param userNick
-	 * @param orderid
-	 * @param giftName
-	 * @param money
-	 * @param time
 	 * @return
 	 * @throws IOException
 	 * @throws URISyntaxException
@@ -186,12 +193,13 @@ public class WxMiniProgramUtil {
 	public static boolean pushTemplateMsg(String openid, String access_token, String template_id, String page,
 			String form_id, JSONObject msg) throws IOException, URISyntaxException {
 		URI uri = new URIBuilder().setScheme("https").setHost("api.weixin.qq.com")
-				.setPath("/cgi-bin/message/wxopen/template/send").setParameter("access_token", access_token).build();
+				.setPath("/cgi-bin/message/wxopen/template/uniform_send").setParameter("access_token", access_token).build();
 
 		HttpPost httpMethod = new HttpPost(uri);
 
 		HashMap<String, Object> map = new HashMap<>();
 
+		map.put("access_token", access_token);
 		map.put("touser", openid);
 		map.put("template_id", template_id);
 		if (page != null && !page.isEmpty()) {
@@ -258,6 +266,7 @@ public class WxMiniProgramUtil {
 				return JSON.parseObject(result);
 			}
 		} catch (Exception e) {
+			e.printStackTrace();
 			throw new HandleException(ErrorCode.WX_CRYPTO_ERROR, "微信解密异常");
 		}
 		return null;

@@ -12,8 +12,6 @@ export default (props) => {
     imageUrl = imageUrls[0]
   }
 
-  const minRMB = (minPrice/100)
-
   return (
     <View onClick={props.onClick} className={styles.item}>
       <Row>
@@ -22,7 +20,7 @@ export default (props) => {
         </Col>
         <Col className={styles.content}>
           <View className={styles.title}>{title}</View>
-          <View className={styles.price}>{`￥${minRMB}起`}</View>
+          <View className={styles.price}>{`￥${minPrice/100}起`}</View>
         </Col>
       </Row>
     </View>

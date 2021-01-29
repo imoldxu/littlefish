@@ -9,16 +9,11 @@ export default function useGroupTour(){
   const { user } = AppContainer.useContainer()
   
   async function getDetail(payload){
-
-    try{
-      await user.checkLogin()
-
+    if(await user.checkLogin()){
       const {success, data} = await getGroupTourDetail(payload)
       if(success){
         setState({ ...state, ...data })
       }
-    }catch(e){
-      throw e
     }
   }
 

@@ -1,6 +1,6 @@
 import { Cell, Col, Grid, Row } from 'annar'
 import React, { Component } from 'react'
-import { View, Text, Image } from 'remax/wechat'
+import { View, Text, Image, navigateTo } from 'remax/wechat'
 import AppContainer from '../../container'
 
 import styles from './index.less'
@@ -9,13 +9,23 @@ export default ()=>{
 
     const {user} = AppContainer.useContainer()
 
+    function handleClickUser(){
+        if(user.state==""){
+            navigateTo({url:'/pages/login/index'})
+        }else{
+            navigateTo({url:'pages/personal/index'})
+        }
+    }
+
     return(<View className="x-page">
-            <View className={styles.personalArea} >
-                <Image src={user.state.avatarUrl}  className={styles.avatar}>
+            <View className={styles.personalArea} onClick={handleClickUser}>
+                <Image src={user.state.avatarUrl? user.state.avatarUrl : '/images/nologin.png'}  className={styles.avatar}>
                 </Image>
                 <View class={styles.name}>
-                    <Text>{user.state.nickName}</Text>
-                    <Text>{user.state.userPhone}</Text>
+                    {
+                        user.state.nickName? (<Text>{user.state.nickName}</Text>):(
+                            <Text>立即登录</Text>)                        
+                    }
                 </View>
             </View>
 

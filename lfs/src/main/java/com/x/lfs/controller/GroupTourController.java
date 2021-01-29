@@ -3,6 +3,7 @@ package com.x.lfs.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -46,7 +47,7 @@ public class GroupTourController {
 	@RequestMapping(path="/{id}", method = RequestMethod.GET)
 	@ApiOperation(value = "查询跟团游详情", notes = "查询跟团游详情")
 	public GroupTour getById(
-			@ApiParam(name = "id", value = "跟团游id") @PathVariable(name="id") String id,
+			@ApiParam(name = "id", value = "跟团游id") @PathVariable(name="id") @NotBlank String id,
 			HttpServletRequest request, HttpServletResponse response) {
 		
 		GroupTour result = groupTourService.getById(id);

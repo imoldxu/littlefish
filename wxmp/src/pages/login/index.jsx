@@ -20,9 +20,17 @@ export default ()=>{
 
     return(
         <View>
-            <Button  type="primary" openType="getUserInfo" onGetUserInfo={handleLogin}>
-                <Image src="/images/wechat.png"></Image>
-                <Text>微信快速登录</Text>
+            <View className={styles.header}>
+                <Image src="/images/logo.png" style={{height:"128",width:"128"}}></Image>
+                <View>小鱼快游</View>
+            </View>
+            <View class={styles.content}>
+                <View>申请获取以下权限</View>
+                <Text>获得你的公开信息(昵称，头像等)</Text>
+            </View>
+            <Button className={styles.loginButton} type="primary" openType="getUserInfo" onGetUserInfo={handleLogin}>
+                <Image src="/images/wechat.png" style={{height:"64",width:"64"}}></Image>
+                <Text>微信登录</Text>
             </Button>
         </View>
     )

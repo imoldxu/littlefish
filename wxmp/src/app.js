@@ -46,7 +46,10 @@ const App = props => {
   });
 
   useAppEvent('onUnhandledRejection', (error)=>{
-    showToast(error)
+    console.log(error)
+    const { reason } = error
+    const { message="未知错误" } = reason
+    showToast({title: message, icon: "none", duration: 2000})
   })
 
   return (

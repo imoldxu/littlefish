@@ -8,6 +8,8 @@ import com.x.lfs.context.HandleException;
 
 public class SessionUtil {
 
+	public static final String SESSION_KEY = "user";
+	
 	public static void set(HttpServletRequest request, String key, Object value) {
 		HttpSession session = request.getSession();
 		session.setAttribute(key, value);

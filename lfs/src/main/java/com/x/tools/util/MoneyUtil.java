@@ -9,6 +9,11 @@ import com.alibaba.fastjson.parser.deserializer.ObjectDeserializer;
 import com.alibaba.fastjson.serializer.JSONSerializer;
 import com.alibaba.fastjson.serializer.ObjectSerializer;
 
+/**
+   * 实现金额的转换，支持fastJson的JSONField来配置格式化转换
+ * @author 老徐
+ *
+ */
 public class MoneyUtil implements ObjectSerializer, ObjectDeserializer{
 
 	 /**金额为分的格式 */    

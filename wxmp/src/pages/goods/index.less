@@ -18,11 +18,14 @@
     font-size:small;
     line-height: 1.5;
     font-weight: 600;
+    margin-bottom: 10px;
 }
 
 .price{
-    font-size:small;
+    font-size:medium;
     color: red;
+    font-weight: 600;
+    margin-top: 10px;
 }
 
 .loading {
@@ -30,8 +33,10 @@
 }
 
 .skuTab{
-    padding-left: 20px;
-    padding-right: 20px;
+    background-color: white;
+    width: 100%;
+    //padding: 0rpx 20rpx;
+    box-sizing:content-box;
 }
 
 .foot{
@@ -60,10 +65,10 @@
 //内容title
 .panel_title{
     position: relative;
-    margin-bottom: 1.06667rem;
-    padding-left: 1.06667rem;
+    margin-bottom: 20rpx;
+    padding-left: 40rpx;
     color: #6a6a77;
-    font-size: .68267rem;
+    font-size: small;
     font-weight: 700;
     line-height: 1.5;
     
@@ -83,34 +88,52 @@
 }
 
 //panel之下的子内容title
-.sub_title {
+.subTitle {
     color: black;
+    font-weight: 600;
+    font-size: small;
+    margin: 20rpx;
 }
 
-.info_key{
-    background-color: #c2c2c2;
-    height: 100%;
-}
 .info_row{
     background-color: #e2e2e2;
-    color: white;
+    font-size: smaller;
+    text-align: center;
 }
 .info_value{
-    background-color: #e7e7e7;
+    background-color: #F9F9F9;
     color: black;
     line-height: 1.5;
+    font-size: x-small;
+    text-align: left;
+    padding: 20rpx;
 }
+// .info_value::after{
+//     content: "";
+//     display: block;
+//     position: absolute;
+//     left: -10px;
+//     top: 50%;
+//     margin-top: -.42667rem;
+//     width: 1PX;
+//     height: 100%;
+//     background-color: #e2e2e2;
+// }
 
 .cancelPolicy_header{
     background-color: #686874;
     color: white;
+    text-align: center;
 }
 .cancelPolicy_key{
-    background-color: #6a6a77;
+    background-color: #e7e7e7;
     line-height: 1.5;
-    color: white;
+    color: black;
+    padding: 10px;
 }
 .cancelPolicy_value{
     background-color: #e7e7e7;
     line-height: 1.5;
+    color: black;
+    padding: 10px;
 }

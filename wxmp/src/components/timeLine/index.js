@@ -103,7 +103,7 @@ export default class Timeline extends React.PureComponent {
                     <Image className={classNames(dotClass)} src={icon} mode="scaleToFill"></Image>
                     <View className={styles['at-timeline-item__content']}>
                         <View className={styles['at-timeline-item__content--title']}>{title}</View>
-                        <View className={styles['at-timeline-item__content-item--sub']}>{info}</View>
+                        <View className={styles['at-timeline-item__content--sub']}>{info}</View>
                         {
                             imageUrlList && imageUrlList.length>0 ? (
                             <Grid data={imageUrlList} columns={             //className={styles['at-timeline-item__content-item']}

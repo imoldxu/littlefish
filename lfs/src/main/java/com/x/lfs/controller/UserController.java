@@ -31,7 +31,7 @@ public class UserController{
 	@Autowired
 	UserServiceImpl userService;
 	
-	public static final String SESSION_KEY = "user";
+	
 	
 	@CrossOrigin(allowedHeaders = "*", allowCredentials = "true")
 	@RequestMapping(value = "/mini/session", method = RequestMethod.POST)
@@ -44,7 +44,7 @@ public class UserController{
 		String sessionId = request.getSession().getId();
 		sessionId = Base64.getEncoder().encodeToString(sessionId.getBytes());
 		user.setSessionId(sessionId);
-		SessionUtil.set(request, SESSION_KEY, user);
+		SessionUtil.set(request, SessionUtil.SESSION_KEY, user);
 		
 		return user;
 	}
@@ -56,12 +56,25 @@ public class UserController{
 			@ApiParam(name = "wxUserInfoBo", value = "微信用户信息") @RequestBody @Valid WxUserInfoBo wxUserInfoBo,
 			HttpServletRequest request, HttpServletResponse response) {
 		
-		UserVo user = SessionUtil.get(request, SESSION_KEY, UserVo.class);
+		UserVo user = SessionUtil.get(request, SessionUtil.SESSION_KEY, UserVo.class);
 			
 		user = userService.updateUserInfo(user, wxUserInfoBo);
-		SessionUtil.set(request, SESSION_KEY, user);
+		SessionUtil.set(request, SessionUtil.SESSION_KEY, user);
 		
 		return user;
 	}	
 
+	@CrossOrigin(allowedHeaders = "*", allowCredentials = "true")
+	@RequestMapping(value = "/test/login", method = RequestMethod.POST)
+	@ApiOperation(value = "临时用户登陆", notes = "临时用户登陆")
+	public UserVo testlogin(
+			HttpServletRequest request, HttpServletResponse response) {
+		
+		UserVo user = new UserVo();
+		user.setId("5e6a5aafd12a915a60d1c79c");
+
+		SessionUtil.set(request, SessionUtil.SESSION_KEY, user);
+		
+		return user;
+	}	
 }

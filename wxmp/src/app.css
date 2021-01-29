@@ -4,13 +4,15 @@
 }
 
 .x-block{
-  margin: 20px 0px;
+  margin-bottom: 20px;
   width: 100vw;
   background-color: white;
 }
 
 .x-card{
   padding: 20px;
+  margin-bottom: 20px;
   width: 100vw;
+  box-sizing: border-box;
   background-color: white;
 }

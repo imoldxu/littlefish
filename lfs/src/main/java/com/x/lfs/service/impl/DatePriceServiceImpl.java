@@ -10,9 +10,7 @@ import java.util.TimeZone;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.aggregation.Aggregation;
-import org.springframework.data.mongodb.core.aggregation.AggregationOperation;
 import org.springframework.data.mongodb.core.aggregation.AggregationResults;
-import org.springframework.data.mongodb.core.aggregation.GroupOperation;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
@@ -22,7 +20,6 @@ import com.x.lfs.context.bo.DatePriceQuery;
 import com.x.lfs.entity.DatePrice;
 import com.x.lfs.entity.PriceRange;
 import com.x.lfs.service.DatePriceService;
-import com.x.tools.util.MongoDbUtil;
 
 import ma.glasnost.orika.MapperFacade;
 

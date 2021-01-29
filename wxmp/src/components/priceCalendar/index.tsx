@@ -35,7 +35,7 @@ export type IProps = {
   /** 要标记的日期列表 YYYY-MM-DD */
   marks?: CalendarMark[];
   /** 点击回调 */
-  onDayClick?: (item: { value: string }) => any;
+  onDayClick?: (day: { value: string }, extraInfo: ExtraInfo) => any;
   /** 长按回调（触发长按事件时不会触发点击事件） */
   onDayLongPress?: (item: { value: string }) => any;
   /** 当前选中的时间 YYYY-MM-DD*/
@@ -93,7 +93,7 @@ export type IProps = {
   /** 日期选择器文本生成器 */
   pickerTextGenerator?: (currentView: Date) => string;
   /** 父组件通过ref可以调用内部方法 */
-  bindRef?: (ref: Calendar) => any;
+  bindRef?: (ref: PriceCalendar) => any;
   /** 指定周几为一行的起点，0为周日*/
   startDay?: number;
 };
@@ -203,7 +203,7 @@ export default class PriceCalendar extends Component<IProps, IState> {
       return monthStr;
     }
   };
-  onClickDate = (value: CalendarDateInfo) => {
+  onClickDate = (value: CalendarDateInfo, extraInfo: ExtraInfo) => {
     const { onDayClick, onSelectDate } = this.props;
     let { current, currentCarouselIndex, selectedRange } = this.state;
     if (!selectedRange.start || selectedRange.end) {
@@ -241,7 +241,7 @@ export default class PriceCalendar extends Component<IProps, IState> {
       current
     });
     if (onDayClick) {
-      onDayClick({ value: value.fullDateStr });
+      onDayClick({ value: value.fullDateStr }, extraInfo);
     }
     if (onSelectDate) {
       onSelectDate(selectedRange);

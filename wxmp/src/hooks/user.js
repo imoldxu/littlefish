@@ -16,7 +16,7 @@ export default function useUser() {
       return Promise.resolve(true)
     } else {
       navigateTo({ url: '/pages/login/index' })
-      return Promise.reject(false)
+      return Promise.resolve(false)
     }
   }
 

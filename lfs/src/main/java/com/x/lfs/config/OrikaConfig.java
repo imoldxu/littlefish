@@ -15,7 +15,6 @@ public class OrikaConfig {
 		MapperFactory mapperFactory = new DefaultMapperFactory.Builder().build();
 
 		MapperFacade mapper = mapperFactory.getMapperFacade();
-		
 		return mapper;
 	}
 	
