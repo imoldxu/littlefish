@@ -10,13 +10,13 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 import com.alibaba.fastjson.JSONObject;
-import com.x.lfs.context.ErrorCode;
-import com.x.lfs.context.HandleException;
-import com.x.lfs.context.bo.WxUserInfoBo;
-import com.x.lfs.context.vo.UserVo;
-import com.x.lfs.entity.User;
+import com.x.commons.util.WxUtil;
+import com.x.lfs.constant.ErrorCode;
+import com.x.lfs.data.bo.WxUserInfoBo;
+import com.x.lfs.data.po.User;
+import com.x.lfs.data.vo.UserVo;
+import com.x.lfs.exception.HandleException;
 import com.x.lfs.service.UserService;
-import com.x.tools.util.WxMiniProgramUtil;
 
 import ma.glasnost.orika.MapperFacade;
 
@@ -25,6 +25,9 @@ import ma.glasnost.orika.MapperFacade;
 public class UserServiceImpl implements UserService {
 
 	@Autowired
+	WxMiniProgramService wxMiniService;
+	
+	@Autowired
 	MongoTemplate mongoTemplate;
 	@Autowired
 	MapperFacade orikaMapper;
@@ -32,7 +35,7 @@ public class UserServiceImpl implements UserService {
 	public UserVo loginByWxMiniprogram(String wxCode) {
 		
 		try {
-			JSONObject wx_session = WxMiniProgramUtil.jsCode2Session(wxCode);
+			JSONObject wx_session = wxMiniService.jsCode2Session(wxCode);
 			String sessionKey = wx_session.getString("session_key");
 			String openid = wx_session.getString("openid");
 			String unionid = wx_session.getString("unionid");
@@ -131,11 +134,11 @@ public class UserServiceImpl implements UserService {
 
 	public UserVo updateUserInfo(UserVo userVo, WxUserInfoBo wxUserInfoBo) {
 		
-		JSONObject userJson = WxMiniProgramUtil.getUserInfo(wxUserInfoBo.getEncryptedData(), userVo.getWxSessionKey(), wxUserInfoBo.getIv());
+		JSONObject userJson = wxMiniService.getUserInfo(wxUserInfoBo.getEncryptedData(), userVo.getWxSessionKey(), wxUserInfoBo.getIv());
 		String nick = userJson.getString("nickName");
-		nick = WxMiniProgramUtil.converWxNick(nick);
+		nick = WxUtil.converWxNick(nick);
 		String avatar = userJson.getString("avatarUrl");
-		avatar = WxMiniProgramUtil.convertAvatar(avatar);
+		avatar = WxUtil.convertAvatar(avatar);
 		String unionId = userJson.getString("unionId");
 		Integer gender = userJson.getInteger("gender");
 		String city = userJson.getString("city");

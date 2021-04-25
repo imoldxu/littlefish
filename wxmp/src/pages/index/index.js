@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { usePageEvent } from 'remax/macro';
-import { View, Text, Image, ScrollView, Swiper, SwiperItem } from 'remax/wechat';
+import { View, Text, Image, ScrollView, Swiper, SwiperItem, navigateTo } from 'remax/wechat';
 import useBanner from '../../hooks/banner';
 import styles from './index.css';
 
@@ -16,6 +16,13 @@ export default () => {
     banner.refresh()
   }
 
+  //跳转到banner对应的地址
+  function handleClick(redirectUrl){
+    if(redirectUrl){
+      navigateTo({url: redirectUrl})
+    }
+  }
+
   return (
     <View className="x-page">
     <ScrollView className={styles.app}>
@@ -27,10 +34,10 @@ export default () => {
         duration="10"
         autoplay>
         {
-          banner.list.map((imagesrc, index)=>{
+          banner.list.map((item, index)=>{
               return (
-                <SwiperItem key={index}>
-                  <Image mode="scaleToFill" className={styles.bannerimage} src={imagesrc}></Image>
+                <SwiperItem key={index} onClick={()=>handleClick(item.redirectUrl)}>
+                  <Image mode="scaleToFill" className={styles.bannerimage} src={item.resUrl}></Image>
                 </SwiperItem>
               )
             }

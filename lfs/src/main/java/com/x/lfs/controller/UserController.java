@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.x.lfs.context.bo.WxMiniProgramLoginBo;
-import com.x.lfs.context.bo.WxUserInfoBo;
-import com.x.lfs.context.vo.UserVo;
+import com.x.commons.util.SessionUtil;
+import com.x.lfs.data.bo.WxMiniProgramLoginBo;
+import com.x.lfs.data.bo.WxUserInfoBo;
+import com.x.lfs.data.vo.UserVo;
 import com.x.lfs.service.impl.UserServiceImpl;
-import com.x.tools.util.SessionUtil;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -31,9 +31,6 @@ public class UserController{
 	@Autowired
 	UserServiceImpl userService;
 	
-	
-	
-	@CrossOrigin(allowedHeaders = "*", allowCredentials = "true")
 	@RequestMapping(value = "/mini/session", method = RequestMethod.POST)
 	@ApiOperation(value = "微信小程序登录", notes = "微信小程序登录")
 	public UserVo loginByMiniProgram(
@@ -49,7 +46,6 @@ public class UserController{
 		return user;
 	}
 	
-	@CrossOrigin(allowedHeaders = "*", allowCredentials = "true")
 	@RequestMapping(value = "/mini/info", method = RequestMethod.PUT)
 	@ApiOperation(value = "更新用户信息", notes = "更新用户信息")
 	public UserVo updateUserInfo(
@@ -64,7 +60,6 @@ public class UserController{
 		return user;
 	}	
 
-	@CrossOrigin(allowedHeaders = "*", allowCredentials = "true")
 	@RequestMapping(value = "/test/login", method = RequestMethod.POST)
 	@ApiOperation(value = "临时用户登陆", notes = "临时用户登陆")
 	public UserVo testlogin(

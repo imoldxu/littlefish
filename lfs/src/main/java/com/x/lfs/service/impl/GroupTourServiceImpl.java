@@ -14,16 +14,17 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
-import com.x.lfs.context.bo.AddGroupTourBo;
-import com.x.lfs.context.bo.GroupTourQuery;
-import com.x.lfs.context.vo.GroupTourItemVo;
-import com.x.lfs.entity.GroupTour;
-import com.x.lfs.entity.PriceRange;
-import com.x.lfs.entity.Sku;
+import com.x.commons.mongo.pageHelper.MongoPageHelper;
+import com.x.commons.mongo.pageHelper.PageResult;
+import com.x.lfs.data.bo.AddGroupTourBo;
+import com.x.lfs.data.bo.GroupTourQuery;
+import com.x.lfs.data.bo.ModifyGroupTourBo;
+import com.x.lfs.data.po.GroupTour;
+import com.x.lfs.data.po.PriceRange;
+import com.x.lfs.data.po.Sku;
+import com.x.lfs.data.vo.GroupTourItemVo;
 import com.x.lfs.service.DatePriceService;
 import com.x.lfs.service.GroupTourService;
-import com.x.tools.mongo.pageHelper.MongoPageHelper;
-import com.x.tools.mongo.pageHelper.PageResult;
 
 import ma.glasnost.orika.MapperFacade;
 
@@ -52,16 +53,16 @@ public class GroupTourServiceImpl implements GroupTourService{
 		return gt;
 	}
 	
-	public GroupTour modify(GroupTour gt) {
-		Query query = new Query(Criteria.where("id").is(gt.getId()));
+	public GroupTour modify(ModifyGroupTourBo newGroupTour) {
+		Query query = new Query(Criteria.where("id").is(newGroupTour.getId()));
 		Update update = new Update();
-		update.set("title", gt.getTitle());
-		update.set("days", gt.getDays());
-		update.set("nights", gt.getNights());
-		update.set("imageUrls", gt.getImageUrls());
-		update.set("tags", gt.getTags());
+		update.set("title", newGroupTour.getTitle());
+		update.set("days", newGroupTour.getDays());
+		update.set("nights", newGroupTour.getNights());
+		update.set("imageUrls", newGroupTour.getImageUrls());
+		update.set("tags", newGroupTour.getTags());
 		
-		List<Sku> skus = gt.getSkus();
+		List<Sku> skus = newGroupTour.getSkus();
 		skus.forEach( p->{
 			if(null == p.getId()) {
 				ObjectId skuId = ObjectId.get();
@@ -71,8 +72,8 @@ public class GroupTourServiceImpl implements GroupTourService{
 		update.set("skus", skus);
 		
 		mongoTemplate.updateFirst(query, update, GroupTour.class);
-		
-		return gt;
+		GroupTour groupTour = orikaMapper.map(newGroupTour, GroupTour.class);
+		return groupTour;
 	}
 	
 	public void addPackage(String tourId, Sku p) {
@@ -107,7 +108,7 @@ public class GroupTourServiceImpl implements GroupTourService{
 		PageResult<GroupTourItemVo> ret = null;
 		
 		int pageSize = gtQuery.getPageSize();
-		int pageIndex = gtQuery.getPageIndex();
+		int pageIndex = gtQuery.getCurrent();
 		String lastId = gtQuery.getLastId();
 		
 		Query query = new Query();

@@ -21,7 +21,7 @@ export default ()=>{
     return(
         <View>
             <View className={styles.header}>
-                <Image src="/images/logo.png" style={{height:"128",width:"128"}}></Image>
+                <Image src="/images/logo.png"></Image>
                 <View>小鱼快游</View>
             </View>
             <View class={styles.content}>

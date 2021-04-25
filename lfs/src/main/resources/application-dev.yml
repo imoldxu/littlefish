@@ -1,0 +1,103 @@
+server:
+  port : 8080
+  tomcat:
+    max-threads: 500
+    max-http-header-size: 8192  
+  
+spring:
+  application:
+    name: lfs
+  data:
+    mongodb:
+      uri: mongodb://127.0.0.1:13001/littlefish  #Mongo database URI. Cannot be set with host, port, credentials and replica set name.
+      #userName: #Login user of the mongo server. Cannot be set with URI.
+      #password: #Login password of the mongo server. Cannot be set with URI.
+      #replicaSetName: #Required replica set name for the cluster. Cannot be set with URI.
+      #fieldNamingStrategy: #Fully qualified name of the FieldNamingStrategy to use.
+      #autoIndexCreation: #Whether to enable auto-index creation.
+      #host:  #Mongo server host.  Cannot be set with URI.
+      #port:  #Mongo server port. Cannot be set with URI.
+      #database:  #Database name
+      #authenticationDatabase: #Authentication database name.
+      #uuidRepresentation #default: JAVA_LEGACY,Representation to use when converting a UUID to a BSON binary value.
+      #gridfs:
+        #database: #GridFS database name.
+        #bucket: #GridFS bucket name.
+  #redis 相关配置，spring-boot-autoconfigure会自动配置
+  redis:
+    #database: 0 #Database index used by the connection factory
+    #url:  #Connection URL. Overrides host, port, and password. User is ignored. Example:redis://user:password@example.com:6379
+    host: 127.0.0.1  # default "localhost"
+    port: 6379
+    #userName:
+    password: hk666
+    ssl: false
+    #timeout:  #读超时
+    #connectTimeout:  #连接超时
+    #clientName: #
+    clientType: lettuce #jedis,设置客户端连接的类型
+    #sentinel:
+      #master:
+      #nodes:  #Comma-separated list of "host:port" pairs
+      #password:
+    #cluster:
+      #nodes:  #Comma-separated list of "host:port" pairs
+      #max-redirects:
+    lettuce:  #推荐使用lettuce而不是jedis，以下是配置连接池
+      pool:
+        max-active: 10  # 连接池最大连接数（使用负值表示没有限制）
+        #timeBetweenEvictionRuns: 3000
+        #max-wait:  ${spring.redis.pool.max-wait-millis} # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-idle: 10  # 连接池中的最大空闲连接
+        min-idle: 1 # 连接池中的最小空闲连接
+      shutdownTimeout: 3000     # 连接超时时间（毫秒）
+      #cluster:
+        #refresh:
+          #dynamicRefreshSources: true
+          #period: 3000
+          #adaptive: false
+    #jedis:
+      #pool:
+        #max-active: 10  # 连接池最大连接数（使用负值表示没有限制）
+        #timeBetweenEvictionRuns: 3000
+        #max-wait:  ${spring.redis.pool.max-wait-millis} # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        #max-idle: 10  # 连接池中的最大空闲连接
+        #min-idle: 1 # 连接池中的最小空闲连接  
+   
+#log
+logging:
+  path:
+    name: ./logs
+  level:
+    root: INFO
+       
+#微信相关配置
+wx:
+  #小程序
+  mini:
+    appid: wx9a452688cd3858eb
+    secret: b09661d0f88271431db87950116c7c09
+  #公众号
+  officalAccount:
+    appid: wx163c4c3d188f8ee5
+    secret: b930acfb50a02e11d1c55882ac813a05
+  #app:
+    #appid:
+    #secret:
+  #支付
+  pay:
+    merchantId: 1230000109
+    merchantSerialNumber: 123
+    merchantPrivateKey: 123123123  #私钥，base64编码
+    refundNotifyUrl: #退货通知地址
+    notifyUrl: https://zkhz.xyz/wxpay/notify #支付通知地址
+
+aliyun:
+  oss:
+    accessKeyId: LTAI5tQQuPD1Fk7bhcEQbNWk
+    accessKeySecret: 62Phu0ADYCKTvJ8hl37PFFvcgkLrZF
+    roleArn: acs:ram::1373745909084993:role/lfsoss
+    region: oss-cn-chengdu
+    endpoint: oss-cn-chengdu.aliyuncs.com
+    callbackUrl:  
+    

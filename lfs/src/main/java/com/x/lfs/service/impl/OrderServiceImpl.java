@@ -4,11 +4,16 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
-import com.x.lfs.config.constant.OrderState;
-import com.x.lfs.context.bo.NewOrderBo;
-import com.x.lfs.entity.Order;
+import com.x.lfs.constant.ErrorCode;
+import com.x.lfs.constant.OrderState;
+import com.x.lfs.data.bo.NewOrderBo;
+import com.x.lfs.data.po.Order;
+import com.x.lfs.data.vo.UserVo;
+import com.x.lfs.exception.HandleException;
 import com.x.lfs.service.OrderService;
 
 import ma.glasnost.orika.MapperFacade;
@@ -17,7 +22,7 @@ import ma.glasnost.orika.MapperFacade;
 public class OrderServiceImpl implements OrderService{
 
 	@Autowired
-	MongoTemplate MongoTemplate;
+	MongoTemplate mongoTemplate;
 	@Autowired
 	MapperFacade orikaMapper;
 	
@@ -27,14 +32,39 @@ public class OrderServiceImpl implements OrderService{
 		order.setUid(uid);
 		order.setState(OrderState.NEW);
 		
-		
-		return null;
+		order = mongoTemplate.save(order);
+		return order;
 	}
 
 	@Override
-	public List<Order> getMyOrder(String uid) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Order> getMyOrders(String uid) {
+		Query query = new Query(Criteria.where("uid").is(uid));
+		List<Order> ret = mongoTemplate.find(query, Order.class);
+		return ret;
+	}
+	
+	public Order getMyOrder(String uid, String orderid) {
+		Query query = new Query(Criteria.where("id").is(orderid).and("uid").is(uid));
+		Order order = mongoTemplate.findOne(query, Order.class);
+		return order;
 	}
 
+	public Object getCharge(UserVo user, String orderid, String payWay, String ip) {
+		Order order = getMyOrder(user.getId(), orderid);
+		if(null == order) {
+			throw new HandleException(ErrorCode.ARG_ERROR, "order不存在");
+		}
+		if(payWay.equals("WX_XCX")){
+//			order.setPayway(payWay);
+//			WXPayCharge charge = MyWxPayUtil.getPayCharge(openid, "租盟-订金", "", order.getSn(), order.getAmount(), ip);
+//			order.setPaysn(charge.getPrepay_id());
+//			order.setState(Order.STATE_PAYING);
+//			orderMapper.updateByPrimaryKey(order);
+//			return charge;
+			return null;
+		}else{
+			throw new HandleException(ErrorCode.ARG_ERROR, "不支持的支付方式");
+		}
+	}
+	
 }

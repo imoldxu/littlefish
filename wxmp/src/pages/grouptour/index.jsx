@@ -87,8 +87,8 @@ export default () => {
                             if(!isGetMore && pagination.current<=pagination.pages){
                                 isGetMore = true
                                 const lastId = list[list.length-1].id
-                                const pageIndex = pagination.current+1
-                                tourGroupList.query({lastId, pageIndex ,pageSize:20}).finally(()=>{
+                                const current = pagination.current+1
+                                tourGroupList.query({lastId, current ,pageSize:20}).finally(()=>{
                                     isGetMore = false
                                 })
                             }

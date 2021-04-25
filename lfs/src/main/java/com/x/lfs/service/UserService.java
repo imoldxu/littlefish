@@ -1,7 +1,7 @@
 package com.x.lfs.service;
 
-import com.x.lfs.context.bo.WxUserInfoBo;
-import com.x.lfs.context.vo.UserVo;
+import com.x.lfs.data.bo.WxUserInfoBo;
+import com.x.lfs.data.vo.UserVo;
 
 public interface UserService {
 

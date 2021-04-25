@@ -2,9 +2,9 @@ package com.x.lfs.service;
 
 import java.util.List;
 
-import com.x.lfs.context.bo.AddTouristBo;
-import com.x.lfs.context.bo.ModifyTouristBo;
-import com.x.lfs.entity.Tourist;
+import com.x.lfs.data.bo.AddTouristBo;
+import com.x.lfs.data.bo.ModifyTouristBo;
+import com.x.lfs.data.po.Tourist;
 
 public interface TouristService {
 

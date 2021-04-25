@@ -6,11 +6,15 @@ export default {
     //首页广告
     getBannerList: '/banner',
 
+    //首页文章
+    queryArticle: '/article',
+    getArticle: '/article/:id',
+
     //查询跟团游
     queryGroupTour: '/grouptour',
     getGroupTourDetail: '/grouptour/:id',
 
-    //查询每日价格
+    //每日价格
     queryDatePrice: '/dateprice',
 
     //查询自由行
@@ -26,6 +30,6 @@ export default {
     //订单接口
     queryOrders: '/order',
     getOrder: '/order/:id',
-    commitOrder: 'POST /order',
+    newOrder: 'POST /order',
 
 }

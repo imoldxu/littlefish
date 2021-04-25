@@ -15,10 +15,10 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
-import com.x.lfs.context.bo.BatchAddDatePriceBo;
-import com.x.lfs.context.bo.DatePriceQuery;
-import com.x.lfs.entity.DatePrice;
-import com.x.lfs.entity.PriceRange;
+import com.x.lfs.data.bo.BatchAddDatePriceBo;
+import com.x.lfs.data.bo.DatePriceQuery;
+import com.x.lfs.data.po.DatePrice;
+import com.x.lfs.data.po.PriceRange;
 import com.x.lfs.service.DatePriceService;
 
 import ma.glasnost.orika.MapperFacade;

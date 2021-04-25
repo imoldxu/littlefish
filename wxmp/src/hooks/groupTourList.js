@@ -7,7 +7,7 @@ export default function useGroupTourList(){
   const [state, setState] = useState({list:[],pagination:{}})
   
   async function refresh(payload){
-    const {success, data} = await queryGroupTour({pageIndex:1, pageSize:20})
+    const {success, data} = await queryGroupTour({current:1, pageSize:20})
     if(success){
       setState({ ...data})
     }

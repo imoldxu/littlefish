@@ -8,19 +8,20 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.x.lfs.context.bo.AddTouristBo;
-import com.x.lfs.context.bo.ModifyTouristBo;
-import com.x.lfs.context.vo.UserVo;
-import com.x.lfs.entity.Tourist;
+import com.x.commons.util.SessionUtil;
+import com.x.lfs.data.bo.AddTouristBo;
+import com.x.lfs.data.bo.ModifyTouristBo;
+import com.x.lfs.data.po.Tourist;
+import com.x.lfs.data.vo.UserVo;
 import com.x.lfs.service.TouristService;
-import com.x.tools.util.SessionUtil;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -34,21 +35,19 @@ public class TouristController {
 	@Autowired
 	TouristService touristService;
 	
-	@CrossOrigin(allowedHeaders = "*", allowCredentials = "true")
-	@RequestMapping(method = RequestMethod.GET)
+	@GetMapping
 	@ApiOperation(value = "查询游客", notes = "查询我的游客")
 	public List<Tourist> query(
 			HttpServletRequest request, HttpServletResponse response) {
 
-		UserVo user = SessionUtil.get(request, "user", UserVo.class);
+		UserVo user = SessionUtil.get(request, SessionUtil.SESSION_KEY, UserVo.class);
 		
 		List<Tourist> ret = touristService.getMyTourists(user.getId());
 		
 		return ret;
 	}
 	
-	@CrossOrigin(allowedHeaders = "*", allowCredentials = "true")
-	@RequestMapping(method = RequestMethod.POST)
+	@PostMapping
 	@ApiOperation(value = "添加游客", notes = "添加我的游客")
 	public Tourist add(
 			@ApiParam(name = "addTouristBo", value = "添加我的游客信息") @RequestBody @Valid AddTouristBo addTouristBo,
@@ -61,7 +60,6 @@ public class TouristController {
 		return ret;
 	}
 	
-	@CrossOrigin(allowedHeaders = "*", allowCredentials = "true")
 	@RequestMapping(method = RequestMethod.PUT)
 	@ApiOperation(value = "修改游客", notes = "修改我的游客")
 	public Tourist modify(
@@ -75,7 +73,6 @@ public class TouristController {
 		return ret;
 	}
 	
-	@CrossOrigin(allowedHeaders = "*", allowCredentials = "true")
 	@RequestMapping(path="/{id}", method = RequestMethod.DELETE)
 	@ApiOperation(value = "删除游客", notes = "删除我的游客")
 	public Tourist del(

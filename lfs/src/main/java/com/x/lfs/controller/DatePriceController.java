@@ -7,20 +7,21 @@ import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.x.lfs.context.bo.BatchAddDatePriceBo;
-import com.x.lfs.context.bo.DatePriceQuery;
-import com.x.lfs.entity.DatePrice;
+import com.x.lfs.data.bo.BatchAddDatePriceBo;
+import com.x.lfs.data.bo.DatePriceQuery;
+import com.x.lfs.data.po.DatePrice;
+import com.x.lfs.data.vo.DatePriceVo;
 import com.x.lfs.service.DatePriceService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import ma.glasnost.orika.MapperFacade;
 
 @RestController
 @RequestMapping("/dateprice")
@@ -29,26 +30,28 @@ public class DatePriceController {
 
 	@Autowired
 	DatePriceService datePriceService;
+	@Autowired
+	MapperFacade orikaMapper;
 	
-	@CrossOrigin(allowedHeaders = "*", allowCredentials = "true")
 	@RequestMapping(method = RequestMethod.GET)
 	@ApiOperation(value = "查询日期价格", notes = "查询日期价格")
-	public List<DatePrice> query(
+	public List<DatePriceVo> query(
 			@ApiParam(name = "datePriceQuery", value = "日期查询条件") @Valid DatePriceQuery datePriceQuery,
 			HttpServletRequest request, HttpServletResponse response) {
 	
 		List<DatePrice> list = datePriceService.query(datePriceQuery);
-		return list;
+		List<DatePriceVo> ret = orikaMapper.mapAsList(list, DatePriceVo.class);
+		return ret;
 	}
 	
-	@CrossOrigin(allowedHeaders = "*", allowCredentials = "true")
 	@RequestMapping(method = RequestMethod.POST)
 	@ApiOperation(value = "批量修改日期价格", notes = "批量修改日期价格")
-	public List<DatePrice> batchAdd(
+	public List<DatePriceVo> batchAdd(
 			@ApiParam(name = "batchAddDatePriceBo", value = "批量添加日期价格") @RequestBody @Valid BatchAddDatePriceBo batchAddDatePriceBo,
 			HttpServletRequest request, HttpServletResponse response) {
 	
-		List<DatePrice> ret = datePriceService.updateDatePrice(batchAddDatePriceBo);
+		List<DatePrice> list = datePriceService.updateDatePrice(batchAddDatePriceBo);
+		List<DatePriceVo> ret = orikaMapper.mapAsList(list, DatePriceVo.class);
 		return ret;
 	}
 }

@@ -10,9 +10,9 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
-import com.x.lfs.context.bo.AddTouristBo;
-import com.x.lfs.context.bo.ModifyTouristBo;
-import com.x.lfs.entity.Tourist;
+import com.x.lfs.data.bo.AddTouristBo;
+import com.x.lfs.data.bo.ModifyTouristBo;
+import com.x.lfs.data.po.Tourist;
 import com.x.lfs.service.TouristService;
 
 import ma.glasnost.orika.MapperFacade;
