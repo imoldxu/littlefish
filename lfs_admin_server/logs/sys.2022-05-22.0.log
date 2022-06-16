@@ -1,0 +1,6 @@
+2022-05-22 19:52:05.077 [main] INFO  com.x.service.impl.WxPayServiceImpl wxPayService init success
+2022-05-22 19:52:35.242 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2022-05-22 19:52:41.136 [main] INFO  org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8080"]
+2022-05-22 19:52:41.238 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-22 19:52:47.632 [main] INFO  o.s.s.a.ScheduledAnnotationBeanPostProcessor No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2022-05-22 19:52:47.771 [main] INFO  com.x.Application Started Application in 123234.121 seconds (JVM running for 123237.835)

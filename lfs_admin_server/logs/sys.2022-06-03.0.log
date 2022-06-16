@@ -1,0 +1,1 @@
+2022-06-03 16:13:19.653 [springSessionRedisMessageListenerContainer-17] WARN  o.s.s.data.redis.RedisIndexedSessionRepository Unable to publish SessionDestroyedEvent for session 44f4fa56-be21-40fb-a57b-27332943a332

@@ -1,0 +1,415 @@
+2022-06-06 10:23:08.468 [http-nio-8080-exec-1] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/staff/session
+参数:null
+异常:还未登陆
+耗时:5
+2022-06-06 10:23:08.994 [http-nio-8080-exec-10] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/aliyun/sts
+参数:null
+响应:{"accessKeyId":"STS.NTvPpXDjaHqJ575d8suvsrZAb","accessKeySecret":"cwmT9ZDsEhgHD2zAVseyGze9HEPB1C8jWnLViRQqyru","expiration":"2022-06-06T03:23:08Z","securityToken":"CAISuwJ1q6Ft5B2yfSjIr5fDG8rsqbVA/7OhNxGEgDgmeflfnZ/qgDz2IH9Fe3NqCO0XtvowlWxZ6vwflqp3RYQdvvUKvTAovPpt6gqET9frT6XXhOV2dvTHdEGXDxnkpuCwB8zyUNLafNq0dlnAjVUd6LDmdDKkLRvHVJqSksxfc8gwVAu1ZiYkYdBNPVlNpdM9P3ncPurPVRnxmTj0DVF0nQB+hGhj8t6ToKum5wHZkUfxx8IMuo31OeLEVcR3O4plWNrHnI4Tf6HagilL8EoIpuUkzs478Dzc7NaGGAsTsVfUN+TPt9xqJQB0IeoYY/cf86OjyaAp4r2Lx9immk13ULsLA3iFdueJ29DZHe6lDNE9eIvgNm7FutL1bcak7Fl+MC9KbF0VKoZwdiUtE3IoRCrdMbS3Ud4Src1mm8IagAFJLL9rTSV/ZIh0H31/RYk4AZDULFDhuhvBICfUwFgDJamnliPMumKiDCjFXRPqGTOB3MTkizdkYrhotJ7s1JX1VJK1cV6QAgpPGJyFX/hGB5vMPxjszfYeVlb+BCShayEZsrlPA+LTfgMz8mpZ3skWlhDQRSFVnAqXUa0IIh8yGA=="}
+耗时:531
+2022-06-06 10:23:11.078 [http-nio-8080-exec-5] INFO  com.x.config.mvc.LogRecordAspect 
+POST请求/staff/session
+参数:{"password":"7dd75c55c0f3a84969cacc5fcdbbd980","phone":"13880605659"}
+响应:{"createTime":"2021-12-29 16:00:36","id":1,"name":"徐竟浩","phone":"13880605659","roles":[{"id":1,"key":"admin","name":"系统管理员"}],"state":1}
+耗时:170
+2022-06-06 10:23:11.152 [http-nio-8080-exec-8] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/staff/session
+参数:null
+响应:{"createTime":"2021-12-29 16:00:36","id":1,"name":"徐竟浩","phone":"13880605659","roles":[{"id":1,"key":"admin","name":"系统管理员"}],"state":1}
+耗时:1
+2022-06-06 10:23:14.722 [http-nio-8080-exec-3] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/product
+参数:current=1&pageSize=20
+响应:{"data":[{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"628ca7e45f2a87006fd75a46","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654485794&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=JMSqVJueyNb25bcvOIpHHKTubq0%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654485794&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=KwormwqTv3wzryLj8Btvr8DCGpc%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚跟团游9:30晚出发+国旅真纯玩+【升级五星品牌Hilton希尔顿酒店/天源豪生/千鹤国际/携程5钻酒店可选】【松潘古城】+可升『头等舱保姆车』+升级五钻酒店美食+24小时客服+成都三环内免费接"},{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"628cebf8de5bc62c3a2d97ac","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654485794&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=JMSqVJueyNb25bcvOIpHHKTubq0%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654485794&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=KwormwqTv3wzryLj8Btvr8DCGpc%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚跟团游9:30晚出发+国旅真纯玩+【升级五星品牌Hilton希尔顿酒店/天源豪生/千鹤国际/携程5钻酒店可选】【松潘古城】+可升『头等舱保姆车』+升级五钻酒店美食+24小时客服+成都三环内免费接"},{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"628cec1ade5bc62c3a2d97ad","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654485794&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=JMSqVJueyNb25bcvOIpHHKTubq0%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654485794&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=KwormwqTv3wzryLj8Btvr8DCGpc%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚跟团游9:30晚出发+国旅真纯玩+【升级五星品牌Hilton希尔顿酒店/天源豪生/千鹤国际/携程5钻酒店可选】【松潘古城】+可升『头等舱保姆车』+升级五钻酒店美食+24小时客服+成都三环内免费接"},{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"6293836cd64fff5f278b332c","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654485794&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=JMSqVJueyNb25bcvOIpHHKTubq0%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654485794&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=KwormwqTv3wzryLj8Btvr8DCGpc%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚"}],"success":true,"total":4}
+耗时:82
+2022-06-06 10:23:16.139 [http-nio-8080-exec-7] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/aliyun/oss/signature
+参数:dir=images%2F
+响应:{"accessId":"LTAI5tQQuPD1Fk7bhcEQbNWk","signature":"ubxcKfu7c5bjjgWlQTq48jNtMpg=","expire":"1654482496","host":"https://lfs-image.oss-cn-chengdu.aliyuncs.com","callback":"eyJjYWxsYmFja0JvZHlUeXBlIjoiYXBwbGljYXRpb24veC13d3ctZm9ybS11cmxlbmNvZGVkIiwiY2FsbGJhY2tVcmwiOiIiLCJjYWxsYmFja0JvZHkiOiJmaWxlbmFtZT0ke29iamVjdH0mc2l6ZT0ke3NpemV9Jm1pbWVUeXBlPSR7bWltZVR5cGV9JmhlaWdodD0ke2ltYWdlSW5mby5oZWlnaHR9JndpZHRoPSR7aW1hZ2VJbmZvLndpZHRofSJ9","dir":"images/","policy":"eyJleHBpcmF0aW9uIjoiMjAyMi0wNi0wNlQwMjoyODoxNi4xMDBaIiwiY29uZGl0aW9ucyI6W1siY29udGVudC1sZW5ndGgtcmFuZ2UiLDAsMTA0ODU3NjAwMF0sWyJzdGFydHMtd2l0aCIsIiRrZXkiLCJpbWFnZXMvIl1dfQ=="}
+耗时:45
+2022-06-06 10:23:16.139 [http-nio-8080-exec-6] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/aliyun/oss/signature
+参数:dir=images%2F
+响应:{"accessId":"LTAI5tQQuPD1Fk7bhcEQbNWk","signature":"ubxcKfu7c5bjjgWlQTq48jNtMpg=","expire":"1654482496","host":"https://lfs-image.oss-cn-chengdu.aliyuncs.com","callback":"eyJjYWxsYmFja0JvZHlUeXBlIjoiYXBwbGljYXRpb24veC13d3ctZm9ybS11cmxlbmNvZGVkIiwiY2FsbGJhY2tVcmwiOiIiLCJjYWxsYmFja0JvZHkiOiJmaWxlbmFtZT0ke29iamVjdH0mc2l6ZT0ke3NpemV9Jm1pbWVUeXBlPSR7bWltZVR5cGV9JmhlaWdodD0ke2ltYWdlSW5mby5oZWlnaHR9JndpZHRoPSR7aW1hZ2VJbmZvLndpZHRofSJ9","dir":"images/","policy":"eyJleHBpcmF0aW9uIjoiMjAyMi0wNi0wNlQwMjoyODoxNi4xMDBaIiwiY29uZGl0aW9ucyI6W1siY29udGVudC1sZW5ndGgtcmFuZ2UiLDAsMTA0ODU3NjAwMF0sWyJzdGFydHMtd2l0aCIsIiRrZXkiLCJpbWFnZXMvIl1dfQ=="}
+耗时:45
+2022-06-06 10:23:16.139 [http-nio-8080-exec-1] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/aliyun/oss/signature
+参数:dir=images%2F
+响应:{"accessId":"LTAI5tQQuPD1Fk7bhcEQbNWk","signature":"ubxcKfu7c5bjjgWlQTq48jNtMpg=","expire":"1654482496","host":"https://lfs-image.oss-cn-chengdu.aliyuncs.com","callback":"eyJjYWxsYmFja0JvZHlUeXBlIjoiYXBwbGljYXRpb24veC13d3ctZm9ybS11cmxlbmNvZGVkIiwiY2FsbGJhY2tVcmwiOiIiLCJjYWxsYmFja0JvZHkiOiJmaWxlbmFtZT0ke29iamVjdH0mc2l6ZT0ke3NpemV9Jm1pbWVUeXBlPSR7bWltZVR5cGV9JmhlaWdodD0ke2ltYWdlSW5mby5oZWlnaHR9JndpZHRoPSR7aW1hZ2VJbmZvLndpZHRofSJ9","dir":"images/","policy":"eyJleHBpcmF0aW9uIjoiMjAyMi0wNi0wNlQwMjoyODoxNi4xMDBaIiwiY29uZGl0aW9ucyI6W1siY29udGVudC1sZW5ndGgtcmFuZ2UiLDAsMTA0ODU3NjAwMF0sWyJzdGFydHMtd2l0aCIsIiRrZXkiLCJpbWFnZXMvIl1dfQ=="}
+耗时:43
+2022-06-06 10:23:17.796 [http-nio-8080-exec-10] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/product
+参数:current=1&pageSize=20
+响应:{"data":[{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"628ca7e45f2a87006fd75a46","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654485797&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=tjnhaJuOsAcwHvzIaVOzEWO1VmA%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654485797&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=GTqruAh7aWrV5nQw7PMnHM1n7Ig%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚跟团游9:30晚出发+国旅真纯玩+【升级五星品牌Hilton希尔顿酒店/天源豪生/千鹤国际/携程5钻酒店可选】【松潘古城】+可升『头等舱保姆车』+升级五钻酒店美食+24小时客服+成都三环内免费接"},{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"628cebf8de5bc62c3a2d97ac","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654485797&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=tjnhaJuOsAcwHvzIaVOzEWO1VmA%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654485797&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=GTqruAh7aWrV5nQw7PMnHM1n7Ig%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚跟团游9:30晚出发+国旅真纯玩+【升级五星品牌Hilton希尔顿酒店/天源豪生/千鹤国际/携程5钻酒店可选】【松潘古城】+可升『头等舱保姆车』+升级五钻酒店美食+24小时客服+成都三环内免费接"},{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"628cec1ade5bc62c3a2d97ad","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654485797&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=tjnhaJuOsAcwHvzIaVOzEWO1VmA%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654485797&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=GTqruAh7aWrV5nQw7PMnHM1n7Ig%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚跟团游9:30晚出发+国旅真纯玩+【升级五星品牌Hilton希尔顿酒店/天源豪生/千鹤国际/携程5钻酒店可选】【松潘古城】+可升『头等舱保姆车』+升级五钻酒店美食+24小时客服+成都三环内免费接"},{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"6293836cd64fff5f278b332c","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654485797&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=tjnhaJuOsAcwHvzIaVOzEWO1VmA%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654485797&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=GTqruAh7aWrV5nQw7PMnHM1n7Ig%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚"}],"success":true,"total":4}
+耗时:19
+2022-06-06 10:23:19.573 [http-nio-8080-exec-5] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/product/sku
+参数:productId=628ca7e45f2a87006fd75a46
+响应:[{"id":"629728e7da667d6000146db0","name":"套餐2","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"保姆车","住宿标准":"四星或同级"},"state":1},{"id":"6297291fda667d6000146db1","name":"套餐1","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"普通大巴","住宿标准":"三星或同级"},"state":0},{"id":"629818163aa8774bc93c9188","name":"套餐3","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"保姆车","住宿标准":"三星或同级"},"state":0},{"id":"629831df3aa8774bc93c9189","name":"套餐4","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"普通大巴","住宿标准":"四星或同级"},"state":0}]
+耗时:8
+2022-06-06 10:23:25.802 [http-nio-8080-exec-8] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/product
+参数:current=1&pageSize=20
+响应:{"data":[{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"628ca7e45f2a87006fd75a46","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654485805&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=ujoDZBBqpP3PKDaIxIcJm87V0WE%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654485805&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=DFDHKWiWaesQum4YImZ3UUtIYzo%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚跟团游9:30晚出发+国旅真纯玩+【升级五星品牌Hilton希尔顿酒店/天源豪生/千鹤国际/携程5钻酒店可选】【松潘古城】+可升『头等舱保姆车』+升级五钻酒店美食+24小时客服+成都三环内免费接"},{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"628cebf8de5bc62c3a2d97ac","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654485805&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=ujoDZBBqpP3PKDaIxIcJm87V0WE%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654485805&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=DFDHKWiWaesQum4YImZ3UUtIYzo%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚跟团游9:30晚出发+国旅真纯玩+【升级五星品牌Hilton希尔顿酒店/天源豪生/千鹤国际/携程5钻酒店可选】【松潘古城】+可升『头等舱保姆车』+升级五钻酒店美食+24小时客服+成都三环内免费接"},{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"628cec1ade5bc62c3a2d97ad","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654485805&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=ujoDZBBqpP3PKDaIxIcJm87V0WE%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654485805&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=DFDHKWiWaesQum4YImZ3UUtIYzo%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚跟团游9:30晚出发+国旅真纯玩+【升级五星品牌Hilton希尔顿酒店/天源豪生/千鹤国际/携程5钻酒店可选】【松潘古城】+可升『头等舱保姆车』+升级五钻酒店美食+24小时客服+成都三环内免费接"},{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"6293836cd64fff5f278b332c","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654485805&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=ujoDZBBqpP3PKDaIxIcJm87V0WE%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654485805&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=DFDHKWiWaesQum4YImZ3UUtIYzo%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚"}],"success":true,"total":4}
+耗时:18
+2022-06-06 10:23:27.463 [http-nio-8080-exec-9] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/product/sku
+参数:productId=628cebf8de5bc62c3a2d97ac
+响应:[{"id":"629832833aa8774bc93c918a","name":"套餐1","productId":"628cebf8de5bc62c3a2d97ac","properties":{"交通车型":"大巴2","住宿标准":"三星"},"state":0},{"id":"62984f953aa8774bc93c918b","name":"套餐2","productId":"628cebf8de5bc62c3a2d97ac","properties":{"交通车型":"大巴","住宿标准":"三星"},"state":0}]
+耗时:3
+2022-06-06 10:23:29.937 [http-nio-8080-exec-4] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/product
+参数:current=1&pageSize=20
+响应:{"data":[{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"628ca7e45f2a87006fd75a46","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654485809&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=Z5KpFeLbJi5Qo2GcWbbctjf%2BUHQ%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654485809&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=ZlLAMzhjEOM4qE7V7h9l62tgaTw%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚跟团游9:30晚出发+国旅真纯玩+【升级五星品牌Hilton希尔顿酒店/天源豪生/千鹤国际/携程5钻酒店可选】【松潘古城】+可升『头等舱保姆车』+升级五钻酒店美食+24小时客服+成都三环内免费接"},{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"628cebf8de5bc62c3a2d97ac","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654485809&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=Z5KpFeLbJi5Qo2GcWbbctjf%2BUHQ%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654485809&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=ZlLAMzhjEOM4qE7V7h9l62tgaTw%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚跟团游9:30晚出发+国旅真纯玩+【升级五星品牌Hilton希尔顿酒店/天源豪生/千鹤国际/携程5钻酒店可选】【松潘古城】+可升『头等舱保姆车』+升级五钻酒店美食+24小时客服+成都三环内免费接"},{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"628cec1ade5bc62c3a2d97ad","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654485809&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=Z5KpFeLbJi5Qo2GcWbbctjf%2BUHQ%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654485809&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=ZlLAMzhjEOM4qE7V7h9l62tgaTw%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚跟团游9:30晚出发+国旅真纯玩+【升级五星品牌Hilton希尔顿酒店/天源豪生/千鹤国际/携程5钻酒店可选】【松潘古城】+可升『头等舱保姆车』+升级五钻酒店美食+24小时客服+成都三环内免费接"},{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"6293836cd64fff5f278b332c","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654485809&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=Z5KpFeLbJi5Qo2GcWbbctjf%2BUHQ%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654485809&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=ZlLAMzhjEOM4qE7V7h9l62tgaTw%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚"}],"success":true,"total":4}
+耗时:18
+2022-06-06 10:23:31.516 [http-nio-8080-exec-2] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/product/sku
+参数:productId=628ca7e45f2a87006fd75a46
+响应:[{"id":"629728e7da667d6000146db0","name":"套餐2","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"保姆车","住宿标准":"四星或同级"},"state":1},{"id":"6297291fda667d6000146db1","name":"套餐1","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"普通大巴","住宿标准":"三星或同级"},"state":0},{"id":"629818163aa8774bc93c9188","name":"套餐3","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"保姆车","住宿标准":"三星或同级"},"state":0},{"id":"629831df3aa8774bc93c9189","name":"套餐4","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"普通大巴","住宿标准":"四星或同级"},"state":0}]
+耗时:7
+2022-06-06 10:27:10.956 [http-nio-8080-exec-3] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/product/sku
+参数:productId=628ca7e45f2a87006fd75a46
+响应:[{"id":"629728e7da667d6000146db0","name":"套餐2","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"保姆车","住宿标准":"四星或同级"},"state":1},{"id":"6297291fda667d6000146db1","name":"套餐1","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"普通大巴","住宿标准":"三星或同级"},"state":0},{"id":"629818163aa8774bc93c9188","name":"套餐3","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"保姆车","住宿标准":"三星或同级"},"state":0},{"id":"629831df3aa8774bc93c9189","name":"套餐4","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"普通大巴","住宿标准":"四星或同级"},"state":0}]
+耗时:4
+2022-06-06 10:27:20.317 [http-nio-8080-exec-7] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/staff/session
+参数:null
+响应:{"createTime":"2021-12-29 16:00:36","id":1,"name":"徐竟浩","phone":"13880605659","roles":[{"id":1,"key":"admin","name":"系统管理员"}],"state":1}
+耗时:0
+2022-06-06 10:27:20.600 [http-nio-8080-exec-1] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/aliyun/sts
+参数:null
+响应:{"accessKeyId":"STS.NTykp9Td65fgEzcfCyjkKHtGP","accessKeySecret":"G9PxYBcK5zw3bJdqyQZr65vbmxUVr8ye7vmZB7jF7oCt","expiration":"2022-06-06T03:27:20Z","securityToken":"CAISuwJ1q6Ft5B2yfSjIr5fMIMqNubsXgqSMR1zSgkMsZuRnp7Hssjz2IH9Fe3NqCO0XtvowlWxZ6vwflqp3RYQdjdsZvTAovPpt6gqET9frT6XXhOV2dvTHdEGXDxnkpuCwB8zyUNLafNq0dlnAjVUd6LDmdDKkLRvHVJqSksxfc8gwVAu1ZiYkYdBNPVlNpdM9P3ncPurPVRnxmTj0DVF0nQB+hGhj8t6ToKum5wHZkUfxx8IMuo31OeLEVcR3O4plWNrHnI4Tf6HagilL8EoIpuUkzs478Dzc7NaGGAsTsVfUN+TPt9xqJQB0IeoYY/cf86OjyaAp4r2Lx9immk13ULsLA3iFdueJ29DZHe6lDNE9eIvgNm7FutL1bcak7Fl+MC9KbF0VKoZwdiUtE3IoRCrdMbS3Ud4Src1mm8IagAGpCUGMdQvzc0ooTNAwEZAszhDC6B1tLUPP0rTnSN/arIVAhHXwZiiiVvB3nsI47a9pCPaXYXtnhKtlhwBVq9ZgZj0h3lYL5CiClwUN1MGBcNT197O8e2Thq5rSe3Zej56GZcv59HKndp3WAtpnN1fCInBv5fBmhImge9f0umnBKA=="}
+耗时:294
+2022-06-06 10:27:21.472 [http-nio-8080-exec-6] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/product/sku
+参数:productId=628ca7e45f2a87006fd75a46
+响应:[{"id":"629728e7da667d6000146db0","name":"套餐2","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"保姆车","住宿标准":"四星或同级"},"state":1},{"id":"6297291fda667d6000146db1","name":"套餐1","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"普通大巴","住宿标准":"三星或同级"},"state":0},{"id":"629818163aa8774bc93c9188","name":"套餐3","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"保姆车","住宿标准":"三星或同级"},"state":0},{"id":"629831df3aa8774bc93c9189","name":"套餐4","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"普通大巴","住宿标准":"四星或同级"},"state":0}]
+耗时:5
+2022-06-06 10:28:37.362 [http-nio-8080-exec-10] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/product/sku
+参数:productId=628ca7e45f2a87006fd75a46
+响应:[{"id":"629728e7da667d6000146db0","name":"套餐2","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"保姆车","住宿标准":"四星或同级"},"state":1},{"id":"6297291fda667d6000146db1","name":"套餐1","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"普通大巴","住宿标准":"三星或同级"},"state":0},{"id":"629818163aa8774bc93c9188","name":"套餐3","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"保姆车","住宿标准":"三星或同级"},"state":0},{"id":"629831df3aa8774bc93c9189","name":"套餐4","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"普通大巴","住宿标准":"四星或同级"},"state":0}]
+耗时:4
+2022-06-06 10:28:40.821 [http-nio-8080-exec-8] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/staff/session
+参数:null
+响应:{"createTime":"2021-12-29 16:00:36","id":1,"name":"徐竟浩","phone":"13880605659","roles":[{"id":1,"key":"admin","name":"系统管理员"}],"state":1}
+耗时:1
+2022-06-06 10:28:41.160 [http-nio-8080-exec-5] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/aliyun/sts
+参数:null
+响应:{"accessKeyId":"STS.NSvyqT5GM4SSiwpKGTp5oXnD5","accessKeySecret":"DSMWc4Kdpjdshsv6rEJiqiSb33mp3LsqHrb1hML4u8DF","expiration":"2022-06-06T03:28:41Z","securityToken":"CAISuwJ1q6Ft5B2yfSjIr5DDMsvg2Jhsg5G4a1HBr0cBfLpDt6vv1zz2IH9Fe3NqCO0XtvowlWxZ6vwflqp3RYQd4dAWvTAovPpt6gqET9frT6XXhOV2dvTHdEGXDxnkpuCwB8zyUNLafNq0dlnAjVUd6LDmdDKkLRvHVJqSksxfc8gwVAu1ZiYkYdBNPVlNpdM9P3ncPurPVRnxmTj0DVF0nQB+hGhj8t6ToKum5wHZkUfxx8IMuo31OeLEVcR3O4plWNrHnI4Tf6HagilL8EoIpuUkzs478Dzc7NaGGAsTsVfUN+TPt9xqJQB0IeoYY/cf86OjyaAp4r2Lx9immk13ULsLA3iFdueJ29DZHe6lDNE9eIvgNm7FutL1bcak7Fl+MC9KbF0VKoZwdiUtE3IoRCrdMbS3Ud4Src1mm8IagAELosYj1JcUZpKpNfRrBIh2wzi1bnE+IE9VtGUuRGuRqTnXqcCFlDrqGMu4kdYGVEWmtHN27skbhGwMCOW/HgpN8UfecCHhkMS7Fmyy9cOJTq/rWbYJ4UelApOIk2DR6k/A+bA3tKq7BIKVTHn71PxVDFP8svLUNhJIdowsqeUMAA=="}
+耗时:351
+2022-06-06 10:28:41.796 [http-nio-8080-exec-9] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/product/sku
+参数:productId=628ca7e45f2a87006fd75a46
+响应:[{"id":"629728e7da667d6000146db0","name":"套餐2","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"保姆车","住宿标准":"四星或同级"},"state":1},{"id":"6297291fda667d6000146db1","name":"套餐1","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"普通大巴","住宿标准":"三星或同级"},"state":0},{"id":"629818163aa8774bc93c9188","name":"套餐3","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"保姆车","住宿标准":"三星或同级"},"state":0},{"id":"629831df3aa8774bc93c9189","name":"套餐4","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"普通大巴","住宿标准":"四星或同级"},"state":0}]
+耗时:9
+2022-06-06 10:29:06.266 [http-nio-8080-exec-4] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/product/sku
+参数:productId=628ca7e45f2a87006fd75a46
+响应:[{"id":"629728e7da667d6000146db0","name":"套餐2","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"保姆车","住宿标准":"四星或同级"},"state":1},{"id":"6297291fda667d6000146db1","name":"套餐1","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"普通大巴","住宿标准":"三星或同级"},"state":0},{"id":"629818163aa8774bc93c9188","name":"套餐3","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"保姆车","住宿标准":"三星或同级"},"state":0},{"id":"629831df3aa8774bc93c9189","name":"套餐4","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"普通大巴","住宿标准":"四星或同级"},"state":0}]
+耗时:2
+2022-06-06 10:29:11.701 [http-nio-8080-exec-3] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/staff/session
+参数:null
+响应:{"createTime":"2021-12-29 16:00:36","id":1,"name":"徐竟浩","phone":"13880605659","roles":[{"id":1,"key":"admin","name":"系统管理员"}],"state":1}
+耗时:1
+2022-06-06 10:29:11.976 [http-nio-8080-exec-2] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/aliyun/sts
+参数:null
+响应:{"accessKeyId":"STS.NUjRT7zYp7xJLtCUXHyfYuJGW","accessKeySecret":"H3EaQ1UrZAmvGJLXvvqvhoHdnB6gxMd7bzYPJvsZeq8r","expiration":"2022-06-06T03:29:11Z","securityToken":"CAISuwJ1q6Ft5B2yfSjIr5bfGe6Dl4ZRgLqhTlLysVgddel1mo/stTz2IH9Fe3NqCO0XtvowlWxZ6vwflqp3RYQdmMEQvTAovPpt6gqET9frT6XXhOV2dvTHdEGXDxnkpuCwB8zyUNLafNq0dlnAjVUd6LDmdDKkLRvHVJqSksxfc8gwVAu1ZiYkYdBNPVlNpdM9P3ncPurPVRnxmTj0DVF0nQB+hGhj8t6ToKum5wHZkUfxx8IMuo31OeLEVcR3O4plWNrHnI4Tf6HagilL8EoIpuUkzs478Dzc7NaGGAsTsVfUN+TPt9xqJQB0IeoYY/cf86OjyaAp4r2Lx9immk13ULsLA3iFdueJ29DZHe6lDNE9eIvgNm7FutL1bcak7Fl+MC9KbF0VKoZwdiUtE3IoRCrdMbS3Ud4Src1mm8IagAGx5w/sMSHxLXU/x5HHyrUxxEfYEns+CsfGQ3HwwgyEICPZ9BfK4Rt3gOgSoW8zJB3s4SzSzmmfcjN//TgmQHAP5jqfIK9anss4DckDOOHPpaMRR+VOJxQoLx0DY+W22Xg6kAOPadvpleEfFJ/kgNTPc5ETCSICn3QFmzAAMXotMA=="}
+耗时:276
+2022-06-06 10:29:12.610 [http-nio-8080-exec-7] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/product/sku
+参数:productId=628ca7e45f2a87006fd75a46
+响应:[{"id":"629728e7da667d6000146db0","name":"套餐2","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"保姆车","住宿标准":"四星或同级"},"state":1},{"id":"6297291fda667d6000146db1","name":"套餐1","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"普通大巴","住宿标准":"三星或同级"},"state":0},{"id":"629818163aa8774bc93c9188","name":"套餐3","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"保姆车","住宿标准":"三星或同级"},"state":0},{"id":"629831df3aa8774bc93c9189","name":"套餐4","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"普通大巴","住宿标准":"四星或同级"},"state":0}]
+耗时:9
+2022-06-06 10:29:53.515 [http-nio-8080-exec-1] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/product/sku
+参数:productId=628ca7e45f2a87006fd75a46
+响应:[{"id":"629728e7da667d6000146db0","name":"套餐2","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"保姆车","住宿标准":"四星或同级"},"state":1},{"id":"6297291fda667d6000146db1","name":"套餐1","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"普通大巴","住宿标准":"三星或同级"},"state":0},{"id":"629818163aa8774bc93c9188","name":"套餐3","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"保姆车","住宿标准":"三星或同级"},"state":0},{"id":"629831df3aa8774bc93c9189","name":"套餐4","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"普通大巴","住宿标准":"四星或同级"},"state":0}]
+耗时:3
+2022-06-06 10:29:56.456 [http-nio-8080-exec-10] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/staff/session
+参数:null
+响应:{"createTime":"2021-12-29 16:00:36","id":1,"name":"徐竟浩","phone":"13880605659","roles":[{"id":1,"key":"admin","name":"系统管理员"}],"state":1}
+耗时:10
+2022-06-06 10:29:56.758 [http-nio-8080-exec-6] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/aliyun/sts
+参数:null
+响应:{"accessKeyId":"STS.NUeD5QfeCVp36oJHEjvVPxJTv","accessKeySecret":"G6hErcdduqaV79yvfALygfKFdi5oFZhFgrinxmNFUR89","expiration":"2022-06-06T03:29:56Z","securityToken":"CAISuwJ1q6Ft5B2yfSjIr5bQD4/li7pi4bLYNEn7rEU/etl8l4//lDz2IH9Fe3NqCO0XtvowlWxZ6vwflqp3RYQdiOcTvTAovPpt6gqET9frT6XXhOV2dvTHdEGXDxnkpuCwB8zyUNLafNq0dlnAjVUd6LDmdDKkLRvHVJqSksxfc8gwVAu1ZiYkYdBNPVlNpdM9P3ncPurPVRnxmTj0DVF0nQB+hGhj8t6ToKum5wHZkUfxx8IMuo31OeLEVcR3O4plWNrHnI4Tf6HagilL8EoIpuUkzs478Dzc7NaGGAsTsVfUN+TPt9xqJQB0IeoYY/cf86OjyaAp4r2Lx9immk13ULsLA3iFdueJ29DZHe6lDNE9eIvgNm7FutL1bcak7Fl+MC9KbF0VKoZwdiUtE3IoRCrdMbS3Ud4Src1mm8IagAFUw1Qow+sPPoDNFGEASpY9xBhyXYRimMlg19T+SnBpY7urc1oe2p/YpXc5xCPiyRJr9ihSl4l96sEUkH1krDfoAxqFewFgFWIIo5haK0nygdK4AID6/7GdZayXbPwEHpK0IRfcbNSXafV3lbbpHyHYA7IbX2cNoxWRLEBtiEIQBw=="}
+耗时:323
+2022-06-06 10:29:57.542 [http-nio-8080-exec-8] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/product/sku
+参数:productId=628ca7e45f2a87006fd75a46
+响应:[{"id":"629728e7da667d6000146db0","name":"套餐2","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"保姆车","住宿标准":"四星或同级"},"state":1},{"id":"6297291fda667d6000146db1","name":"套餐1","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"普通大巴","住宿标准":"三星或同级"},"state":0},{"id":"629818163aa8774bc93c9188","name":"套餐3","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"保姆车","住宿标准":"三星或同级"},"state":0},{"id":"629831df3aa8774bc93c9189","name":"套餐4","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"普通大巴","住宿标准":"四星或同级"},"state":0}]
+耗时:8
+2022-06-06 10:36:17.169 [http-nio-8080-exec-5] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/product/sku
+参数:productId=628ca7e45f2a87006fd75a46
+响应:[{"id":"629728e7da667d6000146db0","name":"套餐2","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"保姆车","住宿标准":"四星或同级"},"state":1},{"id":"6297291fda667d6000146db1","name":"套餐1","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"普通大巴","住宿标准":"三星或同级"},"state":0},{"id":"629818163aa8774bc93c9188","name":"套餐3","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"保姆车","住宿标准":"三星或同级"},"state":0},{"id":"629831df3aa8774bc93c9189","name":"套餐4","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"普通大巴","住宿标准":"四星或同级"},"state":0}]
+耗时:14
+2022-06-06 10:36:20.910 [http-nio-8080-exec-9] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/product/sku
+参数:productId=628ca7e45f2a87006fd75a46
+响应:[{"id":"629728e7da667d6000146db0","name":"套餐2","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"保姆车","住宿标准":"四星或同级"},"state":1},{"id":"6297291fda667d6000146db1","name":"套餐1","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"普通大巴","住宿标准":"三星或同级"},"state":0},{"id":"629818163aa8774bc93c9188","name":"套餐3","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"保姆车","住宿标准":"三星或同级"},"state":0},{"id":"629831df3aa8774bc93c9189","name":"套餐4","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"普通大巴","住宿标准":"四星或同级"},"state":0}]
+耗时:2
+2022-06-06 10:36:44.920 [http-nio-8080-exec-4] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/product/sku
+参数:productId=628ca7e45f2a87006fd75a46
+响应:[{"id":"629728e7da667d6000146db0","name":"套餐2","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"保姆车","住宿标准":"四星或同级"},"state":1},{"id":"6297291fda667d6000146db1","name":"套餐1","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"普通大巴","住宿标准":"三星或同级"},"state":0},{"id":"629818163aa8774bc93c9188","name":"套餐3","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"保姆车","住宿标准":"三星或同级"},"state":0},{"id":"629831df3aa8774bc93c9189","name":"套餐4","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"普通大巴","住宿标准":"四星或同级"},"state":0}]
+耗时:3
+2022-06-06 13:07:58.397 [http-nio-8080-exec-3] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/product/sku
+参数:productId=628ca7e45f2a87006fd75a46
+响应:[{"id":"629728e7da667d6000146db0","name":"套餐2","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"保姆车","住宿标准":"四星或同级"},"state":1},{"id":"6297291fda667d6000146db1","name":"套餐1","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"普通大巴","住宿标准":"三星或同级"},"state":0},{"id":"629818163aa8774bc93c9188","name":"套餐3","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"保姆车","住宿标准":"三星或同级"},"state":0},{"id":"629831df3aa8774bc93c9189","name":"套餐4","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"普通大巴","住宿标准":"四星或同级"},"state":0}]
+耗时:109
+2022-06-06 13:08:05.357 [http-nio-8080-exec-2] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/product
+参数:current=1&pageSize=20
+响应:{"data":[{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"628ca7e45f2a87006fd75a46","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654495685&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=ND8vH89nIL9VO7Chol%2B7MHovtNU%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654495685&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=bgcvk%2Fne%2B95TboztfO7sZ5lGjCo%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚跟团游9:30晚出发+国旅真纯玩+【升级五星品牌Hilton希尔顿酒店/天源豪生/千鹤国际/携程5钻酒店可选】【松潘古城】+可升『头等舱保姆车』+升级五钻酒店美食+24小时客服+成都三环内免费接"},{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"628cebf8de5bc62c3a2d97ac","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654495685&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=ND8vH89nIL9VO7Chol%2B7MHovtNU%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654495685&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=bgcvk%2Fne%2B95TboztfO7sZ5lGjCo%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚跟团游9:30晚出发+国旅真纯玩+【升级五星品牌Hilton希尔顿酒店/天源豪生/千鹤国际/携程5钻酒店可选】【松潘古城】+可升『头等舱保姆车』+升级五钻酒店美食+24小时客服+成都三环内免费接"},{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"628cec1ade5bc62c3a2d97ad","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654495685&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=ND8vH89nIL9VO7Chol%2B7MHovtNU%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654495685&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=bgcvk%2Fne%2B95TboztfO7sZ5lGjCo%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚跟团游9:30晚出发+国旅真纯玩+【升级五星品牌Hilton希尔顿酒店/天源豪生/千鹤国际/携程5钻酒店可选】【松潘古城】+可升『头等舱保姆车』+升级五钻酒店美食+24小时客服+成都三环内免费接"},{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"6293836cd64fff5f278b332c","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654495685&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=ND8vH89nIL9VO7Chol%2B7MHovtNU%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654495685&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=bgcvk%2Fne%2B95TboztfO7sZ5lGjCo%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚"}],"success":true,"total":4}
+耗时:132
+2022-06-06 13:08:08.170 [http-nio-8080-exec-7] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/product/sku
+参数:productId=628cebf8de5bc62c3a2d97ac
+响应:[{"id":"629832833aa8774bc93c918a","name":"套餐1","productId":"628cebf8de5bc62c3a2d97ac","properties":{"交通车型":"大巴2","住宿标准":"三星"},"state":0},{"id":"62984f953aa8774bc93c918b","name":"套餐2","productId":"628cebf8de5bc62c3a2d97ac","properties":{"交通车型":"大巴","住宿标准":"三星"},"state":0}]
+耗时:6
+2022-06-06 13:08:22.358 [http-nio-8080-exec-1] INFO  com.x.config.mvc.LogRecordAspect 
+PUT请求/product/sku
+参数:{"id":"629832833aa8774bc93c918a","name":"套餐1","properties":"{\"交通车型\":\"保姆车\",\"住宿标准\":\"三星\"}","state":"INVALID"}
+响应:{"id":"629832833aa8774bc93c918a","name":"套餐1","productId":"628cebf8de5bc62c3a2d97ac","properties":{"交通车型":"保姆车","住宿标准":"三星"},"state":0}
+耗时:39
+2022-06-06 13:08:40.593 [http-nio-8080-exec-10] INFO  com.x.config.mvc.LogRecordAspect 
+POST请求/product/sku
+参数:{"name":"套餐3","productId":"628cebf8de5bc62c3a2d97ac","properties":"{\"交通车型\":\"保姆车\",\"住宿标准\":\"四星\"}"}
+响应:{"id":"629d8bd83aa8774bc93c918c","name":"套餐3","productId":"628cebf8de5bc62c3a2d97ac","properties":{"交通车型":"保姆车","住宿标准":"四星"},"state":0}
+耗时:9
+2022-06-06 13:11:31.038 [http-nio-8080-exec-6] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/product/sku
+参数:productId=628cebf8de5bc62c3a2d97ac
+响应:[{"id":"629832833aa8774bc93c918a","name":"套餐1","productId":"628cebf8de5bc62c3a2d97ac","properties":{"交通车型":"保姆车","住宿标准":"三星"},"state":0},{"id":"62984f953aa8774bc93c918b","name":"套餐2","productId":"628cebf8de5bc62c3a2d97ac","properties":{"交通车型":"大巴","住宿标准":"三星"},"state":0},{"id":"629d8bd83aa8774bc93c918c","name":"套餐3","productId":"628cebf8de5bc62c3a2d97ac","properties":{"交通车型":"保姆车","住宿标准":"四星"},"state":0}]
+耗时:2
+2022-06-06 13:11:38.492 [http-nio-8080-exec-8] INFO  com.x.config.mvc.LogRecordAspect 
+PUT请求/product/sku
+参数:{"id":"629d8bd83aa8774bc93c918c","name":"套餐3","properties":"{\"交通车型\":\"保姆车\",\"住宿标准\":\"四星\"}","state":"VALID"}
+响应:{"id":"629d8bd83aa8774bc93c918c","name":"套餐3","productId":"628cebf8de5bc62c3a2d97ac","properties":{"交通车型":"保姆车","住宿标准":"四星"},"state":1}
+耗时:2
+2022-06-06 13:11:43.618 [http-nio-8080-exec-5] INFO  com.x.config.mvc.LogRecordAspect 
+PUT请求/product/sku
+参数:{"id":"62984f953aa8774bc93c918b","name":"套餐2","properties":"{\"交通车型\":\"大巴\",\"住宿标准\":\"三星\"}","state":"VALID"}
+响应:{"id":"62984f953aa8774bc93c918b","name":"套餐2","productId":"628cebf8de5bc62c3a2d97ac","properties":{"交通车型":"大巴","住宿标准":"三星"},"state":1}
+耗时:5
+2022-06-06 13:11:48.088 [http-nio-8080-exec-9] INFO  com.x.config.mvc.LogRecordAspect 
+PUT请求/product/sku
+参数:{"id":"629832833aa8774bc93c918a","name":"套餐1","properties":"{\"交通车型\":\"保姆车\",\"住宿标准\":\"三星\"}","state":"VALID"}
+响应:{"id":"629832833aa8774bc93c918a","name":"套餐1","productId":"628cebf8de5bc62c3a2d97ac","properties":{"交通车型":"保姆车","住宿标准":"三星"},"state":1}
+耗时:3
+2022-06-06 13:12:03.397 [http-nio-8080-exec-4] INFO  com.x.config.mvc.LogRecordAspect 
+POST请求/product/sku
+参数:{"name":"套餐4","productId":"628cebf8de5bc62c3a2d97ac","properties":"{\"交通车型\":\"大巴\",\"住宿标准\":\"四星\"}"}
+响应:{"id":"629d8ca33aa8774bc93c918d","name":"套餐4","productId":"628cebf8de5bc62c3a2d97ac","properties":{"交通车型":"大巴","住宿标准":"四星"},"state":0}
+耗时:4
+2022-06-06 13:20:09.524 [http-nio-8080-exec-2] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/staff/session
+参数:null
+响应:{"createTime":"2021-12-29 16:00:36","id":1,"name":"徐竟浩","phone":"13880605659","roles":[{"id":1,"key":"admin","name":"系统管理员"}],"state":1}
+耗时:16
+2022-06-06 13:20:10.006 [http-nio-8080-exec-3] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/aliyun/sts
+参数:null
+响应:{"accessKeyId":"STS.NSt2njFATYhUxwG2QW3eTsMFu","accessKeySecret":"5gqenwZovnquRT4t3ou7exFgy75XE3v5qUFKTSegXoEc","expiration":"2022-06-06T06:20:10Z","securityToken":"CAISuwJ1q6Ft5B2yfSjIr5DBedTeq5517qq+elH21lECP+p4nIjtlzz2IH9Fe3NqCO0XtvowlWxZ6vwflqp3RYQdjNECuDAovPpt6gqET9frT6XXhOV2dvTHdEGXDxnkpuCwB8zyUNLafNq0dlnAjVUd6LDmdDKkLRvHVJqSksxfc8gwVAu1ZiYkYdBNPVlNpdM9P3ncPurPVRnxmTj0DVF0nQB+hGhj8t6ToKum5wHZkUfxx8IMuo31OeLEVcR3O4plWNrHnI4Tf6HagilL8EoIpuUkzs478Dzc7NaGGAsTsVfUN+TPt9xqJQB0IeoYY/cf86OjyaAp4r2Lx9immk13ULsLA3iFdueJ29DZHe6lDNE9eIvgNm7FutL1bcak7Fl+MC9KbF0VKoZwdiUtE3IoRCrdMbS3Ud4Src1mm8IagAEgdxOqyOyP+ch64Bw7uJbyf5oxj63n0G6i4adDi837QlGX+5jF9hph7TlXbmhYoHA5IuBs5Y1KVHTnsZDrKplOpo3AdCaIReJEC2zUU38t3N6SCkZ/1I8hMRqz+DDmJ/TItNgo1aGSxoo4mUeNCR9IVL+ZIl1vuxN6HC/6ygiztA=="}
+耗时:502
+2022-06-06 13:20:55.165 [http-nio-8080-exec-1] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/staff/session
+参数:null
+响应:{"createTime":"2021-12-29 16:00:36","id":1,"name":"徐竟浩","phone":"13880605659","roles":[{"id":1,"key":"admin","name":"系统管理员"}],"state":1}
+耗时:1
+2022-06-06 13:20:55.671 [http-nio-8080-exec-7] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/aliyun/sts
+参数:null
+响应:{"accessKeyId":"STS.NUsV7C8Xr3JbnzrnLVpCaaq47","accessKeySecret":"DbsfBM5kyu3mzfxR16BaThr6VPbwyaxeNKUHhUoHTT7j","expiration":"2022-06-06T06:20:55Z","securityToken":"CAISuwJ1q6Ft5B2yfSjIr5bGHY331YdThIiJbFzDikwDfMxNjrSf1Tz2IH9Fe3NqCO0XtvowlWxZ6vwflqp3RYQds/4duDAovPpt6gqET9frT6XXhOV2dvTHdEGXDxnkpuCwB8zyUNLafNq0dlnAjVUd6LDmdDKkLRvHVJqSksxfc8gwVAu1ZiYkYdBNPVlNpdM9P3ncPurPVRnxmTj0DVF0nQB+hGhj8t6ToKum5wHZkUfxx8IMuo31OeLEVcR3O4plWNrHnI4Tf6HagilL8EoIpuUkzs478Dzc7NaGGAsTsVfUN+TPt9xqJQB0IeoYY/cf86OjyaAp4r2Lx9immk13ULsLA3iFdueJ29DZHe6lDNE9eIvgNm7FutL1bcak7Fl+MC9KbF0VKoZwdiUtE3IoRCrdMbS3Ud4Src1mm8IagAEc5Hf90BQtHnwnJaVkT6LyQuoQmmNjI+PnuQg7elS8rwhIfVkdLntqOPlZv6s+yafvcm/KvQw61g+XLiBG9N6EVI3wImwIfJy+9tJi+/51oV2CkzUy0aSSCIiB5GLQSlDFRuyqGI1nifYF9vv1ylB8JXLuwlQiHZC5cqTqT71fNA=="}
+耗时:478
+2022-06-06 13:28:08.047 [http-nio-8080-exec-6] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/staff/session
+参数:null
+响应:{"createTime":"2021-12-29 16:00:36","id":1,"name":"徐竟浩","phone":"13880605659","roles":[{"id":1,"key":"admin","name":"系统管理员"}],"state":1}
+耗时:1
+2022-06-06 13:28:08.415 [http-nio-8080-exec-10] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/aliyun/sts
+参数:null
+响应:{"accessKeyId":"STS.NTTFSe2AJxchfPdrJZBRNmKgx","accessKeySecret":"8uWLnAmfcjWVYkHUNAxmgvZFGbFihpzsq22Nb1BVxwzZ","expiration":"2022-06-06T06:28:08Z","securityToken":"CAISuwJ1q6Ft5B2yfSjIr5fhDenR355rz6GDZHbVlkoPTt1igo7Mmjz2IH9Fe3NqCO0XtvowlWxZ6vwflqp3RYQdpqtguDAovPpt6gqET9frT6XXhOV2dvTHdEGXDxnkpuCwB8zyUNLafNq0dlnAjVUd6LDmdDKkLRvHVJqSksxfc8gwVAu1ZiYkYdBNPVlNpdM9P3ncPurPVRnxmTj0DVF0nQB+hGhj8t6ToKum5wHZkUfxx8IMuo31OeLEVcR3O4plWNrHnI4Tf6HagilL8EoIpuUkzs478Dzc7NaGGAsTsVfUN+TPt9xqJQB0IeoYY/cf86OjyaAp4r2Lx9immk13ULsLA3iFdueJ29DZHe6lDNE9eIvgNm7FutL1bcak7Fl+MC9KbF0VKoZwdiUtE3IoRCrdMbS3Ud4Src1mm8IagAGsztQhiBbyT6JYBG3cE4a5+B9JiZNy9k71vw56nPyhxUr+JNmXeCTNME2hcH8Wlv9n52KyxDAGsEaTs478T9vXtv1vMDK+mhQyWAcd2AoGZsxy5aEbKRWogSDziRYBAbu0btElI/1zp6MMDmCFsnJMNXIk3EmOTtAb2w5ByCBsJw=="}
+耗时:389
+2022-06-06 13:28:54.743 [http-nio-8080-exec-5] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/staff/session
+参数:null
+响应:{"createTime":"2021-12-29 16:00:36","id":1,"name":"徐竟浩","phone":"13880605659","roles":[{"id":1,"key":"admin","name":"系统管理员"}],"state":1}
+耗时:2
+2022-06-06 13:28:55.029 [http-nio-8080-exec-8] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/aliyun/sts
+参数:null
+响应:{"accessKeyId":"STS.NUQVvCWdsqREYB6kT9oKHjgfv","accessKeySecret":"4cCDYVoPnY9gszWTp9b6ynUas4rzKGv5zaQdhQ6BBW4N","expiration":"2022-06-06T06:28:55Z","securityToken":"CAISuwJ1q6Ft5B2yfSjIr5bkHcz3urtSxpCuW2SHj1RsY8RkhaLNlDz2IH9Fe3NqCO0XtvowlWxZ6vwflqp3RYQdsd9iuDAovPpt6gqET9frT6XXhOV2dvTHdEGXDxnkpuCwB8zyUNLafNq0dlnAjVUd6LDmdDKkLRvHVJqSksxfc8gwVAu1ZiYkYdBNPVlNpdM9P3ncPurPVRnxmTj0DVF0nQB+hGhj8t6ToKum5wHZkUfxx8IMuo31OeLEVcR3O4plWNrHnI4Tf6HagilL8EoIpuUkzs478Dzc7NaGGAsTsVfUN+TPt9xqJQB0IeoYY/cf86OjyaAp4r2Lx9immk13ULsLA3iFdueJ29DZHe6lDNE9eIvgNm7FutL1bcak7Fl+MC9KbF0VKoZwdiUtE3IoRCrdMbS3Ud4Src1mm8IagAF2zzDQ9qoGavqsgxMVSXMmN3H7x5Z84NH4uyLqBh4LSOEYrFLQfNINHcIa+rb8oH7Ok718k0A3P2sbxbhgV/FFqTVLgv49knwISTC7L75IhKdR5bpog6VgquURJjBArNg7M3Wc9hxHfTbaofmLpq+O364wthzLe+VFGXoMBASh6Q=="}
+耗时:287
+2022-06-06 13:39:12.970 [http-nio-8080-exec-4] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/staff/session
+参数:null
+响应:{"createTime":"2021-12-29 16:00:36","id":1,"name":"徐竟浩","phone":"13880605659","roles":[{"id":1,"key":"admin","name":"系统管理员"}],"state":1}
+耗时:1
+2022-06-06 13:39:13.292 [http-nio-8080-exec-9] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/aliyun/sts
+参数:null
+响应:{"accessKeyId":"STS.NStyjMt4ACremT1pCLbbTHnee","accessKeySecret":"89XCQevhwBWuYY7LrzKtxPpuztko1CQEALhukjShLCLr","expiration":"2022-06-06T06:39:13Z","securityToken":"CAISuwJ1q6Ft5B2yfSjIr5DBMtD5metg9LCOb3KAlEMZbu14p6vOhzz2IH9Fe3NqCO0XtvowlWxZ6vwflqp3RYQdi/1YuDAovPpt6gqET9frT6XXhOV2dvTHdEGXDxnkpuCwB8zyUNLafNq0dlnAjVUd6LDmdDKkLRvHVJqSksxfc8gwVAu1ZiYkYdBNPVlNpdM9P3ncPurPVRnxmTj0DVF0nQB+hGhj8t6ToKum5wHZkUfxx8IMuo31OeLEVcR3O4plWNrHnI4Tf6HagilL8EoIpuUkzs478Dzc7NaGGAsTsVfUN+TPt9xqJQB0IeoYY/cf86OjyaAp4r2Lx9immk13ULsLA3iFdueJ29DZHe6lDNE9eIvgNm7FutL1bcak7Fl+MC9KbF0VKoZwdiUtE3IoRCrdMbS3Ud4Src1mm8IagAFstekh091hEgRpwqDuyngDayjlYyCLSN6NABu+Tm87p17rwZHsHnejwcXjvJSwPCZFtPZp02xSq6sWQ3dXAc/uThiAPmnsQEs9VqCkx9FTkLYPLiW3Nr/B0nARib2tNZauct8jh1ShawSQm65dNn1NgHSSnw7umViOK5WRw+Priw=="}
+耗时:325
+2022-06-06 13:39:18.738 [http-nio-8080-exec-2] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/product
+参数:current=1&pageSize=20
+响应:{"data":[{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"628ca7e45f2a87006fd75a46","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654497558&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=mnH8HHO4K7gO52OzFOwzGY%2FgCfE%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654497558&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=Ozh1bhi31%2Fjeay2hpvXouMjqWas%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚跟团游9:30晚出发+国旅真纯玩+【升级五星品牌Hilton希尔顿酒店/天源豪生/千鹤国际/携程5钻酒店可选】【松潘古城】+可升『头等舱保姆车』+升级五钻酒店美食+24小时客服+成都三环内免费接"},{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"628cebf8de5bc62c3a2d97ac","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654497558&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=mnH8HHO4K7gO52OzFOwzGY%2FgCfE%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654497558&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=Ozh1bhi31%2Fjeay2hpvXouMjqWas%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚跟团游9:30晚出发+国旅真纯玩+【升级五星品牌Hilton希尔顿酒店/天源豪生/千鹤国际/携程5钻酒店可选】【松潘古城】+可升『头等舱保姆车』+升级五钻酒店美食+24小时客服+成都三环内免费接"},{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"628cec1ade5bc62c3a2d97ad","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654497558&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=mnH8HHO4K7gO52OzFOwzGY%2FgCfE%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654497558&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=Ozh1bhi31%2Fjeay2hpvXouMjqWas%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚跟团游9:30晚出发+国旅真纯玩+【升级五星品牌Hilton希尔顿酒店/天源豪生/千鹤国际/携程5钻酒店可选】【松潘古城】+可升『头等舱保姆车』+升级五钻酒店美食+24小时客服+成都三环内免费接"},{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"6293836cd64fff5f278b332c","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654497558&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=mnH8HHO4K7gO52OzFOwzGY%2FgCfE%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654497558&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=Ozh1bhi31%2Fjeay2hpvXouMjqWas%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚"}],"success":true,"total":4}
+耗时:27
+2022-06-06 13:39:20.723 [http-nio-8080-exec-3] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/product/sku
+参数:productId=628ca7e45f2a87006fd75a46
+响应:[{"id":"629728e7da667d6000146db0","name":"套餐2","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"保姆车","住宿标准":"四星或同级"},"state":1},{"id":"6297291fda667d6000146db1","name":"套餐1","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"普通大巴","住宿标准":"三星或同级"},"state":0},{"id":"629818163aa8774bc93c9188","name":"套餐3","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"保姆车","住宿标准":"三星或同级"},"state":0},{"id":"629831df3aa8774bc93c9189","name":"套餐4","productId":"628ca7e45f2a87006fd75a46","properties":{"交通车型":"普通大巴","住宿标准":"四星或同级"},"state":0}]
+耗时:4
+2022-06-06 13:39:45.765 [http-nio-8080-exec-7] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/staff/session
+参数:null
+响应:{"createTime":"2021-12-29 16:00:36","id":1,"name":"徐竟浩","phone":"13880605659","roles":[{"id":1,"key":"admin","name":"系统管理员"}],"state":1}
+耗时:0
+2022-06-06 13:39:45.986 [http-nio-8080-exec-1] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/aliyun/sts
+参数:null
+响应:{"accessKeyId":"STS.NTXBMiMBokc8micYxRNfYyay7","accessKeySecret":"CSewYgTpz4Pk9J1vKpNRZTjzGv8xCYxwiVs85G7EBt7S","expiration":"2022-06-06T06:39:46Z","securityToken":"CAISuwJ1q6Ft5B2yfSjIr5ftCffdoJ1O3KHTb0/SvXgHQul1lqTS1Tz2IH9Fe3NqCO0XtvowlWxZ6vwflqp3RYQd1fxauDAovPpt6gqET9frT6XXhOV2dvTHdEGXDxnkpuCwB8zyUNLafNq0dlnAjVUd6LDmdDKkLRvHVJqSksxfc8gwVAu1ZiYkYdBNPVlNpdM9P3ncPurPVRnxmTj0DVF0nQB+hGhj8t6ToKum5wHZkUfxx8IMuo31OeLEVcR3O4plWNrHnI4Tf6HagilL8EoIpuUkzs478Dzc7NaGGAsTsVfUN+TPt9xqJQB0IeoYY/cf86OjyaAp4r2Lx9immk13ULsLA3iFdueJ29DZHe6lDNE9eIvgNm7FutL1bcak7Fl+MC9KbF0VKoZwdiUtE3IoRCrdMbS3Ud4Src1mm8IagAErc02u5UHvbj/N7W3czeB3SiWc8J52byn2WPkrWecNZTITXiKRUN1E8bsy+jxGSTDKKVuzN0GdY2YKgOl3rGSlkwwucVY2/EtfeLluyc8ktpjL3xru4K0AiUEu4RlvG5/T3HQMvs2OzWs3/8e2uLtEEyr7lfDVLseQPSS2LHRwNQ=="}
+耗时:254
+2022-06-06 13:51:14.112 [http-nio-8080-exec-10] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/staff/session
+参数:null
+响应:{"createTime":"2021-12-29 16:00:36","id":1,"name":"徐竟浩","phone":"13880605659","roles":[{"id":1,"key":"admin","name":"系统管理员"}],"state":1}
+耗时:0
+2022-06-06 13:51:14.500 [http-nio-8080-exec-6] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/aliyun/sts
+参数:null
+响应:{"accessKeyId":"STS.NSqiUx1ya2WwHWqHQf4g8ik3Z","accessKeySecret":"FSN2qvGM1ueKAryNAJRN8mUEUAYeJVWXM9agTnyRFcYN","expiration":"2022-06-06T06:51:14Z","securityToken":"CAISuwJ1q6Ft5B2yfSjIr5DEIu/M3KZAhZWcSnHArFEzOOgUhq6YuDz2IH9Fe3NqCO0XtvowlWxZ6vwflqp3RYQd0v8MuzAovPpt6gqET9frT6XXhOV2dvTHdEGXDxnkpuCwB8zyUNLafNq0dlnAjVUd6LDmdDKkLRvHVJqSksxfc8gwVAu1ZiYkYdBNPVlNpdM9P3ncPurPVRnxmTj0DVF0nQB+hGhj8t6ToKum5wHZkUfxx8IMuo31OeLEVcR3O4plWNrHnI4Tf6HagilL8EoIpuUkzs478Dzc7NaGGAsTsVfUN+TPt9xqJQB0IeoYY/cf86OjyaAp4r2Lx9immk13ULsLA3iFdueJ29DZHe6lDNE9eIvgNm7FutL1bcak7Fl+MC9KbF0VKoZwdiUtE3IoRCrdMbS3Ud4Src1mm8IagAGKW0V7VJIW+QrYsEQc6W5j3t66qWWXcT5txueBPbkhsQmTyW3qumiMLwxlKHwNgfayXRnxzp0a5ZQy4KdDM0wcBl2YZW9t7jbDTuA1rMnkHDhXM3xbtHt5JKLyry+e5pPjhpmge6EKwR3i8ESraNM7SoDYevl0Bn1vJQaDGtjdRg=="}
+耗时:392
+2022-06-06 13:51:59.744 [http-nio-8080-exec-8] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/staff/session
+参数:null
+响应:{"createTime":"2021-12-29 16:00:36","id":1,"name":"徐竟浩","phone":"13880605659","roles":[{"id":1,"key":"admin","name":"系统管理员"}],"state":1}
+耗时:0
+2022-06-06 13:51:59.997 [http-nio-8080-exec-5] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/aliyun/sts
+参数:null
+响应:{"accessKeyId":"STS.NT3aBPrjebt6TT5HTr61isLvb","accessKeySecret":"APB5fxmjC61ZSRnsPfWuPbSNek7HAT2DdnGPvJbj8U6q","expiration":"2022-06-06T06:52:00Z","securityToken":"CAISuwJ1q6Ft5B2yfSjIr5eGKvjkn7VE1bbdVnKErFQnOr5FnIndgDz2IH9Fe3NqCO0XtvowlWxZ6vwflqp3RYQdkpsPuzAovPpt6gqET9frT6XXhOV2dvTHdEGXDxnkpuCwB8zyUNLafNq0dlnAjVUd6LDmdDKkLRvHVJqSksxfc8gwVAu1ZiYkYdBNPVlNpdM9P3ncPurPVRnxmTj0DVF0nQB+hGhj8t6ToKum5wHZkUfxx8IMuo31OeLEVcR3O4plWNrHnI4Tf6HagilL8EoIpuUkzs478Dzc7NaGGAsTsVfUN+TPt9xqJQB0IeoYY/cf86OjyaAp4r2Lx9immk13ULsLA3iFdueJ29DZHe6lDNE9eIvgNm7FutL1bcak7Fl+MC9KbF0VKoZwdiUtE3IoRCrdMbS3Ud4Src1mm8IagAGKvV0JlgVXXNHtw2PqujQOWdG3TscjRlOd9qYDStm3fCTOhKGwoXOiQ3GI9lAOmXjCVH/GAG+ukoKpR/G/4Mswisps5/IM5jiHFvfvCs93rH+NfvaDhadAr7TGNf2y34+yl4BN3nwb4Z+XcRRMNbGtW39SvRW9l15nkMSn2IGIWA=="}
+耗时:280
+2022-06-06 13:52:27.478 [http-nio-8080-exec-9] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/staff/session
+参数:null
+响应:{"createTime":"2021-12-29 16:00:36","id":1,"name":"徐竟浩","phone":"13880605659","roles":[{"id":1,"key":"admin","name":"系统管理员"}],"state":1}
+耗时:1
+2022-06-06 13:52:27.852 [http-nio-8080-exec-4] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/aliyun/sts
+参数:null
+响应:{"accessKeyId":"STS.NUqmgZ5ivuwiA1mrpVubsgd6h","accessKeySecret":"J6vSWEmFJB36dQU792tBv3oJyAyhK5gxiJBcRU62LskX","expiration":"2022-06-06T06:52:28Z","securityToken":"CAISuwJ1q6Ft5B2yfSjIr5bEJt3u2LZXwrWCQxfclnADee1fiKGdijz2IH9Fe3NqCO0XtvowlWxZ6vwflqp3RYQdpL0JuzAovPpt6gqET9frT6XXhOV2dvTHdEGXDxnkpuCwB8zyUNLafNq0dlnAjVUd6LDmdDKkLRvHVJqSksxfc8gwVAu1ZiYkYdBNPVlNpdM9P3ncPurPVRnxmTj0DVF0nQB+hGhj8t6ToKum5wHZkUfxx8IMuo31OeLEVcR3O4plWNrHnI4Tf6HagilL8EoIpuUkzs478Dzc7NaGGAsTsVfUN+TPt9xqJQB0IeoYY/cf86OjyaAp4r2Lx9immk13ULsLA3iFdueJ29DZHe6lDNE9eIvgNm7FutL1bcak7Fl+MC9KbF0VKoZwdiUtE3IoRCrdMbS3Ud4Src1mm8IagAFrxWB3e2vs/4J7r5z2PcBkfnvbj6s8xoBcEcapFxBgC96uDK2guqF8YG7tpr9+1RVeZg4ttdwBpe2wwKOCQzInCIFCqUSpHQwEmwR2UVUQfci7WFB9qgul1V04bIn+hWSXnhNPrhdPU8QQf86xkTFB1WejemJrnfBOHzPR/1Jnzg=="}
+耗时:394
+2022-06-06 15:08:27.217 [http-nio-8080-exec-3] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/staff/session
+参数:null
+响应:{"createTime":"2021-12-29 16:00:36","id":1,"name":"徐竟浩","phone":"13880605659","roles":[{"id":1,"key":"admin","name":"系统管理员"}],"state":1}
+耗时:13
+2022-06-06 15:08:27.716 [http-nio-8080-exec-2] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/aliyun/sts
+参数:null
+响应:{"accessKeyId":"STS.NUXHpe6y6Ujz9CTnGjtVwv6Su","accessKeySecret":"8vLKW2YfVqKmGTh8ETfmmdYx9uzYwz1tf1MmB4PgviVg","expiration":"2022-06-06T08:08:28Z","securityToken":"CAISuwJ1q6Ft5B2yfSjIr5btA8rR26YX4qiRO2Xlikc/eNlbmfP4lzz2IH9Fe3NqCO0XtvowlWxZ6vwflqp3RYQdh+UXxTAovPpt6gqET9frT6XXhOV2dvTHdEGXDxnkpuCwB8zyUNLafNq0dlnAjVUd6LDmdDKkLRvHVJqSksxfc8gwVAu1ZiYkYdBNPVlNpdM9P3ncPurPVRnxmTj0DVF0nQB+hGhj8t6ToKum5wHZkUfxx8IMuo31OeLEVcR3O4plWNrHnI4Tf6HagilL8EoIpuUkzs478Dzc7NaGGAsTsVfUN+TPt9xqJQB0IeoYY/cf86OjyaAp4r2Lx9immk13ULsLA3iFdueJ29DZHe6lDNE9eIvgNm7FutL1bcak7Fl+MC9KbF0VKoZwdiUtE3IoRCrdMbS3Ud4Src1mm8IagAEsDZPu86wS7X6rMwAD6QSPbT/cXEG2BRlj4dH/P/BKpy3O2DyCtZ3005rZbkFlJET6vKZnvLznqIZSaMKQWPgldOeTVWXEpWer066cIthrHQFmIkhk4U6I7aAYlQo+J3ZhorZLDZklZlv5BWJrE+7IiPRWEsIBPfnEBXvL0OMbkQ=="}
+耗时:511
+2022-06-06 15:12:34.548 [http-nio-8080-exec-1] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/staff/session
+参数:null
+响应:{"createTime":"2021-12-29 16:00:36","id":1,"name":"徐竟浩","phone":"13880605659","roles":[{"id":1,"key":"admin","name":"系统管理员"}],"state":1}
+耗时:2
+2022-06-06 15:12:34.823 [http-nio-8080-exec-7] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/aliyun/sts
+参数:null
+响应:{"accessKeyId":"STS.NUXtyTHSYyPFuZvYRZ2fZhgge","accessKeySecret":"55FsnhpkcmnZtD5Vgvv6swZqbkVbHYCDzQTrLrLytpAX","expiration":"2022-06-06T08:12:35Z","securityToken":"CAISuwJ1q6Ft5B2yfSjIr5btP8PgpYx4zpKtd3zHvVIPPul2h6LMhzz2IH9Fe3NqCO0XtvowlWxZ6vwflqp3RYQd1u9mxTAovPpt6gqET9frT6XXhOV2dvTHdEGXDxnkpuCwB8zyUNLafNq0dlnAjVUd6LDmdDKkLRvHVJqSksxfc8gwVAu1ZiYkYdBNPVlNpdM9P3ncPurPVRnxmTj0DVF0nQB+hGhj8t6ToKum5wHZkUfxx8IMuo31OeLEVcR3O4plWNrHnI4Tf6HagilL8EoIpuUkzs478Dzc7NaGGAsTsVfUN+TPt9xqJQB0IeoYY/cf86OjyaAp4r2Lx9immk13ULsLA3iFdueJ29DZHe6lDNE9eIvgNm7FutL1bcak7Fl+MC9KbF0VKoZwdiUtE3IoRCrdMbS3Ud4Src1mm8IagAFT7oFNzWObdZm9wTeX8UU0ALm39nhGYcBj3LeY5h3v87Hqe6Sv4GGDBPJ9ExGse3Um+DwBW/k+kn5qiRtDkFcFONMcnOU2K4WsGjTn6erjSPPxjF4N6/XMovMBe+13KUekKnM2/oiBjwp8MIKp50GD4tkCj5S68bwoeHI+qVKJfA=="}
+耗时:308
+2022-06-06 15:13:45.474 [http-nio-8080-exec-6] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/staff/session
+参数:null
+响应:{"createTime":"2021-12-29 16:00:36","id":1,"name":"徐竟浩","phone":"13880605659","roles":[{"id":1,"key":"admin","name":"系统管理员"}],"state":1}
+耗时:2
+2022-06-06 15:13:45.940 [http-nio-8080-exec-10] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/aliyun/sts
+参数:null
+响应:{"accessKeyId":"STS.NTipygWhy5tuiw8TA6qCe1rVE","accessKeySecret":"2HgLgjYiwuKLHCbjcWQpDVzzRAGQnp7UwLjjmAsq21tP","expiration":"2022-06-06T08:13:46Z","securityToken":"CAISuwJ1q6Ft5B2yfSjIr5fcO8PTurdYgraea1GJsEFjfcxJ3rf9pzz2IH9Fe3NqCO0XtvowlWxZ6vwflqp3RYQd49NixTAovPpt6gqET9frT6XXhOV2dvTHdEGXDxnkpuCwB8zyUNLafNq0dlnAjVUd6LDmdDKkLRvHVJqSksxfc8gwVAu1ZiYkYdBNPVlNpdM9P3ncPurPVRnxmTj0DVF0nQB+hGhj8t6ToKum5wHZkUfxx8IMuo31OeLEVcR3O4plWNrHnI4Tf6HagilL8EoIpuUkzs478Dzc7NaGGAsTsVfUN+TPt9xqJQB0IeoYY/cf86OjyaAp4r2Lx9immk13ULsLA3iFdueJ29DZHe6lDNE9eIvgNm7FutL1bcak7Fl+MC9KbF0VKoZwdiUtE3IoRCrdMbS3Ud4Src1mm8IagAE8gvCYNSSd91zjqJUtTADU7K+Eo8RbKwjPXQJKPkAvEruV+2l7E7yuN2OTlHwWzPYOAIzsVYpOSdnh6+qGG47UoN7/7MeUbeLMv9XSEVh9ix1YiSKByBLI9KGhCmU+SVkijX6DXZoyXDB3ePwZqCaz7lDmJavGK8zyhPPwOyFTeA=="}
+耗时:529
+2022-06-06 15:16:38.259 [http-nio-8080-exec-5] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/staff/session
+参数:null
+响应:{"createTime":"2021-12-29 16:00:36","id":1,"name":"徐竟浩","phone":"13880605659","roles":[{"id":1,"key":"admin","name":"系统管理员"}],"state":1}
+耗时:1
+2022-06-06 15:16:38.524 [http-nio-8080-exec-8] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/aliyun/sts
+参数:null
+响应:{"accessKeyId":"STS.NUioYhkYQdS52SjfPxnZQZob9","accessKeySecret":"J92pJiLBeRuBKjTJod6LCsWxSnaBDMu5SuuSdKE72cAu","expiration":"2022-06-06T08:16:38Z","securityToken":"CAISuwJ1q6Ft5B2yfSjIr5bcJOPchoZw05HeMHXbglAtYtV9tarJ2zz2IH9Fe3NqCO0XtvowlWxZ6vwflqp3RYQd3p91xTAovPpt6gqET9frT6XXhOV2dvTHdEGXDxnkpuCwB8zyUNLafNq0dlnAjVUd6LDmdDKkLRvHVJqSksxfc8gwVAu1ZiYkYdBNPVlNpdM9P3ncPurPVRnxmTj0DVF0nQB+hGhj8t6ToKum5wHZkUfxx8IMuo31OeLEVcR3O4plWNrHnI4Tf6HagilL8EoIpuUkzs478Dzc7NaGGAsTsVfUN+TPt9xqJQB0IeoYY/cf86OjyaAp4r2Lx9immk13ULsLA3iFdueJ29DZHe6lDNE9eIvgNm7FutL1bcak7Fl+MC9KbF0VKoZwdiUtE3IoRCrdMbS3Ud4Src1mm8IagAEgxo+ipMn1NctM0llv44O3lJGKco8VFwkG860HjBcLFLrjKRpEVJHuk0aofLdHqJsRn9UIuhomqyAJeXJ1jFHWSPCn/6j3HcipeX4owgq9Wq8I1RrOoDcMjUFn8XMFuvqXaClfXtS7qpYEO+aAd4EaZCTXDefmWjLWLRkV0Jvl6Q=="}
+耗时:269
+2022-06-06 16:35:22.969 [http-nio-8080-exec-4] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/staff/session
+参数:null
+响应:{"createTime":"2021-12-29 16:00:36","id":1,"name":"徐竟浩","phone":"13880605659","roles":[{"id":1,"key":"admin","name":"系统管理员"}],"state":1}
+耗时:9
+2022-06-06 16:35:23.432 [http-nio-8080-exec-9] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/aliyun/sts
+参数:null
+响应:{"accessKeyId":"STS.NTPNnaF4igEce8YnvjJR3fasa","accessKeySecret":"64iYBX1dDEYAiJbocT2PRjdN6yDAdBHRejjjHwvT7Twy","expiration":"2022-06-06T09:35:23Z","securityToken":"CAISuwJ1q6Ft5B2yfSjIr5flBdTVq+tI0IeIZx7oinY/Rt0fiaTYgzz2IH9Fe3NqCO0XtvowlWxZ6vwflqp3RYQd6slVxzAovPpt6gqET9frT6XXhOV2dvTHdEGXDxnkpuCwB8zyUNLafNq0dlnAjVUd6LDmdDKkLRvHVJqSksxfc8gwVAu1ZiYkYdBNPVlNpdM9P3ncPurPVRnxmTj0DVF0nQB+hGhj8t6ToKum5wHZkUfxx8IMuo31OeLEVcR3O4plWNrHnI4Tf6HagilL8EoIpuUkzs478Dzc7NaGGAsTsVfUN+TPt9xqJQB0IeoYY/cf86OjyaAp4r2Lx9immk13ULsLA3iFdueJ29DZHe6lDNE9eIvgNm7FutL1bcak7Fl+MC9KbF0VKoZwdiUtE3IoRCrdMbS3Ud4Src1mm8IagAFBIQAlnX5IyrhkxctBRaev6sNrPoSvkZdF80pRrOzAPIglHhNTCfxS6c8hSXuxMbm0DHDO1QsSE6tTUj7AIvG694TzX7ov1woZ+GQqlouWX5D7jyx93RwLyvbCa7jBm98Iy8PF1y73LeXrKtT1X1uPMd59/QyXpSrrjTmdQHI0pQ=="}
+耗时:473
+2022-06-06 16:36:18.642 [http-nio-8080-exec-2] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/staff/session
+参数:null
+响应:{"createTime":"2021-12-29 16:00:36","id":1,"name":"徐竟浩","phone":"13880605659","roles":[{"id":1,"key":"admin","name":"系统管理员"}],"state":1}
+耗时:1
+2022-06-06 16:36:18.948 [http-nio-8080-exec-3] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/aliyun/sts
+参数:null
+响应:{"accessKeyId":"STS.NSzNPuCSG6HxTwcfxWa1MzWzu","accessKeySecret":"4sXiA81LE9KaCVmibpRNQ35H8qE17Ti836tK9ZQpzrFm","expiration":"2022-06-06T09:36:19Z","securityToken":"CAISuwJ1q6Ft5B2yfSjIr5DPBerBroxmgYqTVlHSgngCbb5hlZLRlzz2IH9Fe3NqCO0XtvowlWxZ6vwflqp3RYQdnrtRxzAovPpt6gqET9frT6XXhOV2dvTHdEGXDxnkpuCwB8zyUNLafNq0dlnAjVUd6LDmdDKkLRvHVJqSksxfc8gwVAu1ZiYkYdBNPVlNpdM9P3ncPurPVRnxmTj0DVF0nQB+hGhj8t6ToKum5wHZkUfxx8IMuo31OeLEVcR3O4plWNrHnI4Tf6HagilL8EoIpuUkzs478Dzc7NaGGAsTsVfUN+TPt9xqJQB0IeoYY/cf86OjyaAp4r2Lx9immk13ULsLA3iFdueJ29DZHe6lDNE9eIvgNm7FutL1bcak7Fl+MC9KbF0VKoZwdiUtE3IoRCrdMbS3Ud4Src1mm8IagAGALvIcYNMmhGhLLUCpDGzHMuUVCdc+pbyCcMjv9GdlS9iA1iJb1au3/dxEPmRBF6bXBgt8T67SAWmiaRiwZgHYt+z7z+TikQzX5KLV/KcmhY6buV4zaawfwmZ6EsIvZFih6hSTWYpSsT0IVOB7FKm2oNFAxlhKQPihfiLpp3PWWw=="}
+耗时:339
+2022-06-06 16:36:22.264 [http-nio-8080-exec-1] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/product
+参数:current=1&pageSize=20
+响应:{"data":[{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"628ca7e45f2a87006fd75a46","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654508182&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=Tnu1UMf8CCtoPA3fFw46nQvmlks%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654508182&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=9TK9596csBOwCaQozACdbEAdbE0%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚跟团游9:30晚出发+国旅真纯玩+【升级五星品牌Hilton希尔顿酒店/天源豪生/千鹤国际/携程5钻酒店可选】【松潘古城】+可升『头等舱保姆车』+升级五钻酒店美食+24小时客服+成都三环内免费接"},{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"628cebf8de5bc62c3a2d97ac","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654508182&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=Tnu1UMf8CCtoPA3fFw46nQvmlks%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654508182&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=9TK9596csBOwCaQozACdbEAdbE0%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚跟团游9:30晚出发+国旅真纯玩+【升级五星品牌Hilton希尔顿酒店/天源豪生/千鹤国际/携程5钻酒店可选】【松潘古城】+可升『头等舱保姆车』+升级五钻酒店美食+24小时客服+成都三环内免费接"},{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"628cec1ade5bc62c3a2d97ad","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654508182&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=Tnu1UMf8CCtoPA3fFw46nQvmlks%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654508182&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=9TK9596csBOwCaQozACdbEAdbE0%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚跟团游9:30晚出发+国旅真纯玩+【升级五星品牌Hilton希尔顿酒店/天源豪生/千鹤国际/携程5钻酒店可选】【松潘古城】+可升『头等舱保姆车』+升级五钻酒店美食+24小时客服+成都三环内免费接"},{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"6293836cd64fff5f278b332c","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654508182&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=Tnu1UMf8CCtoPA3fFw46nQvmlks%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654508182&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=9TK9596csBOwCaQozACdbEAdbE0%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚"}],"success":true,"total":4}
+耗时:102
+2022-06-06 16:36:25.001 [http-nio-8080-exec-7] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/product
+参数:current=1&pageSize=20
+响应:{"data":[{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"628ca7e45f2a87006fd75a46","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654508184&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=1CXSMEqyEyiN4FaFrK69Qb3OuIk%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654508184&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=7azq%2BF3i%2Brbk1GwWsQUz8q%2FYwa4%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚跟团游9:30晚出发+国旅真纯玩+【升级五星品牌Hilton希尔顿酒店/天源豪生/千鹤国际/携程5钻酒店可选】【松潘古城】+可升『头等舱保姆车』+升级五钻酒店美食+24小时客服+成都三环内免费接"},{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"628cebf8de5bc62c3a2d97ac","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654508184&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=1CXSMEqyEyiN4FaFrK69Qb3OuIk%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654508184&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=7azq%2BF3i%2Brbk1GwWsQUz8q%2FYwa4%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚跟团游9:30晚出发+国旅真纯玩+【升级五星品牌Hilton希尔顿酒店/天源豪生/千鹤国际/携程5钻酒店可选】【松潘古城】+可升『头等舱保姆车』+升级五钻酒店美食+24小时客服+成都三环内免费接"},{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"628cec1ade5bc62c3a2d97ad","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654508184&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=1CXSMEqyEyiN4FaFrK69Qb3OuIk%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654508184&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=7azq%2BF3i%2Brbk1GwWsQUz8q%2FYwa4%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚跟团游9:30晚出发+国旅真纯玩+【升级五星品牌Hilton希尔顿酒店/天源豪生/千鹤国际/携程5钻酒店可选】【松潘古城】+可升『头等舱保姆车』+升级五钻酒店美食+24小时客服+成都三环内免费接"},{"days":3,"departPlace":["四川省","成都市"],"destination":["四川省","成都市"],"id":"6293836cd64fff5f278b332c","imageUrls":["http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349051042433.jpg?Expires=1654508185&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=vsAgtiG3OJ%2BA7CwaY5xNwwNM1R4%3D","http://lfs-image.oss-cn-chengdu.aliyuncs.com/images/8349054711605.jpg?Expires=1654508185&OSSAccessKeyId=LTAI5tQQuPD1Fk7bhcEQbNWk&Signature=ovWW8LC0ukPKQ7l8p7WHc4t7i70%3D"],"nights":2,"state":0,"title":"九寨沟+黄龙风景名胜区3日2晚"}],"success":true,"total":4}
+耗时:19
+2022-06-06 16:42:30.534 [http-nio-8080-exec-10] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/staff/session
+参数:null
+响应:{"createTime":"2021-12-29 16:00:36","id":1,"name":"徐竟浩","phone":"13880605659","roles":[{"id":1,"key":"admin","name":"系统管理员"}],"state":1}
+耗时:2
+2022-06-06 16:42:31.177 [http-nio-8080-exec-6] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/aliyun/sts
+参数:null
+响应:{"accessKeyId":"STS.NUuGdvpga29yWcfAeeMPrgECi","accessKeySecret":"FpNkRbhtcJpfuSwbtTb2GRvSYFrK34uSgAEzcmwKixVH","expiration":"2022-06-06T09:42:31Z","securityToken":"CAISuwJ1q6Ft5B2yfSjIr5bADN7CnbhAhfuSVUXXpWUwQd9eiIDoizz2IH9Fe3NqCO0XtvowlWxZ6vwflqp3RYQdgd8/xjAovPpt6gqET9frT6XXhOV2dvTHdEGXDxnkpuCwB8zyUNLafNq0dlnAjVUd6LDmdDKkLRvHVJqSksxfc8gwVAu1ZiYkYdBNPVlNpdM9P3ncPurPVRnxmTj0DVF0nQB+hGhj8t6ToKum5wHZkUfxx8IMuo31OeLEVcR3O4plWNrHnI4Tf6HagilL8EoIpuUkzs478Dzc7NaGGAsTsVfUN+TPt9xqJQB0IeoYY/cf86OjyaAp4r2Lx9immk13ULsLA3iFdueJ29DZHe6lDNE9eIvgNm7FutL1bcak7Fl+MC9KbF0VKoZwdiUtE3IoRCrdMbS3Ud4Src1mm8IagAFa0gwLh5/f4KqV9qh4/Tez2WCzteeBHs0ANBk3ER5mKcmR14aADBs1VWHxqQOs2gVk+tWjjfptqesrq884OAhqv6onDtDLAzKpI4T3VnF04IZdiHboeakxsXcFhbh1rWbfItI7QV8oD2jE5ehuhGDOkKGoyuSgiDBgya3lNyySgg=="}
+耗时:652
+2022-06-06 16:43:02.856 [http-nio-8080-exec-8] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/staff/session
+参数:null
+响应:{"createTime":"2021-12-29 16:00:36","id":1,"name":"徐竟浩","phone":"13880605659","roles":[{"id":1,"key":"admin","name":"系统管理员"}],"state":1}
+耗时:0
+2022-06-06 16:43:03.118 [http-nio-8080-exec-5] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/aliyun/sts
+参数:null
+响应:{"accessKeyId":"STS.NUeG4MaRFfMvizS95rfGUeFz2","accessKeySecret":"GhhyUyUZ7fFBhdaoZJuTEmWRnoiHKXDE6dsWeznPzDY3","expiration":"2022-06-06T09:43:03Z","securityToken":"CAISuwJ1q6Ft5B2yfSjIr5bQDI75jI1n0Y+da1zi3TUnash5ioPR0Dz2IH9Fe3NqCO0XtvowlWxZ6vwflqp3RYQd0NA5xjAovPpt6gqET9frT6XXhOV2dvTHdEGXDxnkpuCwB8zyUNLafNq0dlnAjVUd6LDmdDKkLRvHVJqSksxfc8gwVAu1ZiYkYdBNPVlNpdM9P3ncPurPVRnxmTj0DVF0nQB+hGhj8t6ToKum5wHZkUfxx8IMuo31OeLEVcR3O4plWNrHnI4Tf6HagilL8EoIpuUkzs478Dzc7NaGGAsTsVfUN+TPt9xqJQB0IeoYY/cf86OjyaAp4r2Lx9immk13ULsLA3iFdueJ29DZHe6lDNE9eIvgNm7FutL1bcak7Fl+MC9KbF0VKoZwdiUtE3IoRCrdMbS3Ud4Src1mm8IagAFKv2+KvuK5UaghJebKaDOt8ZOttVqhi+OEHi+pjpuA8msbtyZarxK404CtnsdRsHD6Nu40Vl0avXH6nbvoMJ50TUdpbGnlU7wloUhSb5m4XQKdfn3tZq08T4Imk1TwEOy+PO+y53zzx15gjJzO8/3sJ+O2TRz4sX9YhMj6S3V9Rg=="}
+耗时:266
+2022-06-06 16:43:28.179 [http-nio-8080-exec-9] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/staff/session
+参数:null
+响应:{"createTime":"2021-12-29 16:00:36","id":1,"name":"徐竟浩","phone":"13880605659","roles":[{"id":1,"key":"admin","name":"系统管理员"}],"state":1}
+耗时:0
+2022-06-06 16:43:28.455 [http-nio-8080-exec-4] INFO  com.x.config.mvc.LogRecordAspect 
+GET请求/aliyun/sts
+参数:null
+响应:{"accessKeyId":"STS.NUGJQHUHwXS5U34MDzzQJkZq3","accessKeySecret":"79PQ5KG5uhSkPaTkG7YeusgfFocfwcSvVpSSyWoeMuBz","expiration":"2022-06-06T09:43:28Z","securityToken":"CAISuwJ1q6Ft5B2yfSjIr5byAev8uJdW75HeVxWFqUQvdt5mhJ/a0Tz2IH9Fe3NqCO0XtvowlWxZ6vwflqp3RYQd2p47xjAovPpt6gqET9frT6XXhOV2dvTHdEGXDxnkpuCwB8zyUNLafNq0dlnAjVUd6LDmdDKkLRvHVJqSksxfc8gwVAu1ZiYkYdBNPVlNpdM9P3ncPurPVRnxmTj0DVF0nQB+hGhj8t6ToKum5wHZkUfxx8IMuo31OeLEVcR3O4plWNrHnI4Tf6HagilL8EoIpuUkzs478Dzc7NaGGAsTsVfUN+TPt9xqJQB0IeoYY/cf86OjyaAp4r2Lx9immk13ULsLA3iFdueJ29DZHe6lDNE9eIvgNm7FutL1bcak7Fl+MC9KbF0VKoZwdiUtE3IoRCrdMbS3Ud4Src1mm8IagAER9Qr+ssijcukAOm9jopKaTlaKadO+Ic+MZ2XQIvGABqTM5SUAvTHgqZKj/4vOs1DEJojOhljSH8E5DTAwb9lSzF48xPeAHw7HUTM+UYcCfj1UTT4VV1b6Hgd427dOTOGvYceXtPIET2TPVCmdYCrYcDfDoqApGQ73E72uUgqNRA=="}
+耗时:280

@@ -1,0 +1,260 @@
+server:
+  port : 8080
+  tomcat:
+    max-threads: 500
+    max-http-header-size: 8192  
+  
+spring:
+  application:
+    name: lfs
+  datasource:
+    #JDBC数据源配置，单数据源，druid可以使用jdbc配置
+    url: jdbc:mysql://127.0.0.1:3306/yizhixin?characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&useUnicode=true&serverTimezone=Asia/Shanghai&allowMultiQueries=true&useAffectedRows=true 
+    username: root
+    password: 
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #hikari: springboot 默认连接池，据说比druid快
+      #connectionTimeout: 30000
+      #idleTimeout: 300000
+      #minimumIdle: 10
+      #maximumPoolSize: 30
+      #maxLifetime: 1800000
+    #连接池属性配置 
+    druid:
+      initialSize: 10
+      maxActive: 10    #数据库连接池的大小应该是数据库(CPU核心数*2)+有效磁盘数，否则会导致线程切换的开销
+      minIdle: 10
+      maxWait: 60000
+      poolPreparedStatements: true   #开启预编译
+      maxOpenPreparedStatements: 20
+      validationQuery: select 'x'
+      validationQueryTimeout: 3000
+      testOnBorrow: false
+      testOnReturn: false
+      testWhileIdle: true
+      timeBetweenEvictionRunsMillis: 60000
+      maxEvictableIdleTimeMillis: 600000
+      minEvictableIdleTimeMillis: 300000
+      filters: stat #启用相应的内置Filter,stat,wall,log4j,不过这些Filter都是默认配置，配置多个英文逗号分隔
+      #type: com.alibaba.druid.pool.DruidDataSource
+      #配置filter,如果默认配置不能满足你的需求，你可以放弃这种方式，通过配置文件来配置Filter
+      #filter:
+        #stat:
+          #enable: true
+          #dbType: mysql
+          #logSlowSql: true
+          #slowSqlMillis: 2000
+      # WebStatFilter配置，说明请参考Druid Wiki，配置_配置WebStatFilter
+      webStatFilter:
+        enabled: false #是否启用StatFilter默认值false
+        urlPattern: /*
+        exclusions: '*.js,*.gif,*.png,*.css,*.ico,/druid/*'  #忽略的格式信息
+        #sessionStatEnable:
+        #sessionStatMaxCount:
+        #principalSessionName:
+        #principalCookieName:
+        #profileEnable:
+      # StatViewServlet配置，说明请参考Druid Wiki，配置_StatViewServlet配置
+      statViewServlet:
+        enabled: false #是否启用StatViewServlet（监控页面）默认值为false（考虑到安全问题默认并未启动，如需启用建议设置密码或白名单以保障安全）
+        urlPattern: /druid/*
+        resetEnable: false  #是否能够重置数据
+        loginUsername: admin
+        loginPassword: 820125
+        allow: 127.0.0.1  #白名单
+        #deny:             #黑名单
+      # Spring监控配置，说明请参考Druid Github Wiki，配置_Druid和Spring关联监控配置
+      #aopPatterns: com.x.service.* # Spring监控AOP切入点，如x.y.z.service.*,配置多个英文逗号分隔
+      
+      # 多数据源每一个数据源都需要单独配置Druid的属性
+      # 数据源 1 配置
+      #one:
+        #url: jdbc:mysql://127.0.0.1:3306/kph?characterEncoding:UTF-8&zeroDateTimeBehavior:convertToNull&transformedBitIsBoolean:true&useUnicode:true&serverTimezone:Asia/Shanghai&allowMultiQueries:true
+        #username: root
+        #password: 
+        #driver-class-name: com.mysql.cj.jdbc.Driver
+        #maxActive: 10
+        #maxWait: 10000
+      # Druid 数据源 2 配置
+      #two:
+        #url: jdbc:mysql://127.0.0.1:3306/kph?characterEncoding:UTF-8&zeroDateTimeBehavior:convertToNull&transformedBitIsBoolean:true&useUnicode:true&serverTimezone:Asia/Shanghai&allowMultiQueries:true
+        #username: root
+        #password: 
+        #driver-class-name: com.mysql.cj.jdbc.Driver
+        #maxActive: 20
+        #maxWait: 20000
+  data:
+    mongodb:
+      uri: mongodb://127.0.0.1:13001/littlefish  #Mongo database URI. Cannot be set with host, port, credentials and replica set name.
+      #userName: #Login user of the mongo server. Cannot be set with URI.
+      #password: #Login password of the mongo server. Cannot be set with URI.
+      #replicaSetName: #Required replica set name for the cluster. Cannot be set with URI.
+      #fieldNamingStrategy: #Fully qualified name of the FieldNamingStrategy to use.
+      #autoIndexCreation: #Whether to enable auto-index creation.
+      #host:  #Mongo server host.  Cannot be set with URI.
+      #port:  #Mongo server port. Cannot be set with URI.
+      #database:  #Database name
+      #authenticationDatabase: #Authentication database name.
+      #uuidRepresentation #default: JAVA_LEGACY,Representation to use when converting a UUID to a BSON binary value.
+      #gridfs:
+        #database: #GridFS database name.
+        #bucket: #GridFS bucket name.
+  #redis 相关配置，spring-boot-autoconfigure会自动配置
+  redis:
+    #database: 0 #Database index used by the connection factory
+    #url:  #Connection URL. Overrides host, port, and password. User is ignored. Example:redis://user:password@example.com:6379
+    host: 127.0.0.1  # default "localhost"
+    port: 6379
+    #userName:
+    password: hk666
+    ssl: false
+    #timeout:  #读超时
+    #connectTimeout:  #连接超时
+    #clientName: #
+    clientType: lettuce #jedis,设置客户端连接的类型
+    #sentinel:
+      #master:
+      #nodes:  #Comma-separated list of "host:port" pairs
+      #password:
+    #cluster:
+      #nodes:  #Comma-separated list of "host:port" pairs
+      #max-redirects:
+    lettuce:  #推荐使用lettuce而不是jedis，以下是配置连接池
+      pool:
+        max-active: 10  # 连接池最大连接数（使用负值表示没有限制）
+        #timeBetweenEvictionRuns: 3000
+        #max-wait:  ${spring.redis.pool.max-wait-millis} # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-idle: 10  # 连接池中的最大空闲连接
+        min-idle: 1 # 连接池中的最小空闲连接
+      shutdownTimeout: 3000     # 连接超时时间（毫秒）
+      #cluster:
+        #refresh:
+          #dynamicRefreshSources: true
+          #period: 3000
+          #adaptive: false
+    #jedis:
+      #pool:
+        #max-active: 10  # 连接池最大连接数（使用负值表示没有限制）
+        #timeBetweenEvictionRuns: 3000
+        #max-wait:  ${spring.redis.pool.max-wait-millis} # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        #max-idle: 10  # 连接池中的最大空闲连接
+        #min-idle: 1 # 连接池中的最小空闲连接  
+   
+#mybatis:  #不引入plus时，使用mybatis-spring-boot-starter来配置
+mybatisPlus:  #引入plus时，
+  #configLocation:
+  #checkConfigLocation:
+  mapperLocations: classpath:mapper/*.xml
+  typeAliasesPackage: com.x.data.po
+  #typeAliasesSuperType: 
+  typeHandlersPackage: com.x.commons.mybatis.typehandler
+  typeEnumsPackage: com.x.data.pojo.enums
+  executorType: REUSE #SIMPLE, REUSE, BATCH
+  #defaultScriptingLanguageDriver:
+  #configurationProperties:
+  #lazyInitialization:
+  #mapperDefaultScope:
+  configuration: #mybaties的属性配置
+    mapUnderscoreToCamelCase: true
+    defaultFetchSize: 100
+    defaultStatementTimeout: 30
+  #scriptingLanguageDriver:
+    #thymeleaf:
+      #*:
+    #freemarker:
+      #*:
+    #velocity:
+      #*:
+  globalConfig: #plus的配置
+    banner: false  #是否控制台 print mybatis-plus 的 LOGO
+    #enableSqlRunner: false  #是否初始化 SqlRunner
+    #superMapperClass: com.baomidou.mybatisplus.core.mapper.Mapper.class  #通用Mapper父类(影响sqlInjector,只有这个的子类的 mapper 才会注入 sqlInjector 内的 method)
+    #metaObjectHandler:  #元对象字段填充控制器(starter 下支持@bean注入)
+  dbConfig: #plus的配置
+    #idType: ASSIGN_ID  #全局默认主键类型
+    #tablePrefix:  #表名前缀
+    #schema:     #schema
+    #columnFormat:  #字段 format,例: %s,(对主键无效)
+    #propertyFormat: #entity 的字段(property)的 format,只有在 column as property 这种情况下生效例: %s,(对主键无效) 
+    tableUnderline: true #表名是否使用驼峰转下划线命名,只对表名生效
+    #capitalMode: false #大写命名,对表名和字段名均生效
+    #keyGenerator: #表主键生成器(starter 下支持@bean注入)
+    logicDeleteField: deleted #全局的entity的逻辑删除字段属性名,(逻辑删除下有效)
+    logicDeleteValue: 1
+    logicNotDeleteValue: 0
+    #insertStrategy: #字段验证策略之 insert,在 insert 的时候的字段验证策略
+    #updateStrategy: #字段验证策略之 update,在 update 的时候的字段验证策略
+    #selectStrategy: #字段验证策略之 select,在 select 的时候的字段验证策略既 wrapper 根据内部 entity 生成的 where 条件
+#lock4j 分布式锁
+lock4j:
+  acquire-timeout: 3000 #默认值3s，可不设置
+  expire: 30000 #默认值30s，可不设置
+  primary-executor: com.baomidou.lock.executor.RedisTemplateLockExecutor #默认redisson>redisTemplate>zookeeper，可不设置
+
+#shiro-spring-boot-starter, 使用默认设置基本ok，有特殊需求再配置
+#shiro:
+#  enabled: false #defualt true
+#  web:
+#    enabled: false  #defualt true
+#  annotations:
+#    enabled: false  #defualt true
+#  loginUrl: #defualt /login.jsp
+#  successUrl:  #defualt /
+#  unauthorizedUrl: #default null
+#  userNativeSessionManager: true #defualt false, true 自己管理session而不是由容器来管理
+#  sessionManager:
+#    deleteInvalidSessions: true #defualt true
+#    sessionIdCookieEnabled: true #defualt true
+#    sessionIdUrlRewritingEnabled: false #default true
+#    cookie:
+#      name: JSESSIONID
+#      maxAge: -1
+#      domain: null
+#      path: null
+#      secure: false
+#  rememberMeManager:
+#    cookie:
+#      name: rememberMe
+#      maxAge: one year
+#      domain: null
+#      path: null
+#      secure: false
+
+#log
+logging:
+  path:
+    name: ./logs
+  level:
+    root: INFO
+       
+#微信相关配置
+wx:
+  #小程序
+  mini:
+    appid: wx9a452688cd3858eb
+    secret: b09661d0f88271431db87950116c7c09
+  #公众号
+  officalAccount:
+    appid: wx93b74200c4d93cf0
+    secret: ca7e515159827183b7c4e048a64cf7ce
+  #app:
+    #appid:
+    #secret:
+  #支付
+  pay:
+    merchantId: 1616235071 #商户号
+    certSerialNumber: 558AA5E1A264195B0BE13B140E3CA74C4EA6E907 #私钥对应证书的序列号
+    merchantPrivateKeyFile: /cert/apiclient_key.pem  #私钥pem文件的位置
+    refundNotifyUrl: https://www.x.com/api/wxpay/notify#退货通知地址
+    notifyUrl: https://www.x.com/api/wxpay/notify #支付通知地址
+    apiv3Key: 7dd75c55c0f3a84969cacc5fcdbbd980 #apiv3设置的密钥
+
+aliyun:
+  oss:
+    accessKeyId: LTAI5tQQuPD1Fk7bhcEQbNWk
+    accessKeySecret: 62Phu0ADYCKTvJ8hl37PFFvcgkLrZF
+    roleArn: acs:ram::1373745909084993:role/lfsoss
+    region: oss-cn-chengdu
+    endpoint: oss-cn-chengdu.aliyuncs.com
+    callbackUrl:  
+    

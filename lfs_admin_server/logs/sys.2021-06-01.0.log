@@ -1,0 +1,80 @@
+2021-06-01 13:45:14.004 [http-nio-8080-exec-7] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求=====>GET /price
+2021-06-01 13:45:14.028 [http-nio-8080-exec-7] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求参数==>:myprice=265&ratio=0.05&distance=9&chratio=0.1
+2021-06-01 13:45:14.056 [http-nio-8080-exec-7] INFO  com.x.lfs.config.mvc.LogRecordAspect 响应=====>:168.0
+2021-06-01 13:45:14.056 [http-nio-8080-exec-7] INFO  com.x.lfs.config.mvc.LogRecordAspect 耗时=====>91
+2021-06-01 13:45:43.326 [http-nio-8080-exec-10] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求=====>GET /price
+2021-06-01 13:45:43.327 [http-nio-8080-exec-10] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求参数==>:myprice=265&ratio=0.1&distance=18&chratio=0.1
+2021-06-01 13:45:43.327 [http-nio-8080-exec-10] INFO  com.x.lfs.config.mvc.LogRecordAspect 响应=====>:150.0
+2021-06-01 13:45:43.327 [http-nio-8080-exec-10] INFO  com.x.lfs.config.mvc.LogRecordAspect 耗时=====>1
+2021-06-01 13:45:49.577 [http-nio-8080-exec-3] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求=====>GET /price
+2021-06-01 13:45:49.577 [http-nio-8080-exec-3] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求参数==>:myprice=265&ratio=0.15&distance=18&chratio=0.1
+2021-06-01 13:45:49.577 [http-nio-8080-exec-3] INFO  com.x.lfs.config.mvc.LogRecordAspect 响应=====>:160.0
+2021-06-01 13:45:49.577 [http-nio-8080-exec-3] INFO  com.x.lfs.config.mvc.LogRecordAspect 耗时=====>1
+2021-06-01 13:46:09.586 [http-nio-8080-exec-4] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求=====>GET /price
+2021-06-01 13:46:09.587 [http-nio-8080-exec-4] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求参数==>:myprice=265&ratio=0.1&distance=18&chratio=0.05
+2021-06-01 13:46:09.588 [http-nio-8080-exec-4] INFO  com.x.lfs.config.mvc.LogRecordAspect 响应=====>:167.0
+2021-06-01 13:46:09.588 [http-nio-8080-exec-4] INFO  com.x.lfs.config.mvc.LogRecordAspect 耗时=====>2
+2021-06-01 13:46:18.073 [http-nio-8080-exec-5] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求=====>GET /price
+2021-06-01 13:46:18.073 [http-nio-8080-exec-5] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求参数==>:myprice=265&ratio=0.1&distance=9&chratio=0.05
+2021-06-01 13:46:18.073 [http-nio-8080-exec-5] INFO  com.x.lfs.config.mvc.LogRecordAspect 响应=====>:235.0
+2021-06-01 13:46:18.073 [http-nio-8080-exec-5] INFO  com.x.lfs.config.mvc.LogRecordAspect 耗时=====>3
+2021-06-01 13:46:24.438 [http-nio-8080-exec-6] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求=====>GET /price
+2021-06-01 13:46:24.439 [http-nio-8080-exec-6] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求参数==>:myprice=265&ratio=0.05&distance=9&chratio=0.05
+2021-06-01 13:46:24.439 [http-nio-8080-exec-6] INFO  com.x.lfs.config.mvc.LogRecordAspect 响应=====>:206.0
+2021-06-01 13:46:24.440 [http-nio-8080-exec-6] INFO  com.x.lfs.config.mvc.LogRecordAspect 耗时=====>3
+2021-06-01 14:17:20.351 [http-nio-8080-exec-8] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求=====>GET /price
+2021-06-01 14:17:20.354 [http-nio-8080-exec-8] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求参数==>:myprice=265&ratio=0.05&distance=9&chratio=0.1
+2021-06-01 14:17:20.355 [http-nio-8080-exec-8] INFO  com.x.lfs.config.mvc.LogRecordAspect 响应=====>:168.0
+2021-06-01 14:17:20.356 [http-nio-8080-exec-8] INFO  com.x.lfs.config.mvc.LogRecordAspect 耗时=====>8
+2021-06-01 15:00:50.010 [http-nio-8080-exec-9] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求=====>GET /price
+2021-06-01 15:00:50.026 [http-nio-8080-exec-9] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求参数==>:myprice=265&ratio=0.05&distance=9&chratio=0.1
+2021-06-01 15:00:50.028 [http-nio-8080-exec-9] INFO  com.x.lfs.config.mvc.LogRecordAspect 响应=====>:168.0
+2021-06-01 15:00:50.029 [http-nio-8080-exec-9] INFO  com.x.lfs.config.mvc.LogRecordAspect 耗时=====>28
+2021-06-01 15:01:21.300 [http-nio-8080-exec-2] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求=====>GET /price
+2021-06-01 15:01:21.303 [http-nio-8080-exec-2] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求参数==>:myprice=265&ratio=0.05&distance=9&chratio=0.05
+2021-06-01 15:01:21.303 [http-nio-8080-exec-2] INFO  com.x.lfs.config.mvc.LogRecordAspect 响应=====>:206.0
+2021-06-01 15:01:21.303 [http-nio-8080-exec-2] INFO  com.x.lfs.config.mvc.LogRecordAspect 耗时=====>6
+2021-06-01 15:01:59.287 [http-nio-8080-exec-10] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求=====>GET /price
+2021-06-01 15:01:59.288 [http-nio-8080-exec-10] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求参数==>:myprice=265&ratio=0.00&distance=9&chratio=0.05
+2021-06-01 15:01:59.289 [http-nio-8080-exec-10] INFO  com.x.lfs.config.mvc.LogRecordAspect 响应=====>:150.0
+2021-06-01 15:01:59.291 [http-nio-8080-exec-10] INFO  com.x.lfs.config.mvc.LogRecordAspect 耗时=====>4
+2021-06-01 15:02:51.864 [http-nio-8080-exec-3] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求=====>GET /price
+2021-06-01 15:02:51.865 [http-nio-8080-exec-3] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求参数==>:myprice=250&ratio=0.05&distance=9&chratio=0.05
+2021-06-01 15:02:51.866 [http-nio-8080-exec-3] INFO  com.x.lfs.config.mvc.LogRecordAspect 响应=====>:194.0
+2021-06-01 15:02:51.866 [http-nio-8080-exec-3] INFO  com.x.lfs.config.mvc.LogRecordAspect 耗时=====>7
+2021-06-01 15:03:09.069 [http-nio-8080-exec-4] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求=====>GET /price
+2021-06-01 15:03:09.072 [http-nio-8080-exec-4] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求参数==>:myprice=250&ratio=0.01&distance=9&chratio=0.05
+2021-06-01 15:03:09.072 [http-nio-8080-exec-4] INFO  com.x.lfs.config.mvc.LogRecordAspect 响应=====>:150.0
+2021-06-01 15:03:09.073 [http-nio-8080-exec-4] INFO  com.x.lfs.config.mvc.LogRecordAspect 耗时=====>5
+2021-06-01 15:03:39.401 [http-nio-8080-exec-5] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求=====>GET /price
+2021-06-01 15:03:39.402 [http-nio-8080-exec-5] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求参数==>:myprice=290&ratio=0.01&distance=9&chratio=0.05
+2021-06-01 15:03:39.402 [http-nio-8080-exec-5] INFO  com.x.lfs.config.mvc.LogRecordAspect 响应=====>:150.0
+2021-06-01 15:03:39.403 [http-nio-8080-exec-5] INFO  com.x.lfs.config.mvc.LogRecordAspect 耗时=====>3
+2021-06-01 15:03:54.398 [http-nio-8080-exec-6] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求=====>GET /price
+2021-06-01 15:03:54.399 [http-nio-8080-exec-6] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求参数==>:myprice=260&ratio=0.01&distance=9&chratio=0.05
+2021-06-01 15:03:54.402 [http-nio-8080-exec-6] INFO  com.x.lfs.config.mvc.LogRecordAspect 响应=====>:150.0
+2021-06-01 15:03:54.402 [http-nio-8080-exec-6] INFO  com.x.lfs.config.mvc.LogRecordAspect 耗时=====>4
+2021-06-01 15:04:01.963 [http-nio-8080-exec-7] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求=====>GET /price
+2021-06-01 15:04:01.964 [http-nio-8080-exec-7] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求参数==>:myprice=260&ratio=0.01&distance=9&chratio=0.01
+2021-06-01 15:04:01.965 [http-nio-8080-exec-7] INFO  com.x.lfs.config.mvc.LogRecordAspect 响应=====>:202.0
+2021-06-01 15:04:01.965 [http-nio-8080-exec-7] INFO  com.x.lfs.config.mvc.LogRecordAspect 耗时=====>8
+2021-06-01 15:04:23.908 [http-nio-8080-exec-8] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求=====>GET /price
+2021-06-01 15:04:23.909 [http-nio-8080-exec-8] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求参数==>:myprice=238&ratio=0.01&distance=9&chratio=0.01
+2021-06-01 15:04:23.912 [http-nio-8080-exec-8] INFO  com.x.lfs.config.mvc.LogRecordAspect 响应=====>:185.0
+2021-06-01 15:04:23.912 [http-nio-8080-exec-8] INFO  com.x.lfs.config.mvc.LogRecordAspect 耗时=====>11
+2021-06-01 15:04:32.659 [http-nio-8080-exec-1] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求=====>GET /price
+2021-06-01 15:04:32.660 [http-nio-8080-exec-1] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求参数==>:myprice=220&ratio=0.01&distance=9&chratio=0.01
+2021-06-01 15:04:32.661 [http-nio-8080-exec-1] INFO  com.x.lfs.config.mvc.LogRecordAspect 响应=====>:171.0
+2021-06-01 15:04:32.664 [http-nio-8080-exec-1] INFO  com.x.lfs.config.mvc.LogRecordAspect 耗时=====>6
+2021-06-01 15:06:13.344 [http-nio-8080-exec-2] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求=====>GET /price
+2021-06-01 15:06:13.345 [http-nio-8080-exec-2] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求参数==>:myprice=255&ratio=0.1&distance=9&chratio=0.1
+2021-06-01 15:06:13.346 [http-nio-8080-exec-2] INFO  com.x.lfs.config.mvc.LogRecordAspect 响应=====>:198.0
+2021-06-01 15:06:13.346 [http-nio-8080-exec-2] INFO  com.x.lfs.config.mvc.LogRecordAspect 耗时=====>5
+2021-06-01 15:06:44.260 [http-nio-8080-exec-10] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求=====>GET /price
+2021-06-01 15:06:44.261 [http-nio-8080-exec-10] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求参数==>:myprice=257&ratio=0.1&distance=9&chratio=0.1
+2021-06-01 15:06:44.262 [http-nio-8080-exec-10] INFO  com.x.lfs.config.mvc.LogRecordAspect 响应=====>:200.0
+2021-06-01 15:06:44.263 [http-nio-8080-exec-10] INFO  com.x.lfs.config.mvc.LogRecordAspect 耗时=====>6
+2021-06-01 15:07:07.327 [http-nio-8080-exec-3] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求=====>GET /price
+2021-06-01 15:07:07.327 [http-nio-8080-exec-3] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求参数==>:myprice=257&ratio=0&distance=9&chratio=0
+2021-06-01 15:07:07.327 [http-nio-8080-exec-3] INFO  com.x.lfs.config.mvc.LogRecordAspect 响应=====>:180.0
+2021-06-01 15:07:07.327 [http-nio-8080-exec-3] INFO  com.x.lfs.config.mvc.LogRecordAspect 耗时=====>1

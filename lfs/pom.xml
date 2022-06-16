@@ -26,6 +26,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-websocket</artifactId>
+		</dependency>
 		<!-- aop -->
 		<dependency>
             <groupId>org.springframework.boot</groupId>
@@ -39,20 +43,14 @@
 
 		<!-- session -->
 		<!-- 使用redis存session则引入下面这个，否则只需要引入spring-session-core -->
-		<!-- dependency>
+		<dependency>
 			<groupId>org.springframework.session</groupId>
 			<artifactId>spring-session-data-redis</artifactId>
 		</dependency>
-		<dependency>
+		<!-- dependency>
 			<groupId>org.springframework.session</groupId>
 			<artifactId>spring-session-core</artifactId>
 		</dependency-->
-		<!-- shiro -->
-		<dependency>
-		    <groupId>org.apache.shiro</groupId>
-		    <artifactId>shiro-spring-boot-web-starter</artifactId>
-		    <version>1.7.1</version>
-		</dependency>
 
 		<!-- rsa算法 -->
 		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-rsa -->
@@ -83,33 +81,12 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-pool2</artifactId>
         </dependency>
-
-		<!-- 微信支付sdk -->
-		<dependency>
-		    <groupId>com.github.wechatpay-apiv3</groupId>
-		    <artifactId>wechatpay-apache-httpclient</artifactId>
-		    <version>0.2.1</version>
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
-		<dependency>
-		    <groupId>org.apache.httpcomponents</groupId>
-		    <artifactId>httpclient</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>fastjson</artifactId>
-			<version>1.2.75</version>
-		</dependency>
-		
-		<!-- https://mvnrepository.com/artifact/ma.glasnost.orika/orika-core -->
-		<!-- po bo vo 对象按字段名称进行互转 -->
-		<dependency>
-		    <groupId>ma.glasnost.orika</groupId>
-		    <artifactId>orika-core</artifactId>
-		    <version>1.5.4</version>
-		</dependency>
+	<!-- lock4j,分布式锁 -->
+        <dependency>
+	        <groupId>com.baomidou</groupId>
+	        <artifactId>lock4j-redis-template-spring-boot-starter</artifactId>
+	        <version>2.2.0</version>
+	    </dependency>
 			
 		<!-- excel poi -->
 		<dependency>
@@ -123,19 +100,7 @@
     		<version>4.1.2</version>
 		</dependency>	
 		
-		<!-- lombok -->
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
-		<!-- swagger -->
-		<dependency>
-		    <groupId>io.springfox</groupId>
-		    <artifactId>springfox-boot-starter</artifactId>
-		    <version>3.0.0</version>
-		</dependency>
-		
+	
 		<!-- aliyun oss -->
 		<dependency>
 		    <groupId>com.aliyun.oss</groupId>
@@ -163,33 +128,90 @@
 		    <artifactId>jaxb-runtime</artifactId>
 		</dependency>
 		
+		<!-- fastjson -->
+		<dependency>
+		    <groupId>com.alibaba</groupId>
+		    <artifactId>fastjson</artifactId>
+		    <version>1.2.75</version>
+		</dependency>
+		<!-- httpclient -->
+		<dependency>
+		    <groupId>org.apache.httpcomponents</groupId>
+		    <artifactId>httpclient</artifactId>
+		</dependency>
+		<!-- orika -->
+		<dependency>
+		    <groupId>ma.glasnost.orika</groupId>
+		    <artifactId>orika-core</artifactId>
+		    <version>1.5.4</version>
+		</dependency>
+		<!-- mail -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
+		<!-- 微信支付sdk -->
+		<dependency>
+		    <groupId>com.github.wechatpay-apiv3</groupId>
+		    <artifactId>wechatpay-apache-httpclient</artifactId>
+		    <version>0.2.1</version>
+		</dependency>
+		<!-- rsa算法 -->
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-rsa -->
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-rsa</artifactId>
+		    <version>1.0.9.RELEASE</version>
+		</dependency>
 		
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 		</dependency>
-		
+		<!-- lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<!-- swagger -->
+		<dependency>
+		    <groupId>io.springfox</groupId>
+		    <artifactId>springfox-boot-starter</artifactId>
+		    <version>3.0.0</version>
+		</dependency>
 		
 		<!-- test -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
+        	<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 		
 	</dependencies>
 	
 	<build>
+		<finalName>x</finalName>
 		<resources>
 			<resource>
 				<filtering>true</filtering>
 				<directory>${basedir}/src/main/resources</directory>
 				<includes>
+					<include>**/bootstrap*.yml</include>
 					<include>**/application*.yml</include>
 					<include>**/application*.yaml</include>
 					<include>**/application*.properties</include>
 					<include>**/*.xml</include>
 					<include>**/readme*</include>
+					<include>**/*.p12</include>
+					<include>**/*.pem</include>
+				</includes>
+			</resource>
+			<resource>
+				<filtering>true</filtering>
+				<directory>${basedir}/lib</directory>
+				<includes>
+					<include>**/*.jar</include>
 				</includes>
 			</resource>
 		</resources>
@@ -209,11 +231,12 @@
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.1.0</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
+				<artifactId>maven-jar-plugin</artifactId>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

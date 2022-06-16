@@ -21,9 +21,9 @@ export default () => {
     const [ loading, setLoading ] = useState(true)
     const tourGroupList = useTourGroupList()
     const [ triggered, setTriggered] = useState(false)
-    const { list, pagination } = tourGroupList.state
+    const { data, pagination } = tourGroupList.state
 
-    const data = list.map(i=>{
+    const mydata = tourGroupList.state.data.map(i=>{
         i.height=240  //设置Item的高度
         return i
     })
@@ -51,11 +51,11 @@ export default () => {
     return (
         <View className="x-page">
             {
-                list.length>0? (
+                mydata.length>0? (
                     <RecycleView
                         className={styles.recycleView}
                         //placeholderImage="https://gw.alicdn.com/tfs/TB18fUJCxD1gK0jSZFyXXciOVXa-750-656.png"
-                        data={list}
+                        data={mydata}
                         overscanCount={20}
                         // headerHeight={200}
                         // bottomHeight={300}

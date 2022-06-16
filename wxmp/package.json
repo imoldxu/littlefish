@@ -1,5 +1,5 @@
 {
-  "name": "remax-test",
+  "name": "little fish",
   "private": true,
   "version": "1.0.0",
   "description": "Remax Project",
@@ -15,16 +15,16 @@
   "dependencies": {
     "@miniprogram-component-plus/sticky": "^1.0.1",
     "@remax/plugin-less": "^1.0.0",
-    "annar": "^2.0.7",
-    "axios": "^0.21.1",
-    "axios-miniprogram-adapter": "^0.3.2",
+    "annar": "^2.2.1",
+    "axios": "^0.26.1",
+    "axios-miniprogram-adapter": "^0.3.6",
     "moment": "^2.29.1",
     "path-to-regexp": "^6.2.0",
     "react": "^16.14.0",
-    "remax": "^2.9.1",
+    "remax": "^2.15.12",
     "remax-recycle-view": "^1.1.1",
     "unstated-next": "^1.1.0",
-    "weui-miniprogram": "^1.0.7"
+    "weui-miniprogram": "^1.2.3"
   },
   "devDependencies": {
     "cross-env": "^7.0.2",

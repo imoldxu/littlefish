@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.x.dao.mybatis.StaffMapper">
+
+	<resultMap id="staffDto" type="com.x.data.dto.StaffDto" autoMapping="true">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<collection property="roles"
+			ofType="com.x.data.dto.RoleDto">
+			<id column="rid" property="id" jdbcType="INTEGER" />
+			<result column="rkey" property="key" jdbcType="VARCHAR" />
+			<result column="rname" property="name" jdbcType="VARCHAR" />
+			<collection property="permissions"
+				ofType="com.x.data.po.Permission">
+				<id column="pid" property="id" jdbcType="INTEGER" />
+				<result column="pname" property="name" jdbcType="VARCHAR" />
+			</collection>
+		</collection>
+	</resultMap>
+
+	<select id="selectByPhone" resultMap="staffDto">
+		SELECT t_staff.*,
+		t_role.id as rid, t_role.name as rname, t_role.key as rkey, t_permission.id as pid,
+		t_permission.name as pname
+		FROM t_staff LEFT JOIN t_staff_role ON t_staff.id = t_staff_role.staff_id
+		LEFT JOIN t_role ON t_staff_role.role_id = t_role.id
+		LEFT JOIN t_role_permission ON t_role_permission.role_id = t_role.id
+		LEFT JOIN t_permission ON t_role_permission.permission_id = t_permission.id
+		WHERE t_staff.phone = #{phone, jdbcType=VARCHAR}
+	</select>
+
+	<select id="selectStaffById" resultMap="staffDto">
+		SELECT t_staff.*,
+		t_role.id as rid, t_role.name as rname, t_role.key as rkey, t_permission.id as pid,
+		t_permission.name as pname
+		FROM t_staff LEFT JOIN t_staff_role ON t_staff.id = t_staff_role.staff_id
+		LEFT JOIN t_role ON t_staff_role.role_id = t_role.id
+		LEFT JOIN t_role_permission ON t_role_permission.role_id = t_role.id
+		LEFT JOIN t_permission ON t_role_permission.permission_id = t_permission.id
+		WHERE t_staff.id = #{staff_id, jdbcType=INTEGER}
+	</select>
+	
+	<select id="queryStaff" resultMap="staffDto">
+		SELECT t_staff.*,
+		t_role.id as rid, t_role.name as rname, t_role.key as rkey, t_permission.id as pid,
+		t_permission.name as pname
+		FROM t_staff LEFT JOIN t_staff_role ON t_staff.id = t_staff_role.staff_id
+		LEFT JOIN t_role ON t_staff_role.role_id = t_role.id
+		LEFT JOIN t_role_permission ON t_role_permission.role_id = t_role.id
+		LEFT JOIN t_permission ON t_role_permission.permission_id = t_permission.id
+		<where>
+			<if test="query.phone != null and query.phone != ''">
+				t_staff.phone = #{query.phone}
+			</if>
+			<if test="query.name != null and query.name !=''">
+				AND t_staff.name like CONCAT(#{query.name},"%") 
+			</if>
+			<if test="query.state != null">
+				AND t_staff.state = #{query.state}
+			</if>
+			<if test="query.role != null and query.role !=''">
+				AND t_role.key = #{query.role}
+			</if>
+		</where>
+		order by t_staff.id DESC
+	</select>
+
+</mapper>

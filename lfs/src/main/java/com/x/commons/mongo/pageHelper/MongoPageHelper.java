@@ -27,29 +27,17 @@ public class MongoPageHelper {
     }
 
 
-    /**
-     * 分页查询，直接返回集合类型的结果.
-     *
-     * @see MongoPageHelper#pageQuery(org.springframework.data.mongodb.core.query.Query,
-     * java.lang.Class, java.util.function.Function, java.lang.Integer, java.lang.Integer,
-     * java.lang.String)
-     */
-    public <T> PageResult<T> pageQuery(Query query, String collectionName, Class<T> entityClass, Integer pageSize,
-        Integer pageNum) {
-        return pageQuery(query, collectionName, entityClass, Function.identity(), pageSize, pageNum, null);
-    }
-
-    /**
-     * 分页查询，不考虑条件分页，直接使用skip-limit来分页.
-     *
-     * @see MongoPageHelper#pageQuery(org.springframework.data.mongodb.core.query.Query,
-     * java.lang.Class, java.util.function.Function, java.lang.Integer, java.lang.Integer,
-     * java.lang.String)
-     */
-    public <T, R> PageResult<R> pageQuery(Query query, String collectionName, Class<T> entityClass, Function<T, R> mapper,
-        Integer pageSize, Integer pageNum) {
-        return pageQuery(query, collectionName, entityClass, mapper, pageSize, pageNum, null);
-    }
+//    /**
+//     * 分页查询，直接返回集合类型的结果.
+//     *
+//     * @see MongoPageHelper#pageQuery(org.springframework.data.mongodb.core.query.Query,
+//     * java.lang.Class, java.util.function.Function, java.lang.Integer, java.lang.Integer,
+//     * java.lang.String)
+//     */
+//    public <T> MongoPageResult<T> pageQuery(Query query, String collectionName, Class<T> entityClass, Integer pageSize,
+//        Integer pageNum) {
+//        return pageQuery(query, collectionName, entityClass, pageSize, pageNum, null);
+//    }
 
     /**
      * 分页查询.
@@ -65,7 +53,7 @@ public class MongoPageHelper {
      * @param <R> 最终返回时，展现给页面时的一条记录的类型。
      * @return PageResult，一个封装page信息的对象.
      */
-    public <T, R> PageResult<R> pageQuery(Query query, String collectionName, Class<T> entityClass, Function<T, R> mapper,
+    public <T> MongoPageResult<T> pageQuery(Query query, String collectionName, Class<T> entityClass,
         Integer pageSize, Integer pageIndex, String lastId) {
         //分页逻辑
         long total = mongoTemplate.count(query, collectionName);
@@ -92,14 +80,16 @@ public class MongoPageHelper {
         final List<T> entityList = mongoTemplate
             .find(query, entityClass, collectionName);
 
-        final PageResult<R> pageResult = new PageResult<>();
-        final Pagination pagination = new Pagination();
-        pagination.setTotal(total);
-        pagination.setPages(pages);
-        pagination.setPageSize(pageSize);
-        pagination.setCurrent(pageIndex);
-        pageResult.setPagination(pagination);
-        pageResult.setList(entityList.stream().map(mapper).collect(Collectors.toList()));
+        final MongoPageResult<T> pageResult = new MongoPageResult<T>();
+//        final Pagination pagination = new Pagination();
+//        pagination.setTotal(total);
+//        pagination.setPages(pages);
+//        pagination.setPageSize(pageSize);
+//        pagination.setCurrent(pageIndex);
+        pageResult.setTotal(total);
+//        pageResult.setPagination(pagination);
+        //pageResult.setData(entityList.stream().map(mapper).collect(Collectors.toList()));
+        pageResult.setData(entityList);
         return pageResult;
     }
 

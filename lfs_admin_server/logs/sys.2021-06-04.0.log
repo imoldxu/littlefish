@@ -1,0 +1,60 @@
+2021-06-04 00:12:57.861 [http-nio-8080-exec-6] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求=====>GET /aliyun/oss/signature
+2021-06-04 00:12:57.878 [http-nio-8080-exec-6] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求参数==>:null
+2021-06-04 00:12:57.879 [http-nio-8080-exec-6] INFO  com.x.lfs.config.mvc.LogRecordAspect 响应=====>:{"accessId":"LTAI5tQQuPD1Fk7bhcEQbNWk","signature":"sFNk6bltNTjF/TJARTXWje8FzIw=","expire":"1622736807","host":"https://lfs-image.oss-cn-chengdu.aliyuncs.com","callback":"eyJjYWxsYmFja0JvZHlUeXBlIjoiYXBwbGljYXRpb24veC13d3ctZm9ybS11cmxlbmNvZGVkIiwiY2FsbGJhY2tVcmwiOiIiLCJjYWxsYmFja0JvZHkiOiJmaWxlbmFtZT0ke29iamVjdH0mc2l6ZT0ke3NpemV9Jm1pbWVUeXBlPSR7bWltZVR5cGV9JmhlaWdodD0ke2ltYWdlSW5mby5oZWlnaHR9JndpZHRoPSR7aW1hZ2VJbmZvLndpZHRofSJ9","dir":"images/","policy":"eyJleHBpcmF0aW9uIjoiMjAyMS0wNi0wM1QxNjoxMzoyNy44NTZaIiwiY29uZGl0aW9ucyI6W1siY29udGVudC1sZW5ndGgtcmFuZ2UiLDAsMTA0ODU3NjAwMF0sWyJzdGFydHMtd2l0aCIsIiRrZXkiLCJpbWFnZXMvIl1dfQ=="}
+2021-06-04 00:12:57.880 [http-nio-8080-exec-6] INFO  com.x.lfs.config.mvc.LogRecordAspect 耗时=====>24
+2021-06-04 00:12:57.895 [http-nio-8080-exec-2] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求=====>GET /aliyun/oss/signature
+2021-06-04 00:12:57.897 [http-nio-8080-exec-2] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求参数==>:null
+2021-06-04 00:12:57.897 [http-nio-8080-exec-2] INFO  com.x.lfs.config.mvc.LogRecordAspect 响应=====>:{"accessId":"LTAI5tQQuPD1Fk7bhcEQbNWk","signature":"VQJHX4eHpQAL40goJc8JGorsTyo=","expire":"1622736807","host":"https://lfs-image.oss-cn-chengdu.aliyuncs.com","callback":"eyJjYWxsYmFja0JvZHlUeXBlIjoiYXBwbGljYXRpb24veC13d3ctZm9ybS11cmxlbmNvZGVkIiwiY2FsbGJhY2tVcmwiOiIiLCJjYWxsYmFja0JvZHkiOiJmaWxlbmFtZT0ke29iamVjdH0mc2l6ZT0ke3NpemV9Jm1pbWVUeXBlPSR7bWltZVR5cGV9JmhlaWdodD0ke2ltYWdlSW5mby5oZWlnaHR9JndpZHRoPSR7aW1hZ2VJbmZvLndpZHRofSJ9","dir":"images/","policy":"eyJleHBpcmF0aW9uIjoiMjAyMS0wNi0wM1QxNjoxMzoyNy44OTRaIiwiY29uZGl0aW9ucyI6W1siY29udGVudC1sZW5ndGgtcmFuZ2UiLDAsMTA0ODU3NjAwMF0sWyJzdGFydHMtd2l0aCIsIiRrZXkiLCJpbWFnZXMvIl1dfQ=="}
+2021-06-04 00:12:57.897 [http-nio-8080-exec-2] INFO  com.x.lfs.config.mvc.LogRecordAspect 耗时=====>3
+2021-06-04 00:13:34.443 [http-nio-8080-exec-5] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求=====>GET /aliyun/oss/signature
+2021-06-04 00:13:34.443 [http-nio-8080-exec-5] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求参数==>:null
+2021-06-04 00:13:34.444 [http-nio-8080-exec-5] INFO  com.x.lfs.config.mvc.LogRecordAspect 响应=====>:{"accessId":"LTAI5tQQuPD1Fk7bhcEQbNWk","signature":"3AEK39ZJCDltQu3baj7cSfD8d3A=","expire":"1622736844","host":"https://lfs-image.oss-cn-chengdu.aliyuncs.com","callback":"eyJjYWxsYmFja0JvZHlUeXBlIjoiYXBwbGljYXRpb24veC13d3ctZm9ybS11cmxlbmNvZGVkIiwiY2FsbGJhY2tVcmwiOiIiLCJjYWxsYmFja0JvZHkiOiJmaWxlbmFtZT0ke29iamVjdH0mc2l6ZT0ke3NpemV9Jm1pbWVUeXBlPSR7bWltZVR5cGV9JmhlaWdodD0ke2ltYWdlSW5mby5oZWlnaHR9JndpZHRoPSR7aW1hZ2VJbmZvLndpZHRofSJ9","dir":"images/","policy":"eyJleHBpcmF0aW9uIjoiMjAyMS0wNi0wM1QxNjoxNDowNC40NDJaIiwiY29uZGl0aW9ucyI6W1siY29udGVudC1sZW5ndGgtcmFuZ2UiLDAsMTA0ODU3NjAwMF0sWyJzdGFydHMtd2l0aCIsIiRrZXkiLCJpbWFnZXMvIl1dfQ=="}
+2021-06-04 00:13:34.444 [http-nio-8080-exec-5] INFO  com.x.lfs.config.mvc.LogRecordAspect 耗时=====>2
+2021-06-04 00:13:34.455 [http-nio-8080-exec-8] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求=====>GET /aliyun/oss/signature
+2021-06-04 00:13:34.455 [http-nio-8080-exec-8] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求参数==>:null
+2021-06-04 00:13:34.455 [http-nio-8080-exec-8] INFO  com.x.lfs.config.mvc.LogRecordAspect 响应=====>:{"accessId":"LTAI5tQQuPD1Fk7bhcEQbNWk","signature":"LrMoOA4SY8RGGl/RYSDrMvFA8EY=","expire":"1622736844","host":"https://lfs-image.oss-cn-chengdu.aliyuncs.com","callback":"eyJjYWxsYmFja0JvZHlUeXBlIjoiYXBwbGljYXRpb24veC13d3ctZm9ybS11cmxlbmNvZGVkIiwiY2FsbGJhY2tVcmwiOiIiLCJjYWxsYmFja0JvZHkiOiJmaWxlbmFtZT0ke29iamVjdH0mc2l6ZT0ke3NpemV9Jm1pbWVUeXBlPSR7bWltZVR5cGV9JmhlaWdodD0ke2ltYWdlSW5mby5oZWlnaHR9JndpZHRoPSR7aW1hZ2VJbmZvLndpZHRofSJ9","dir":"images/","policy":"eyJleHBpcmF0aW9uIjoiMjAyMS0wNi0wM1QxNjoxNDowNC40NTNaIiwiY29uZGl0aW9ucyI6W1siY29udGVudC1sZW5ndGgtcmFuZ2UiLDAsMTA0ODU3NjAwMF0sWyJzdGFydHMtd2l0aCIsIiRrZXkiLCJpbWFnZXMvIl1dfQ=="}
+2021-06-04 00:13:34.455 [http-nio-8080-exec-8] INFO  com.x.lfs.config.mvc.LogRecordAspect 耗时=====>2
+2021-06-04 00:21:46.250 [http-nio-8080-exec-4] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求=====>GET /aliyun/oss/signature
+2021-06-04 00:21:46.250 [http-nio-8080-exec-4] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求参数==>:null
+2021-06-04 00:21:46.250 [http-nio-8080-exec-4] INFO  com.x.lfs.config.mvc.LogRecordAspect 响应=====>:{"accessId":"LTAI5tQQuPD1Fk7bhcEQbNWk","signature":"2v0jlC9wocrOP604QQo7J4RMf78=","expire":"1622737336","host":"https://lfs-image.oss-cn-chengdu.aliyuncs.com","callback":"eyJjYWxsYmFja0JvZHlUeXBlIjoiYXBwbGljYXRpb24veC13d3ctZm9ybS11cmxlbmNvZGVkIiwiY2FsbGJhY2tVcmwiOiIiLCJjYWxsYmFja0JvZHkiOiJmaWxlbmFtZT0ke29iamVjdH0mc2l6ZT0ke3NpemV9Jm1pbWVUeXBlPSR7bWltZVR5cGV9JmhlaWdodD0ke2ltYWdlSW5mby5oZWlnaHR9JndpZHRoPSR7aW1hZ2VJbmZvLndpZHRofSJ9","dir":"images/","policy":"eyJleHBpcmF0aW9uIjoiMjAyMS0wNi0wM1QxNjoyMjoxNi4yNDhaIiwiY29uZGl0aW9ucyI6W1siY29udGVudC1sZW5ndGgtcmFuZ2UiLDAsMTA0ODU3NjAwMF0sWyJzdGFydHMtd2l0aCIsIiRrZXkiLCJpbWFnZXMvIl1dfQ=="}
+2021-06-04 00:21:46.250 [http-nio-8080-exec-4] INFO  com.x.lfs.config.mvc.LogRecordAspect 耗时=====>2
+2021-06-04 00:21:46.260 [http-nio-8080-exec-7] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求=====>GET /aliyun/oss/signature
+2021-06-04 00:21:46.260 [http-nio-8080-exec-7] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求参数==>:null
+2021-06-04 00:21:46.261 [http-nio-8080-exec-7] INFO  com.x.lfs.config.mvc.LogRecordAspect 响应=====>:{"accessId":"LTAI5tQQuPD1Fk7bhcEQbNWk","signature":"hoOjhQzgnGsbvHb4sc6SRRCSEQI=","expire":"1622737336","host":"https://lfs-image.oss-cn-chengdu.aliyuncs.com","callback":"eyJjYWxsYmFja0JvZHlUeXBlIjoiYXBwbGljYXRpb24veC13d3ctZm9ybS11cmxlbmNvZGVkIiwiY2FsbGJhY2tVcmwiOiIiLCJjYWxsYmFja0JvZHkiOiJmaWxlbmFtZT0ke29iamVjdH0mc2l6ZT0ke3NpemV9Jm1pbWVUeXBlPSR7bWltZVR5cGV9JmhlaWdodD0ke2ltYWdlSW5mby5oZWlnaHR9JndpZHRoPSR7aW1hZ2VJbmZvLndpZHRofSJ9","dir":"images/","policy":"eyJleHBpcmF0aW9uIjoiMjAyMS0wNi0wM1QxNjoyMjoxNi4yNTlaIiwiY29uZGl0aW9ucyI6W1siY29udGVudC1sZW5ndGgtcmFuZ2UiLDAsMTA0ODU3NjAwMF0sWyJzdGFydHMtd2l0aCIsIiRrZXkiLCJpbWFnZXMvIl1dfQ=="}
+2021-06-04 00:21:46.262 [http-nio-8080-exec-7] INFO  com.x.lfs.config.mvc.LogRecordAspect 耗时=====>3
+2021-06-04 19:05:26.275 [http-nio-8080-exec-2] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求=====>GET /price
+2021-06-04 19:05:26.295 [http-nio-8080-exec-2] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求参数==>:myprice=220&ratio=0.03&distance=9&chratio=0.03
+2021-06-04 19:05:26.320 [http-nio-8080-exec-2] INFO  com.x.lfs.config.mvc.LogRecordAspect 响应=====>:171.0
+2021-06-04 19:05:26.321 [http-nio-8080-exec-2] INFO  com.x.lfs.config.mvc.LogRecordAspect 耗时=====>60
+2021-06-04 19:06:16.932 [http-nio-8080-exec-5] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求=====>GET /price
+2021-06-04 19:06:16.935 [http-nio-8080-exec-5] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求参数==>:myprice=220&ratio=0.03&distance=9&chratio=0.05
+2021-06-04 19:06:16.946 [http-nio-8080-exec-5] INFO  com.x.lfs.config.mvc.LogRecordAspect 响应=====>:150.0
+2021-06-04 19:06:16.947 [http-nio-8080-exec-5] INFO  com.x.lfs.config.mvc.LogRecordAspect 耗时=====>21
+2021-06-04 19:06:27.880 [http-nio-8080-exec-8] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求=====>GET /price
+2021-06-04 19:06:27.882 [http-nio-8080-exec-8] INFO  com.x.lfs.config.mvc.LogRecordAspect 请求参数==>:myprice=230&ratio=0.03&distance=9&chratio=0.05
+2021-06-04 19:06:27.884 [http-nio-8080-exec-8] INFO  com.x.lfs.config.mvc.LogRecordAspect 响应=====>:154.0
+2021-06-04 19:06:27.884 [http-nio-8080-exec-8] INFO  com.x.lfs.config.mvc.LogRecordAspect 耗时=====>5
+2021-06-04 21:49:04.519 [lettuce-nioEventLoop-4-1] INFO  io.lettuce.core.protocol.CommandHandler null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at java.base/sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at java.base/sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:276)
+	at java.base/sun.nio.ch.IOUtil.read(IOUtil.java:233)
+	at java.base/sun.nio.ch.IOUtil.read(IOUtil.java:223)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:358)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1134)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-06-04 21:49:05.259 [lettuce-eventExecutorLoop-1-3] INFO  io.lettuce.core.protocol.ConnectionWatchdog Reconnecting, last destination was /127.0.0.1:6379
+2021-06-04 21:49:08.367 [lettuce-nioEventLoop-4-2] WARN  io.lettuce.core.protocol.ConnectionWatchdog Cannot reconnect to [127.0.0.1:6379]: Connection refused: no further information: /127.0.0.1:6379
+2021-06-04 21:49:10.728 [lettuce-eventExecutorLoop-1-5] INFO  io.lettuce.core.protocol.ConnectionWatchdog Reconnecting, last destination was 127.0.0.1:6379
+2021-06-04 21:49:13.031 [lettuce-nioEventLoop-4-4] WARN  io.lettuce.core.protocol.ConnectionWatchdog Cannot reconnect to [127.0.0.1:6379]: Connection refused: no further information: /127.0.0.1:6379
